@@ -1,0 +1,263 @@
+{
+  "backend_status": "REAL_BACKEND",
+  "elapsed_seconds": 271.47521054104436,
+  "manifest": {
+    "args": {
+      "control_search_samples": 256,
+      "donor_head": [
+        0,
+        7
+      ],
+      "donor_seed": 0,
+      "eval_seed": 9999,
+      "n_eval_samples": 1024,
+      "seq_len": 200,
+      "source_result_path": "experiments/shakespeare_portability_results.json"
+    },
+    "name": "shakespeare_redundancy_control",
+    "real_backend_policy": "REAL_BACKEND_ONLY_FOR_REPORTED_METRICS",
+    "repo_root": ".",
+    "system": {
+      "gpu": "Graphics/Displays:\n\n    Apple M4 Max:\n\n      Chipset Model: Apple M4 Max\n      Type: GPU\n      Bus: Built-In\n      Total Number of Cores: 40\n      Vendor: Apple (0x106b)\n      Metal Support: Metal 4\n      Displays:\n        Color LCD:\n          Display Type: Built-in Liquid Retina XDR Display\n          Resolution: 3024 x 1964 Retina\n          Main Display: Yes\n          Mirror: Off\n          Online: Yes\n          Automatically Adjust Brightness: Yes\n          Display Asleep: Yes\n          Connection Type: Internal",
+      "hardware": "2026-04-22 21:37:13.822 system_profiler[61968:4793835] hw.cpufamily: 0x17d5b93a\nHardware:\n\n    Hardware Overview:\n\n      Model Name: MacBook Pro\n      Model Identifier: Mac16,6\n      Model Number: Z1FG000AULL/A\n      Chip: Apple M4 Max\n      Total Number of Cores: 16 (12 Performance and 4 Efficiency)\n      Memory: 64 GB\n      System Firmware Version: 13822.81.10\n      OS Loader Version: 13822.81.10\n      Serial Number (system): FJW43GVG60\n      Hardware UUID: C6061F50-3532-5D2B-83B8-67321EBA7F0A\n      Provisioning UDID: 00006041-001221EE3E0A401C\n      Activation Lock Status: Enabled",
+      "machine": "arm64",
+      "memory_bytes": "68719476736",
+      "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+      "processor": "arm",
+      "python": "3.14.3",
+      "timestamp": "2026-04-22T21:37:13-0600"
+    }
+  },
+  "rows": [
+    {
+      "aggressive_critical_only_ablated_heads": [
+        "L0H0",
+        "L0H1",
+        "L0H2",
+        "L0H3",
+        "L0H5",
+        "L0H6",
+        "L0H7"
+      ],
+      "aggressive_critical_only_baseline_accuracy": 0.50390625,
+      "aggressive_critical_only_baseline_advantage": 0.2275390625,
+      "aggressive_critical_only_transplant_accuracy": 0.412109375,
+      "aggressive_critical_only_transplant_advantage": 0.1357421875,
+      "aggressive_critical_only_transplant_drop": 0.091796875,
+      "aggressive_critical_only_zero_accuracy": 0.4052734375,
+      "aggressive_critical_only_zero_advantage": 0.12890625,
+      "control_ablated_heads": [
+        "L0H1",
+        "L0H2",
+        "L0H3",
+        "L0H6"
+      ],
+      "control_evaluated_subsets": 128,
+      "control_screening_baseline_advantage": 0.5390625,
+      "control_screening_slot_load_bearing_drop": 0.54296875,
+      "control_search_n_samples": 256,
+      "control_selection_feasible": true,
+      "control_selection_thresholds": {
+        "min_advantage": 0.5,
+        "min_load_bearing_drop": 0.25
+      },
+      "controlled_baseline_accuracy": 0.818359375,
+      "controlled_baseline_advantage": 0.5419921875,
+      "controlled_procrustes_accuracy": 0.505859375,
+      "controlled_procrustes_advantage": 0.2294921875,
+      "controlled_procrustes_drop": 0.3125,
+      "controlled_slot_load_bearing_drop": 0.501953125,
+      "controlled_transplant_accuracy": 0.3271484375,
+      "controlled_transplant_advantage": 0.05078125,
+      "controlled_transplant_drop": 0.4912109375,
+      "controlled_transplant_drop_fraction": 0.9063063063063063,
+      "controlled_zero_accuracy": 0.31640625,
+      "controlled_zero_advantage": 0.0400390625,
+      "critical_head": "L0H4",
+      "n_control_ablated_heads": 4,
+      "normal_baseline_accuracy": 1.0,
+      "normal_baseline_advantage": 0.7236328125,
+      "normal_function_matched_drop": 0.5693359375,
+      "recipient_seed": 1,
+      "status": "REAL_BACKEND"
+    },
+    {
+      "aggressive_critical_only_ablated_heads": [
+        "L0H0",
+        "L0H1",
+        "L0H2",
+        "L0H3",
+        "L0H4",
+        "L0H6",
+        "L0H7"
+      ],
+      "aggressive_critical_only_baseline_accuracy": 0.517578125,
+      "aggressive_critical_only_baseline_advantage": 0.2412109375,
+      "aggressive_critical_only_transplant_accuracy": 0.3857421875,
+      "aggressive_critical_only_transplant_advantage": 0.109375,
+      "aggressive_critical_only_transplant_drop": 0.1318359375,
+      "aggressive_critical_only_zero_accuracy": 0.3916015625,
+      "aggressive_critical_only_zero_advantage": 0.115234375,
+      "control_ablated_heads": [
+        "L0H0",
+        "L0H4",
+        "L0H6",
+        "L0H7"
+      ],
+      "control_evaluated_subsets": 128,
+      "control_screening_baseline_advantage": 0.50390625,
+      "control_screening_slot_load_bearing_drop": 0.44140625,
+      "control_search_n_samples": 256,
+      "control_selection_feasible": true,
+      "control_selection_thresholds": {
+        "min_advantage": 0.5,
+        "min_load_bearing_drop": 0.25
+      },
+      "controlled_baseline_accuracy": 0.7802734375,
+      "controlled_baseline_advantage": 0.50390625,
+      "controlled_procrustes_accuracy": 0.5244140625,
+      "controlled_procrustes_advantage": 0.248046875,
+      "controlled_procrustes_drop": 0.255859375,
+      "controlled_slot_load_bearing_drop": 0.4306640625,
+      "controlled_transplant_accuracy": 0.3564453125,
+      "controlled_transplant_advantage": 0.080078125,
+      "controlled_transplant_drop": 0.423828125,
+      "controlled_transplant_drop_fraction": 0.8410852713178295,
+      "controlled_zero_accuracy": 0.349609375,
+      "controlled_zero_advantage": 0.0732421875,
+      "critical_head": "L0H5",
+      "n_control_ablated_heads": 4,
+      "normal_baseline_accuracy": 1.0,
+      "normal_baseline_advantage": 0.7236328125,
+      "normal_function_matched_drop": 0.5888671875,
+      "recipient_seed": 2,
+      "status": "REAL_BACKEND"
+    },
+    {
+      "aggressive_critical_only_ablated_heads": [
+        "L0H0",
+        "L0H1",
+        "L0H3",
+        "L0H4",
+        "L0H5",
+        "L0H6",
+        "L0H7"
+      ],
+      "aggressive_critical_only_baseline_accuracy": 0.4873046875,
+      "aggressive_critical_only_baseline_advantage": 0.2109375,
+      "aggressive_critical_only_transplant_accuracy": 0.353515625,
+      "aggressive_critical_only_transplant_advantage": 0.0771484375,
+      "aggressive_critical_only_transplant_drop": 0.1337890625,
+      "aggressive_critical_only_zero_accuracy": 0.3583984375,
+      "aggressive_critical_only_zero_advantage": 0.08203125,
+      "control_ablated_heads": [
+        "L0H0",
+        "L0H4",
+        "L0H5",
+        "L0H6"
+      ],
+      "control_evaluated_subsets": 128,
+      "control_screening_baseline_advantage": 0.50390625,
+      "control_screening_slot_load_bearing_drop": 0.40625,
+      "control_search_n_samples": 256,
+      "control_selection_feasible": true,
+      "control_selection_thresholds": {
+        "min_advantage": 0.5,
+        "min_load_bearing_drop": 0.25
+      },
+      "controlled_baseline_accuracy": 0.791015625,
+      "controlled_baseline_advantage": 0.5146484375,
+      "controlled_procrustes_accuracy": 0.498046875,
+      "controlled_procrustes_advantage": 0.2216796875,
+      "controlled_procrustes_drop": 0.29296875,
+      "controlled_slot_load_bearing_drop": 0.4140625,
+      "controlled_transplant_accuracy": 0.3701171875,
+      "controlled_transplant_advantage": 0.09375,
+      "controlled_transplant_drop": 0.4208984375,
+      "controlled_transplant_drop_fraction": 0.8178368121442126,
+      "controlled_zero_accuracy": 0.376953125,
+      "controlled_zero_advantage": 0.1005859375,
+      "critical_head": "L0H2",
+      "n_control_ablated_heads": 4,
+      "normal_baseline_accuracy": 1.0,
+      "normal_baseline_advantage": 0.7236328125,
+      "normal_function_matched_drop": 0.6142578125,
+      "recipient_seed": 3,
+      "status": "REAL_BACKEND"
+    }
+  ],
+  "scope": "SHAKESPEARE_19M_CRITICAL_SLOT_ONLY_CONTROL",
+  "summary": {
+    "aggressive_critical_only_baseline_advantage": {
+      "max": 0.2412109375,
+      "mean": 0.2265625,
+      "min": 0.2109375,
+      "sd": 0.01516032685181643
+    },
+    "aggressive_critical_only_transplant_drop": {
+      "max": 0.1337890625,
+      "mean": 0.119140625,
+      "min": 0.091796875,
+      "sd": 0.023700509959983587
+    },
+    "all_controlled_slots_load_bearing": true,
+    "all_redundancy_controlled_transplants_fail": true,
+    "controlled_baseline_advantage": {
+      "max": 0.5419921875,
+      "mean": 0.5201822916666666,
+      "min": 0.50390625,
+      "sd": 0.019636759286270407
+    },
+    "controlled_procrustes_advantage": {
+      "max": 0.248046875,
+      "mean": 0.23307291666666666,
+      "min": 0.2216796875,
+      "sd": 0.013543388061663228
+    },
+    "controlled_procrustes_drop": {
+      "max": 0.3125,
+      "mean": 0.287109375,
+      "min": 0.255859375,
+      "sd": 0.028771327856750458
+    },
+    "controlled_slot_load_bearing_drop": {
+      "max": 0.501953125,
+      "mean": 0.4488932291666667,
+      "min": 0.4140625,
+      "sd": 0.04669493954106258
+    },
+    "controlled_transplant_advantage": {
+      "max": 0.09375,
+      "mean": 0.07486979166666667,
+      "min": 0.05078125,
+      "sd": 0.021952754296988758
+    },
+    "controlled_transplant_drop": {
+      "max": 0.4912109375,
+      "mean": 0.4453125,
+      "min": 0.4208984375,
+      "sd": 0.03977619502815684
+    },
+    "controlled_zero_advantage": {
+      "max": 0.1005859375,
+      "mean": 0.0712890625,
+      "min": 0.0400390625,
+      "sd": 0.03032065370363286
+    },
+    "mean_ablated_redundant_heads": 4.0,
+    "mean_transplant_drop_fraction_of_controlled_baseline": 0.8550761299227828,
+    "n_recipients": 3,
+    "normal_baseline_advantage": {
+      "max": 0.7236328125,
+      "mean": 0.7236328125,
+      "min": 0.7236328125,
+      "sd": 0.0
+    },
+    "normal_function_matched_drop": {
+      "max": 0.6142578125,
+      "mean": 0.5908203125,
+      "min": 0.5693359375,
+      "sd": 0.0225245363177164
+    }
+  }
+}

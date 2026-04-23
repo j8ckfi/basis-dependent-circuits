@@ -1,0 +1,63 @@
+{
+  "baselines": {
+    "seed0": 0.8567335243553008,
+    "seed1": 0.9690104166666667
+  },
+  "alignment_diagnostics": {
+    "pre_l0_ln": {
+      "r2_procrustes": -0.04312872886657715,
+      "r2_unrotated": -1.03304935085582,
+      "frob_procrustes": -0.011552214622497559,
+      "frob_unrotated": -0.412190863915765,
+      "orthogonality_error": 3.890398524252272e-06
+    },
+    "post_l0": {
+      "r2_procrustes": -0.9348536729812622,
+      "r2_unrotated": -1.3565600130900108,
+      "frob_procrustes": -0.3333303928375244,
+      "frob_unrotated": -0.4714753894641459,
+      "orthogonality_error": 3.865399942914492e-06
+    },
+    "note": "LayerNorm is not rotation-invariant, so R2 < 1 is structural. pre_l0_ln applies ln1 before collecting activations so alignment is at the exact interface Q/K/V read from."
+  },
+  "unaligned_transplant": {
+    "description": "seed0 L0H3 -> seed1 L0H1, no alignment",
+    "accuracy": 0.09223553934340803,
+    "delta_vs_seed1_baseline": -0.8767748773232587
+  },
+  "one_interface_aligned": {
+    "description": "seed0 L0H3 -> seed1 L0H1, single-rotation aligned (post-L0, corrected SVD)",
+    "accuracy": 0.0870018233915082,
+    "delta_vs_seed1_baseline": -0.8820085932751585,
+    "improvement_vs_unaligned": -0.005233715951899823
+  },
+  "two_interface_aligned": {
+    "description": "seed0 L0H3 -> seed1 L0H1, two-rotation aligned (R_in for Q/K/V, R_out for out_proj)",
+    "accuracy": 0.07922856398227782,
+    "delta_vs_seed1_baseline": -0.8897818526843888,
+    "improvement_vs_unaligned": -0.013006975361130213,
+    "improvement_vs_one_interface": -0.00777325940923039
+  },
+  "random_rotation_control": {
+    "description": "seed0 L0H3 rotated by random orthogonal matrix -> seed1 L0H1",
+    "hypothesis": "should be equivalent to unaligned \u2014 random rotation is not informative",
+    "accuracy": 0.0802710450873078,
+    "delta_vs_seed1_baseline": -0.8887393715793589
+  },
+  "noncritical_donor_aligned": {
+    "description": "seed0 L0H0 (non-critical), two-interface aligned -> seed1 L0H1",
+    "hypothesis": "alignment alone should not rescue a non-functional head",
+    "accuracy": 0.10106798645480594,
+    "delta_vs_seed1_baseline": -0.8679424302118607
+  },
+  "interpretation": {
+    "conclusion": "CIRCUITS ARE GENUINELY NON-PORTABLE. Two-interface alignment gain: -0.0130 \u2014 not meaningful. Non-portability is NOT a basis problem. The induction circuit in seed 0 is inseparable from its full weight context.",
+    "two_interface_preserves_function": false,
+    "random_rotation_fails_as_expected": true,
+    "noncritical_fails_as_expected": true,
+    "meaningful_gain_over_unaligned": false,
+    "two_interface_vs_one_interface_gain": -0.00777325940923039,
+    "two_interface_vs_unaligned_gain": -0.013006975361130213,
+    "layernorm_caveat": "LayerNorm is not rotation-invariant. We align at ln1(pre_L0_residual) which is the exact interface Q/K/V read from \u2014 this is the theoretically correct alignment point. R2 < 1 reflects that the two models have genuinely different LN-transformed representations, not a bug in the alignment procedure."
+  }
+}

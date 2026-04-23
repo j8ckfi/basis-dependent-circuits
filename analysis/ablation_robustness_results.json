@@ -1,0 +1,270 @@
+{
+  "seeds": [
+    {
+      "seed": 0,
+      "baseline": 0.8538681948424068,
+      "per_head": {
+        "L0H0": {
+          "accuracy": 0.8129477660544484,
+          "drop": 0.04092042878795843,
+          "layer": 0,
+          "head": 0
+        },
+        "L0H1": {
+          "accuracy": 0.7991920771436017,
+          "drop": 0.05467611769880509,
+          "layer": 0,
+          "head": 1
+        },
+        "L0H2": {
+          "accuracy": 0.7888975762314308,
+          "drop": 0.06497061861097608,
+          "layer": 0,
+          "head": 2
+        },
+        "L0H3": {
+          "accuracy": 0.04076582443344621,
+          "drop": 0.8131023704089606,
+          "layer": 0,
+          "head": 3
+        },
+        "L1H0": {
+          "accuracy": 0.85842667361292,
+          "drop": -0.004558478770513186,
+          "layer": 1,
+          "head": 0
+        },
+        "L1H1": {
+          "accuracy": 0.8544815007816571,
+          "drop": -0.0006133059392502416,
+          "layer": 1,
+          "head": 1
+        },
+        "L1H2": {
+          "accuracy": 0.8600833767587285,
+          "drop": -0.006215181916321644,
+          "layer": 1,
+          "head": 2
+        },
+        "L1H3": {
+          "accuracy": 0.8547798905965095,
+          "drop": -0.0009116957541026594,
+          "layer": 1,
+          "head": 3
+        }
+      },
+      "critical_head": {
+        "key": "L0H3",
+        "layer": 0,
+        "head": 3,
+        "accuracy_after_ablation": 0.04076582443344621,
+        "accuracy_drop": 0.8131023704089606
+      }
+    },
+    {
+      "seed": 1,
+      "baseline": 0.9636576787807737,
+      "per_head": {
+        "L0H0": {
+          "accuracy": 0.9644438655899974,
+          "drop": -0.0007861868092237101,
+          "layer": 0,
+          "head": 0
+        },
+        "L0H1": {
+          "accuracy": 0.11798411251465034,
+          "drop": 0.8456735662661233,
+          "layer": 0,
+          "head": 1
+        },
+        "L0H2": {
+          "accuracy": 0.20424645043636838,
+          "drop": 0.7594112283444053,
+          "layer": 0,
+          "head": 2
+        },
+        "L0H3": {
+          "accuracy": 0.9653465346534653,
+          "drop": -0.0016888558726916303,
+          "layer": 0,
+          "head": 3
+        },
+        "L1H0": {
+          "accuracy": 0.9636671441593958,
+          "drop": -9.465378622119935e-06,
+          "layer": 1,
+          "head": 0
+        },
+        "L1H1": {
+          "accuracy": 0.9637879379966132,
+          "drop": -0.00013025921583953437,
+          "layer": 1,
+          "head": 1
+        },
+        "L1H2": {
+          "accuracy": 0.9611776967170401,
+          "drop": 0.0024799820637335657,
+          "layer": 1,
+          "head": 2
+        },
+        "L1H3": {
+          "accuracy": 0.9609222352481438,
+          "drop": 0.0027354435326298887,
+          "layer": 1,
+          "head": 3
+        }
+      },
+      "critical_head": {
+        "key": "L0H1",
+        "layer": 0,
+        "head": 1,
+        "accuracy_after_ablation": 0.11798411251465034,
+        "accuracy_drop": 0.8456735662661233
+      }
+    },
+    {
+      "seed": 2,
+      "baseline": 0.9650950768429278,
+      "per_head": {
+        "L0H0": {
+          "accuracy": 0.9573996873371547,
+          "drop": 0.007695389505773087,
+          "layer": 0,
+          "head": 0
+        },
+        "L0H1": {
+          "accuracy": 0.028143322475570033,
+          "drop": 0.9369517543673578,
+          "layer": 0,
+          "head": 1
+        },
+        "L0H2": {
+          "accuracy": 0.9557176348007294,
+          "drop": 0.00937744204219848,
+          "layer": 0,
+          "head": 2
+        },
+        "L0H3": {
+          "accuracy": 0.9179473821307632,
+          "drop": 0.04714769471216462,
+          "layer": 0,
+          "head": 3
+        },
+        "L1H0": {
+          "accuracy": 0.9577905158936947,
+          "drop": 0.007304560949233152,
+          "layer": 1,
+          "head": 0
+        },
+        "L1H1": {
+          "accuracy": 0.9569976544175137,
+          "drop": 0.008097422425414114,
+          "layer": 1,
+          "head": 1
+        },
+        "L1H2": {
+          "accuracy": 0.9577905158936947,
+          "drop": 0.007304560949233152,
+          "layer": 1,
+          "head": 2
+        },
+        "L1H3": {
+          "accuracy": 0.9618340497590204,
+          "drop": 0.0032610270839074085,
+          "layer": 1,
+          "head": 3
+        }
+      },
+      "critical_head": {
+        "key": "L0H1",
+        "layer": 0,
+        "head": 1,
+        "accuracy_after_ablation": 0.028143322475570033,
+        "accuracy_drop": 0.9369517543673578
+      }
+    },
+    {
+      "seed": 3,
+      "baseline": 0.9683305095790434,
+      "per_head": {
+        "L0H0": {
+          "accuracy": 0.9320046893317703,
+          "drop": 0.036325820247273155,
+          "layer": 0,
+          "head": 0
+        },
+        "L0H1": {
+          "accuracy": 0.9584527220630372,
+          "drop": 0.009877787516006209,
+          "layer": 0,
+          "head": 1
+        },
+        "L0H2": {
+          "accuracy": 0.9451465798045603,
+          "drop": 0.023183929774483136,
+          "layer": 0,
+          "head": 2
+        },
+        "L0H3": {
+          "accuracy": 0.46300156331422615,
+          "drop": 0.5053289462648173,
+          "layer": 0,
+          "head": 3
+        },
+        "L1H0": {
+          "accuracy": 0.9585721730067743,
+          "drop": 0.0097583365722691,
+          "layer": 1,
+          "head": 0
+        },
+        "L1H1": {
+          "accuracy": 0.9521948677868959,
+          "drop": 0.016135641792147548,
+          "layer": 1,
+          "head": 1
+        },
+        "L1H2": {
+          "accuracy": 0.9549244398124023,
+          "drop": 0.01340606976664116,
+          "layer": 1,
+          "head": 2
+        },
+        "L1H3": {
+          "accuracy": 0.9605417372053653,
+          "drop": 0.007788772373678143,
+          "layer": 1,
+          "head": 3
+        }
+      },
+      "critical_head": {
+        "key": "L0H3",
+        "layer": 0,
+        "head": 3,
+        "accuracy_after_ablation": 0.46300156331422615,
+        "accuracy_drop": 0.5053289462648173
+      }
+    }
+  ],
+  "summary": {
+    "baseline_mean": 0.9377378650112879,
+    "baseline_std": 0.04845174212794615,
+    "critical_head_drop_mean": 0.7752641593268148,
+    "critical_head_drop_std": 0.1623246072259708,
+    "critical_heads_always_in_layer0": true,
+    "layer_distribution": {
+      "seed0": 0,
+      "seed1": 0,
+      "seed2": 0,
+      "seed3": 0
+    },
+    "head_distribution": {
+      "seed0": 3,
+      "seed1": 1,
+      "seed2": 1,
+      "seed3": 3
+    },
+    "all_heads_same": false,
+    "single_head_criticality_reproduces": true,
+    "interpretation": "Baseline accuracy: 0.938 +/- 0.048 across 4 seeds. Critical head is always in Layer 0, confirming the L0 'previous-token / content-matching' role is universal. Single-head criticality reproduces in all seeds (mean drop=0.775 +/- 0.162). This is a robust finding, not a seed-0 artifact. Head assignment partially shared across seeds: {'L0H1': 2, 'L0H3': 2}."
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "baselines": {
+    "seed0": 0.8605143229166667,
+    "seed1": 0.9640299479166667
+  },
+  "methods": {
+    "unaligned": {
+      "accuracy": 0.09505208333333333,
+      "params_added": 0,
+      "per_seq_path": "analysis/alignment_tournament_per_seq/unaligned.npy"
+    },
+    "procrustes": {
+      "accuracy": 0.08382161458333334,
+      "params_added": 32768,
+      "per_seq_path": "analysis/alignment_tournament_per_seq/procrustes.npy"
+    },
+    "affine": {
+      "accuracy": 0.07796223958333333,
+      "params_added": 32768,
+      "per_seq_path": "analysis/alignment_tournament_per_seq/affine.npy"
+    },
+    "cka_linear": {
+      "accuracy": 0.09814453125,
+      "params_added": 16384,
+      "converged_cka_in": 0.5905003547668457,
+      "converged_cka_out": 0.10644067078828812,
+      "per_seq_path": "analysis/alignment_tournament_per_seq/cka_linear.npy"
+    },
+    "git_rebasin": {
+      "accuracy": 0.08382161458333334,
+      "params_added": 0,
+      "perm_info": {
+        "head_perm_L0": [
+          1,
+          2,
+          0,
+          3
+        ],
+        "head_perm_L1": [
+          2,
+          1,
+          3,
+          0
+        ],
+        "mlp_perm_L0_fixed_pts": 2,
+        "mlp_perm_L1_fixed_pts": 0
+      },
+      "per_seq_path": "analysis/alignment_tournament_per_seq/git_rebasin.npy"
+    },
+    "learned_linear": {
+      "accuracy": 0.96044921875,
+      "params_added": 32768,
+      "final_train_loss": 0.08038552105426788,
+      "per_seq_path": "analysis/alignment_tournament_per_seq/learned_linear.npy"
+    },
+    "donor_zero_control_linear": {
+      "accuracy": 0.11783854166666666,
+      "final_train_loss": 6.395496368408203,
+      "per_seq_path": "analysis/alignment_tournament_per_seq/donor_zero_control_linear.npy"
+    },
+    "learned_nonlinear": {
+      "accuracy": 0.9601236979166667,
+      "params_added": 262144,
+      "final_train_loss": 0.10751495510339737,
+      "per_seq_path": "analysis/alignment_tournament_per_seq/learned_nonlinear.npy"
+    },
+    "donor_zero_control_nonlinear": {
+      "accuracy": 0.11783854166666666,
+      "final_train_loss": 6.395496368408203,
+      "per_seq_path": "analysis/alignment_tournament_per_seq/donor_zero_control_nonlinear.npy"
+    }
+  },
+  "pairwise_pvalues_vs_unaligned": {
+    "procrustes_vs_unaligned": {
+      "mean_diff": -0.01123046875,
+      "ci_95": [
+        -0.018717447916666664,
+        -0.003906249999999999
+      ],
+      "p": 0.0030996900309969004
+    },
+    "affine_vs_unaligned": {
+      "mean_diff": -0.01708984375,
+      "ci_95": [
+        -0.0244140625,
+        -0.009765625
+      ],
+      "p": 9.999000099990002e-05
+    },
+    "cka_linear_vs_unaligned": {
+      "mean_diff": 0.0030924479166666665,
+      "ci_95": [
+        -0.0035807291666666652,
+        0.009765625
+      ],
+      "p": 0.3675632436756324
+    },
+    "git_rebasin_vs_unaligned": {
+      "mean_diff": -0.01123046875,
+      "ci_95": [
+        -0.018717447916666664,
+        -0.003906249999999999
+      ],
+      "p": 0.0030996900309969004
+    },
+    "learned_linear_vs_unaligned": {
+      "mean_diff": 0.8653971354166667,
+      "ci_95": [
+        0.8569335937500001,
+        0.8736979166666667
+      ],
+      "p": 9.999000099990002e-05
+    },
+    "donor_zero_control_linear_vs_unaligned": {
+      "mean_diff": 0.022786458333333332,
+      "ci_95": [
+        0.016764322916666664,
+        0.029134114583333332
+      ],
+      "p": 9.999000099990002e-05
+    },
+    "learned_nonlinear_vs_unaligned": {
+      "mean_diff": 0.8650716145833335,
+      "ci_95": [
+        0.85660400390625,
+        0.87353515625
+      ],
+      "p": 9.999000099990002e-05
+    },
+    "donor_zero_control_nonlinear_vs_unaligned": {
+      "mean_diff": 0.022786458333333332,
+      "ci_95": [
+        0.016764322916666664,
+        0.029134114583333332
+      ],
+      "p": 9.999000099990002e-05
+    }
+  },
+  "eval_protocol": {
+    "n_sequences": 1024,
+    "data_seed": 9999,
+    "align_seed": 1234,
+    "align_batch": 256,
+    "train_seed": 7777,
+    "adapter_steps": 1000,
+    "adapter_batch": 32,
+    "adapter_lr": 0.0003
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "baselines": {
+    "seed0": 0.8517457008858781,
+    "seed1": 0.9635416666666666
+  },
+  "transplant_seed0_L0H3_into_seed1_L0H3": {
+    "description": "seed0 critical head inserted into seed1 non-critical slot",
+    "hypothesis": "minimal effect \u2014 seed1 doesn't use L0H3",
+    "accuracy": 0.9648345923417556,
+    "delta_vs_seed1_baseline": 0.001292925675088985,
+    "weight_change_verified": true
+  },
+  "transplant_seed0_L0H3_into_seed1_L0H1": {
+    "description": "seed0 critical head inserted into seed1 critical slot",
+    "hypothesis": "if universal, accuracy should be preserved (near seed1 baseline)",
+    "accuracy": 0.08989056800416884,
+    "delta_vs_seed1_baseline": -0.8736510986624978,
+    "weight_change_verified": true
+  },
+  "control_a_noncritical_donor_into_seed1_L0H1": {
+    "description": "seed0 non-critical head into seed1 critical slot",
+    "hypothesis": "should hurt \u2014 non-critical head lacks induction function",
+    "accuracy": 0.10505735140771637,
+    "delta_vs_seed1_baseline": -0.8584843152589503,
+    "weight_change_verified": true
+  },
+  "control_b_shuffled_donor_into_seed1_L0H1": {
+    "description": "seed0 L0H3 with shuffled weights into seed1 critical slot",
+    "hypothesis": "null control \u2014 shuffled weights should destroy function",
+    "accuracy": 0.09379885356956748,
+    "delta_vs_seed1_baseline": -0.8697428130970991,
+    "weight_change_verified": true
+  },
+  "selective_ablation_seed1_L0H1_zeroed": {
+    "description": "seed1 with L0H1 completely zeroed (weight-level ablation)",
+    "accuracy": 0.1200833550403751,
+    "drop_vs_baseline": 0.8434583116262915
+  },
+  "selective_ablation_then_replace_seed0_L0H3": {
+    "description": "zeroed seed1 L0H1 then inserted seed0 L0H3",
+    "accuracy_after_zero": 0.1200833550403751,
+    "accuracy_after_replace": 0.09256844850065189,
+    "recovery_delta": -0.027514906539723202,
+    "delta_vs_seed1_baseline": -0.8709732181660147,
+    "weight_change_verified": true
+  },
+  "interpretation": {
+    "transplant_preserves_function": false,
+    "control_a_hurts_as_expected": true,
+    "control_b_hurts_as_expected": true,
+    "recovery_observed": false,
+    "conclusion": "EVIDENCE AGAINST SIMPLE FUNCTIONAL UNIVERSALITY: Transplanting the functional head did NOT preserve seed 1's performance, suggesting the induction computation is NOT simply stored in head weights alone. The head function depends on INTERACTIONS with surrounding weights \u2014 the wiring context (Q/K/V projections operating in seed 1's residual stream basis) matters. This argues against naive weight-level transplantability, even if the computational motif is universal at a higher level of abstraction."
+  }
+}

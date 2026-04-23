@@ -1,0 +1,181 @@
+{
+  "claim1": {
+    "claim": "Cross-seed circuit similarity",
+    "n": 190,
+    "point_estimate": 0.9854420459571043,
+    "se": 0.0015831794519272958,
+    "ci_95": [
+      0.9824259106118054,
+      0.9884120465029004
+    ],
+    "null_hypothesis": 0.0,
+    "p_value": 0.0,
+    "note": "190 unique pairs from 20-seed similarity matrix"
+  },
+  "claim2": {
+    "claim": "Head-level agreement",
+    "n_seeds": 20,
+    "n_heads_possible": 16,
+    "point_estimate": 0.13157894736842105,
+    "se": 0.0384519904278964,
+    "ci_95": [
+      0.11578947368421053,
+      0.2736842105263158
+    ],
+    "null_hypothesis": 0.0625,
+    "p_value": 0.001,
+    "critical_heads": [
+      {
+        "layer": 3,
+        "head": 2
+      },
+      {
+        "layer": 3,
+        "head": 1
+      },
+      {
+        "layer": 1,
+        "head": 1
+      },
+      {
+        "layer": 3,
+        "head": 3
+      },
+      {
+        "layer": 3,
+        "head": 1
+      },
+      {
+        "layer": 3,
+        "head": 3
+      },
+      {
+        "layer": 3,
+        "head": 2
+      },
+      {
+        "layer": 1,
+        "head": 1
+      },
+      {
+        "layer": 1,
+        "head": 3
+      },
+      {
+        "layer": 3,
+        "head": 3
+      },
+      {
+        "layer": 3,
+        "head": 0
+      },
+      {
+        "layer": 3,
+        "head": 3
+      },
+      {
+        "layer": 3,
+        "head": 0
+      },
+      {
+        "layer": 1,
+        "head": 3
+      },
+      {
+        "layer": 3,
+        "head": 1
+      },
+      {
+        "layer": 3,
+        "head": 2
+      },
+      {
+        "layer": 3,
+        "head": 3
+      },
+      {
+        "layer": 3,
+        "head": 2
+      },
+      {
+        "layer": 2,
+        "head": 3
+      },
+      {
+        "layer": 3,
+        "head": 1
+      }
+    ],
+    "note": "Fraction of seed-pairs sharing the same best induction head"
+  },
+  "claim3": {
+    "claim": "Developmental ordering (canonical)",
+    "n_seeds": 20,
+    "n_matching": 12,
+    "point_estimate": 0.6,
+    "se": 0.10540587032988247,
+    "ci_95": [
+      0.4,
+      0.8
+    ],
+    "null_hypothesis": 0.041666666666666664,
+    "p_value_bootstrap": 0.0,
+    "p_value_binomial": 2.521055810291795e-12,
+    "canonical_order": [
+      "copy_score",
+      "prev_token_score",
+      "induction_score",
+      "task_accuracy"
+    ],
+    "note": "Fraction of seeds whose feature-crystallisation order matches canonical"
+  },
+  "claim4": {
+    "claim": "Ablation drop (content-matching induction head)",
+    "n_seeds": 4,
+    "point_estimate": 0.7752641593268148,
+    "std": 0.18743631135602903,
+    "se": 0.08219180631489284,
+    "ci_95": [
+      0.5904151012651437,
+      0.9059894083777584
+    ],
+    "null_hypothesis": 0.0,
+    "t_statistic": 8.27229423923336,
+    "p_value": 0.0037000255965981064,
+    "per_seed_drops": [
+      0.8131023704089606,
+      0.8456735662661233,
+      0.9369517543673578,
+      0.5053289462648173
+    ],
+    "note": "Accuracy drop when ablating the critical induction head per seed"
+  },
+  "claim5": {
+    "claim": "Suppression fraction scales with depth",
+    "n_models": 4,
+    "depths": [
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "suppression_fractions": [
+      0.5,
+      0.71875,
+      0.8125,
+      0.859375
+    ],
+    "regression": {
+      "slope": 0.05859375,
+      "intercept": 0.4296875,
+      "r_squared": 0.8992805755395683,
+      "p_value": 0.05169594773639809,
+      "se_slope": 0.013865811991639727,
+      "slope_ci_95": [
+        0.0234375,
+        0.109375
+      ]
+    },
+    "note": "OLS: suppression_frac ~ n_layers; bootstrap CI on slope"
+  }
+}

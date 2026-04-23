@@ -1,0 +1,331 @@
+{
+  "backend_status": "REAL_BACKEND",
+  "manifest": {
+    "args": {
+      "command": "shared-basis-training",
+      "func": "run_shared_basis_training",
+      "lambdas": null,
+      "pairs_per_lambda": 1,
+      "seed_a": 0,
+      "seed_b": 1,
+      "steps": 20000
+    },
+    "config": {
+      "evaluation": {
+        "batch_size": 32,
+        "data_seed": 9999,
+        "n_bigrams": 6,
+        "n_sequences": 1024
+      },
+      "experiments": {
+        "partial_retrain_rescue": {
+          "checkpoints": [
+            0,
+            100,
+            500,
+            1000,
+            2000,
+            5000,
+            10000,
+            20000
+          ],
+          "pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "recovery_fraction": 0.8
+        },
+        "shared_basis_training": {
+          "lambdas": [
+            0.0,
+            0.01,
+            0.1,
+            1.0
+          ],
+          "pairs_per_lambda": 1
+        },
+        "shared_trajectory": {
+          "branch_data_seed_base": 10000,
+          "fork_points": [
+            0,
+            500,
+            2000,
+            5000,
+            10000,
+            15000,
+            18000,
+            19500,
+            20000
+          ],
+          "init_seed": 0,
+          "pairs": 3
+        },
+        "stitching_adapters": {
+          "batch_size": 32,
+          "conditions": [
+            "none",
+            "post_l0_linear",
+            "all4_linear",
+            "all4_mlp"
+          ],
+          "learning_rate": 0.0003,
+          "steps": 2000
+        }
+      },
+      "heads": {
+        "seed0_critical": [
+          0,
+          3
+        ],
+        "seed0_noncritical": [
+          0,
+          0
+        ],
+        "seed1_critical": [
+          0,
+          1
+        ]
+      },
+      "pythia": {
+        "include_patterns": [
+          "config.json",
+          "generation_config.json",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "special_tokens_map.json",
+          "model.safetensors",
+          "*.safetensors.index.json",
+          "pytorch_model.bin"
+        ],
+        "models": [
+          {
+            "repo_id": "EleutherAI/pythia-160m",
+            "required": true,
+            "scale": "160m",
+            "seed": "default"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed1",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed1"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed2",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed2"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed3",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed3"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed4",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed4"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed5",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed5"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-1.4b",
+            "required": false,
+            "scale": "1.4b",
+            "seed": "default"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-1.4b-seed1",
+            "required": false,
+            "scale": "1.4b",
+            "seed": "seed1"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-1.4b-seed2",
+            "required": false,
+            "scale": "1.4b",
+            "seed": "seed2"
+          }
+        ]
+      },
+      "small_model": {
+        "ctx_len": 64,
+        "d_ff": 512,
+        "d_model": 128,
+        "dropout": 0.0,
+        "n_heads": 4,
+        "n_layers": 2,
+        "vocab_size": 512
+      },
+      "training": {
+        "batch_size": 64,
+        "data_seed": 42,
+        "grad_clip": 1.0,
+        "learning_rate": 0.001,
+        "total_steps": 20000,
+        "warmup_steps": 500,
+        "weight_decay": 0.01
+      }
+    },
+    "name": "shared_basis_training",
+    "real_backend_policy": "REAL_BACKEND_ONLY_FOR_REPORTED_METRICS",
+    "repo_root": ".",
+    "system": {
+      "gpu": "Graphics/Displays:\n\n    Apple M4 Max:\n\n      Chipset Model: Apple M4 Max\n      Type: GPU\n      Bus: Built-In\n      Total Number of Cores: 40\n      Vendor: Apple (0x106b)\n      Metal Support: Metal 4\n      Displays:\n        Color LCD:\n          Display Type: Built-in Liquid Retina XDR Display\n          Resolution: 3024 x 1964 Retina\n          Main Display: Yes\n          Mirror: Off\n          Online: Yes\n          Automatically Adjust Brightness: Yes\n          Connection Type: Internal",
+      "hardware": "2026-04-22 19:36:53.874 system_profiler[49527:4673537] hw.cpufamily: 0x17d5b93a\nHardware:\n\n    Hardware Overview:\n\n      Model Name: MacBook Pro\n      Model Identifier: Mac16,6\n      Model Number: Z1FG000AULL/A\n      Chip: Apple M4 Max\n      Total Number of Cores: 16 (12 Performance and 4 Efficiency)\n      Memory: 64 GB\n      System Firmware Version: 13822.81.10\n      OS Loader Version: 13822.81.10\n      Serial Number (system): FJW43GVG60\n      Hardware UUID: C6061F50-3532-5D2B-83B8-67321EBA7F0A\n      Provisioning UDID: 00006041-001221EE3E0A401C\n      Activation Lock Status: Enabled",
+      "machine": "arm64",
+      "memory_bytes": "68719476736",
+      "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+      "processor": "arm",
+      "python": "3.14.3",
+      "timestamp": "2026-04-22T19:36:53-0600"
+    }
+  },
+  "results": [
+    {
+      "baseline_accuracy_a": 0.9576822916666667,
+      "baseline_accuracy_b": 0.9637044270833335,
+      "cka": {
+        "post_l0": 0.03138936124742031,
+        "post_l1": 0.2783488258719444
+      },
+      "donor_head": [
+        0,
+        3
+      ],
+      "lambda": 0.0,
+      "pair_idx": 0,
+      "procrustes_transplant_accuracy": 0.10664062499999999,
+      "recipient_head": [
+        0,
+        1
+      ],
+      "seed_a": 0,
+      "seed_b": 1,
+      "steps": 20000,
+      "train_stats": {
+        "elapsed_seconds": 313.6855375409941,
+        "final_batch_accuracy_a": 0.9557291865348816,
+        "final_batch_accuracy_b": 0.9557291865348816,
+        "final_loss": 0.11397495120763779,
+        "steps_per_second": 63.75811953838099
+      },
+      "unaligned_transplant_accuracy": 0.10615234374999999
+    },
+    {
+      "baseline_accuracy_a": 0.9612630208333333,
+      "baseline_accuracy_b": 0.9612630208333334,
+      "cka": {
+        "post_l0": 0.9222544282674789,
+        "post_l1": 0.9277502000331879
+      },
+      "donor_head": [
+        0,
+        3
+      ],
+      "lambda": 0.01,
+      "pair_idx": 0,
+      "procrustes_transplant_accuracy": 0.06367187499999999,
+      "recipient_head": [
+        0,
+        1
+      ],
+      "seed_a": 0,
+      "seed_b": 1,
+      "steps": 20000,
+      "train_stats": {
+        "elapsed_seconds": 316.73873841698514,
+        "final_batch_accuracy_a": 0.9583333134651184,
+        "final_batch_accuracy_b": 0.9609375,
+        "final_loss": 0.1399775594472885,
+        "steps_per_second": 63.14352358652793
+      },
+      "unaligned_transplant_accuracy": 0.05973307291666666
+    },
+    {
+      "baseline_accuracy_a": 0.96240234375,
+      "baseline_accuracy_b": 0.9627278645833333,
+      "cka": {
+        "post_l0": 0.9916737526655197,
+        "post_l1": 0.9981776028871536
+      },
+      "donor_head": [
+        0,
+        3
+      ],
+      "lambda": 0.1,
+      "pair_idx": 0,
+      "procrustes_transplant_accuracy": 0.5048502604166667,
+      "recipient_head": [
+        0,
+        1
+      ],
+      "seed_a": 0,
+      "seed_b": 1,
+      "steps": 20000,
+      "train_stats": {
+        "elapsed_seconds": 309.8941530419979,
+        "final_batch_accuracy_a": 0.9635416865348816,
+        "final_batch_accuracy_b": 0.9635416865348816,
+        "final_loss": 0.10757063329219818,
+        "steps_per_second": 64.5381650595051
+      },
+      "unaligned_transplant_accuracy": 0.025878906249999997
+    },
+    {
+      "baseline_accuracy_a": 0.9573567708333334,
+      "baseline_accuracy_b": 0.9571940104166666,
+      "cka": {
+        "post_l0": 0.9992350786924362,
+        "post_l1": 0.9995246231555939
+      },
+      "donor_head": [
+        0,
+        3
+      ],
+      "lambda": 1.0,
+      "pair_idx": 0,
+      "procrustes_transplant_accuracy": 0.1720703125,
+      "recipient_head": [
+        0,
+        1
+      ],
+      "seed_a": 0,
+      "seed_b": 1,
+      "steps": 20000,
+      "train_stats": {
+        "elapsed_seconds": 306.0782870000112,
+        "final_batch_accuracy_a": 0.9583333134651184,
+        "final_batch_accuracy_b": 0.9661458134651184,
+        "final_loss": 0.1459539532661438,
+        "steps_per_second": 65.34275984104443
+      },
+      "unaligned_transplant_accuracy": 0.018391927083333332
+    }
+  ],
+  "scope": "FULL"
+}

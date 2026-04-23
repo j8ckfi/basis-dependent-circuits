@@ -1,0 +1,385 @@
+{
+  "eval_protocol": {
+    "n_sequences": 1024,
+    "data_seed": 9999,
+    "vocab_size": 512,
+    "seq_len": 64,
+    "n_bigrams": 6,
+    "batch_size": 32,
+    "n_batches": 32,
+    "bootstrap_n_resamples": 10000,
+    "bootstrap_seed": 42,
+    "fix": "Eval set materialized once as list of numpy arrays. RNG state does NOT advance during evaluation. All conditions see identical sequences."
+  },
+  "baselines": {
+    "seed0": 0.8605143229166667,
+    "seed1": 0.9640299479166667
+  },
+  "experiment_1": {
+    "basic_transplants": [
+      {
+        "condition": "Seed0 L0H3 -> Seed1 L0H3 (non-critical slot)",
+        "accuracy": 0.9658203125000001,
+        "weight_change_verified": true
+      },
+      {
+        "condition": "Seed0 L0H3 -> Seed1 L0H1 (critical slot, unaligned)",
+        "accuracy": 0.09505208333333333,
+        "weight_change_verified": true
+      },
+      {
+        "condition": "Control A: Seed0 non-critical L0H0 -> Seed1 L0H1",
+        "accuracy": 0.10026041666666666,
+        "weight_change_verified": true
+      },
+      {
+        "condition": "Control B: Seed0 L0H3 shuffled weights -> Seed1 L0H1",
+        "accuracy": 0.09798177083333334,
+        "weight_change_verified": true
+      },
+      {
+        "condition": "Ablate Seed1 L0H1 (no replacement)",
+        "accuracy": 0.11783854166666666,
+        "weight_change_verified": true
+      }
+    ],
+    "bootstrap": {
+      "transplant_noncrit_slot": {
+        "accuracy": 0.9658203125000001,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": 0.0017903645833333333,
+          "ci_lo": -0.0011393229166666663,
+          "ci_hi": 0.004882812499999998,
+          "p_value": 0.25237476252374763,
+          "significant_vs_seed1": false
+        }
+      },
+      "transplant_crit_slot": {
+        "accuracy": 0.09505208333333333,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.8689778645833335,
+          "ci_lo": -0.8772786458333335,
+          "ci_hi": -0.8605143229166667,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "ctrl_a_noncrit_donor": {
+        "accuracy": 0.10026041666666666,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.86376953125,
+          "ci_lo": -0.8727213541666667,
+          "ci_hi": -0.8546549479166667,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "ctrl_b_shuffled": {
+        "accuracy": 0.09798177083333334,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.8660481770833335,
+          "ci_lo": -0.8746744791666667,
+          "ci_hi": -0.8572591145833335,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "ablated_l0h1": {
+        "accuracy": 0.11783854166666666,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.8461914062500001,
+          "ci_lo": -0.8551432291666667,
+          "ci_hi": -0.8370768229166667,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      }
+    }
+  },
+  "experiment_2": {
+    "procrustes_alignment": [
+      {
+        "condition": "Unaligned transplant",
+        "accuracy": 0.09505208333333333,
+        "weight_change_verified": true
+      },
+      {
+        "condition": "One-interface aligned (post-L0 only)",
+        "accuracy": 0.09375,
+        "weight_change_verified": true
+      },
+      {
+        "condition": "Two-interface aligned (pre-L0 Q/K/V + post-L0 out_proj)",
+        "accuracy": 0.08382161458333334,
+        "weight_change_verified": true
+      },
+      {
+        "condition": "Random orthogonal rotation control",
+        "accuracy": 0.09065755208333334,
+        "weight_change_verified": true
+      },
+      {
+        "condition": "Aligned non-critical donor (Seed0 L0H0, two-interface)",
+        "accuracy": 0.107421875,
+        "weight_change_verified": true
+      }
+    ],
+    "alignment_diagnostics": {
+      "R_in_orthogonality_error": 3.890398524252272e-06,
+      "R_out_orthogonality_error": 3.865399942914492e-06
+    },
+    "bootstrap": {
+      "unaligned": {
+        "accuracy": 0.09505208333333333,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.8689778645833335,
+          "ci_lo": -0.8772786458333335,
+          "ci_hi": -0.8605143229166667,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "one_iface_aligned": {
+        "accuracy": 0.09375,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.8702799479166667,
+          "ci_lo": -0.8787434895833335,
+          "ci_hi": -0.8614908854166667,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "two_iface_aligned": {
+        "accuracy": 0.08382161458333334,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.8802083333333335,
+          "ci_lo": -0.8885091145833334,
+          "ci_hi": -0.8719075520833334,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "random_rotation": {
+        "accuracy": 0.09065755208333334,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.8733723958333335,
+          "ci_lo": -0.8819986979166667,
+          "ci_hi": -0.8647420247395834,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "aligned_noncrit_donor": {
+        "accuracy": 0.107421875,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.8566080729166667,
+          "ci_lo": -0.8655598958333334,
+          "ci_hi": -0.84765625,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      }
+    }
+  },
+  "experiment_3": {
+    "whole_layer": [
+      {
+        "condition": "Single-head L0H3 -> L0H1 (reference)",
+        "accuracy": 0.09505208333333333,
+        "weight_change_verified": true
+      },
+      {
+        "condition": "Whole L0 attention block (all 4 heads)",
+        "accuracy": 0.0037434895833333335,
+        "weight_change_verified": true,
+        "n_tensors": 2
+      },
+      {
+        "condition": "Whole L0 block (attn + MLP + LayerNorms)",
+        "accuracy": 0.004557291666666666,
+        "weight_change_verified": true,
+        "n_tensors": 6
+      },
+      {
+        "condition": "Whole L0 block + final LayerNorm",
+        "accuracy": 0.005859375,
+        "weight_change_verified": true,
+        "n_tensors": 7
+      },
+      {
+        "condition": "Embeddings only (wte + wpe)",
+        "accuracy": 0.01220703125,
+        "weight_change_verified": true,
+        "n_tensors": 2
+      },
+      {
+        "condition": "Embeddings + L0 attention",
+        "accuracy": 0.003580729166666666,
+        "weight_change_verified": true,
+        "n_tensors": 4
+      },
+      {
+        "condition": "Embeddings + L0 full block",
+        "accuracy": 0.00732421875,
+        "weight_change_verified": true,
+        "n_tensors": 8
+      },
+      {
+        "condition": "All except L1 block (embed + L0 + ln_f)",
+        "accuracy": 0.006998697916666667,
+        "weight_change_verified": true,
+        "n_tensors": 9
+      },
+      {
+        "condition": "Full transplant (all weights, sanity check)",
+        "accuracy": 0.8605143229166667,
+        "weight_change_verified": true,
+        "n_tensors": 15
+      }
+    ],
+    "bootstrap": {
+      "single_head_ref": {
+        "accuracy": 0.09505208333333333,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.8689778645833335,
+          "ci_lo": -0.8772786458333335,
+          "ci_hi": -0.8605143229166667,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "whole_l0_attn": {
+        "accuracy": 0.0037434895833333335,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.9602864583333333,
+          "ci_lo": -0.9654947916666667,
+          "ci_hi": -0.955078125,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "whole_l0_block": {
+        "accuracy": 0.004557291666666666,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.95947265625,
+          "ci_lo": -0.9646809895833334,
+          "ci_hi": -0.9541015625,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "whole_l0_block_ln_f": {
+        "accuracy": 0.005859375,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.9581705729166667,
+          "ci_lo": -0.9635416666666667,
+          "ci_hi": -0.9527994791666667,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "embeddings_only": {
+        "accuracy": 0.01220703125,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.9518229166666667,
+          "ci_lo": -0.9573567708333334,
+          "ci_hi": -0.9459635416666667,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "embed_l0_attn": {
+        "accuracy": 0.003580729166666666,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.96044921875,
+          "ci_lo": -0.9656575520833334,
+          "ci_hi": -0.955078125,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "embed_l0_block": {
+        "accuracy": 0.00732421875,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.9567057291666667,
+          "ci_lo": -0.9620768229166667,
+          "ci_hi": -0.951171875,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "all_except_l1": {
+        "accuracy": 0.006998697916666667,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.95703125,
+          "ci_lo": -0.9622395833333335,
+          "ci_hi": -0.9514973958333334,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      },
+      "full_transplant": {
+        "accuracy": 0.8605143229166667,
+        "bootstrap_vs_seed1": {
+          "mean_diff_vs_seed1": -0.103515625,
+          "ci_lo": -0.11230468749999999,
+          "ci_hi": -0.09488932291666666,
+          "p_value": 9.999000099990002e-05,
+          "significant_vs_seed1": true
+        }
+      }
+    }
+  },
+  "pairwise_bootstrap": {
+    "unaligned_vs_one_iface_aligned": {
+      "mean_diff_b_minus_a": -0.0013020833333333326,
+      "ci_lo": -0.007649739583333333,
+      "ci_hi": 0.00537109375,
+      "p_value": 0.7249275072492751,
+      "significant": false
+    },
+    "unaligned_vs_two_iface_aligned": {
+      "mean_diff_b_minus_a": -0.01123046875,
+      "ci_lo": -0.018717447916666664,
+      "ci_hi": -0.003906249999999999,
+      "p_value": 0.0030996900309969004,
+      "significant": true
+    },
+    "one_iface_aligned_vs_two_iface_aligned": {
+      "mean_diff_b_minus_a": -0.009928385416666664,
+      "ci_lo": -0.017252604166666664,
+      "ci_hi": -0.0029296874999999996,
+      "p_value": 0.0103989601039896,
+      "significant": true
+    },
+    "unaligned_vs_random_rotation": {
+      "mean_diff_b_minus_a": -0.00439453125,
+      "ci_lo": -0.010904947916666666,
+      "ci_hi": 0.0022786458333333335,
+      "p_value": 0.20057994200579943,
+      "significant": false
+    },
+    "two_iface_aligned_vs_random_rotation": {
+      "mean_diff_b_minus_a": 0.0068359375,
+      "ci_lo": -0.000813802083333333,
+      "ci_hi": 0.014485677083333332,
+      "p_value": 0.0811918808119188,
+      "significant": false
+    },
+    "transplant_crit_slot_vs_ablated_l0h1": {
+      "mean_diff_b_minus_a": 0.022786458333333332,
+      "ci_lo": 0.016764322916666664,
+      "ci_hi": 0.029134114583333332,
+      "p_value": 9.999000099990002e-05,
+      "significant": true
+    },
+    "whole_l0_attn_vs_single_head_ref": {
+      "mean_diff_b_minus_a": 0.09130859375,
+      "ci_lo": 0.08447265625,
+      "ci_hi": 0.09830729166666666,
+      "p_value": 9.999000099990002e-05,
+      "significant": true
+    }
+  },
+  "interpretation": "All conditions evaluated on identical 1024 fixed sequences (seed=9999). Paired bootstrap CIs computed over per-sequence accuracy differences vs seed1 baseline. P-values from paired sign-flip permutation test (10000 permutations, seed=42): under H0 the sign of each paired difference is exchangeable. Conditions with CI excluding 0 are statistically distinguishable from seed1 baseline."
+}

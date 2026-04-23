@@ -1,0 +1,199 @@
+{
+  "model": "checkpoints/shakespeare/text_seed0/step_010000/model.safetensors",
+  "config": {
+    "n_layers": 6,
+    "n_heads": 8,
+    "d_model": 512,
+    "vocab_size": 65,
+    "ctx_len": 256
+  },
+  "candidate_heads": [
+    {
+      "label": "L0H7",
+      "layer": 0,
+      "head": 7
+    },
+    {
+      "label": "L1H6",
+      "layer": 1,
+      "head": 6
+    },
+    {
+      "label": "L2H0",
+      "layer": 2,
+      "head": 0
+    },
+    {
+      "label": "L2H4",
+      "layer": 2,
+      "head": 4
+    }
+  ],
+  "named_prompt_tests": [
+    {
+      "name": "king_hello",
+      "description": "Repeated word 'hello' \u2014 does model predict 'h' to start the third?",
+      "prompt_length": 70,
+      "target_char": "h",
+      "target_prob": 5.424187765612487e-10,
+      "target_rank": 60,
+      "top5_chars": [
+        "A",
+        "u",
+        "Q",
+        ".",
+        "J"
+      ],
+      "top5_probs": [
+        0.9959200620651245,
+        0.0039245132356882095,
+        3.288539301138371e-05,
+        2.0029603547300212e-05,
+        1.9261069610365666e-05
+      ]
+    },
+    {
+      "name": "romeo_juliet",
+      "description": "After 'Romeo' appears twice, does model expect something similar for 'Juliet'?",
+      "prompt_length": 84,
+      "target_char": " ",
+      "target_prob": 0.999895453453064,
+      "target_rank": 1,
+      "top5_chars": [
+        " ",
+        "\n",
+        "!",
+        ":",
+        "C"
+      ],
+      "top5_probs": [
+        0.999895453453064,
+        0.0001040420975186862,
+        4.206611947665806e-07,
+        2.2051056092209365e-08,
+        1.135604321689243e-08
+      ]
+    },
+    {
+      "name": "act_scene",
+      "description": "Pattern ACT N / SCENE N \u2014 does it predict the digit?",
+      "prompt_length": 43,
+      "target_char": "3",
+      "target_prob": 0.0006060674786567688,
+      "target_rank": 27,
+      "top5_chars": [
+        "V",
+        "m",
+        "E",
+        "P",
+        "J"
+      ],
+      "top5_probs": [
+        0.4960070550441742,
+        0.18244870007038116,
+        0.09539441764354706,
+        0.04947333782911301,
+        0.03013119101524353
+      ]
+    },
+    {
+      "name": "repeated_name",
+      "description": "Speaker name HAMLET appears, then again \u2014 does it predict 'T' (start of 'To')?",
+      "prompt_length": 61,
+      "target_char": "T",
+      "target_prob": 0.10509636998176575,
+      "target_rank": 3,
+      "top5_chars": [
+        "W",
+        "M",
+        "T",
+        "F",
+        "P"
+      ],
+      "top5_probs": [
+        0.4757716655731201,
+        0.26159369945526123,
+        0.10509636998176575,
+        0.06658261269330978,
+        0.048386648297309875
+      ]
+    },
+    {
+      "name": "repeated_word_the",
+      "description": "Common bigram 'the ' \u2014 does it predict space after 'the'?",
+      "prompt_length": 70,
+      "target_char": " ",
+      "target_prob": 0.14498424530029297,
+      "target_rank": 2,
+      "top5_chars": [
+        "e",
+        " ",
+        "m",
+        "\n",
+        "M"
+      ],
+      "top5_probs": [
+        0.7694876194000244,
+        0.14498424530029297,
+        0.04677845910191536,
+        0.03199031576514244,
+        0.0020340641494840384
+      ]
+    }
+  ],
+  "systematic_induction": {
+    "n_samples": 500,
+    "gap_mean": 40.626,
+    "gap_median": 29.0,
+    "baseline": {
+      "accuracy": 1.0,
+      "mean_rank": 1.0,
+      "median_rank": 1.0,
+      "mean_prob": 0.9997253137826919,
+      "n_samples": 500
+    },
+    "control_L3H3": {
+      "accuracy": 0.998,
+      "drop": 0.0020000000000000018
+    },
+    "per_head_ablation": {
+      "L0H7": {
+        "accuracy": 0.38,
+        "drop": 0.62,
+        "mean_rank": 8.888
+      },
+      "L1H6": {
+        "accuracy": 0.962,
+        "drop": 0.038000000000000034,
+        "mean_rank": 1.044
+      },
+      "L2H0": {
+        "accuracy": 0.998,
+        "drop": 0.0020000000000000018,
+        "mean_rank": 1.002
+      },
+      "L2H4": {
+        "accuracy": 0.99,
+        "drop": 0.010000000000000009,
+        "mean_rank": 1.014
+      }
+    },
+    "all_candidates_ablated": {
+      "accuracy": 0.414,
+      "drop": 0.5860000000000001
+    }
+  },
+  "direct_logit_attribution": {
+    "L0H7": 0.02077741773799062,
+    "L1H6": 0.10773108188062906,
+    "L2H0": 0.012701142868027092,
+    "L2H4": 0.010974249523133039,
+    "embed": -0.0063646348007023335
+  },
+  "induction_heads_identified": [
+    "L0H7",
+    "L1H6",
+    "L2H4"
+  ],
+  "conclusion": "The Shakespeare character-level model does perform in-context copying. Baseline bigram induction accuracy is 1.000 (chance ~0.015). Ablating all candidate heads drops accuracy by 0.586. Identified induction heads: ['L0H7', 'L1H6', 'L2H4']. This supports the hypothesis that circuits identified on synthetic induction tasks predict natural-language induction behavior."
+}

@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this code or paper, please cite it as below."
+title: "Circuits Are Basis-Dependent Computations: Transplantation Failure and Rescue Across Task-Matched Networks"
+authors:
+  - family-names: Large
+    given-names: Jack
+date-released: 2026-04-23
+license: MIT
+repository-code: "https://github.com/j8ckfi/basis-dependent-circuits"

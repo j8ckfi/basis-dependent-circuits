@@ -1,0 +1,701 @@
+{
+  "experiment": "Shakespeare portability at 19M scale (4 seeds)",
+  "config": {
+    "n_layers": 6,
+    "n_heads": 8,
+    "d_model": 512,
+    "d_ff": 2048,
+    "vocab_size": 65,
+    "ctx_len": 256,
+    "d_head": 64
+  },
+  "eval_settings": {
+    "eval_seed": 9999,
+    "n_samples": 1024,
+    "seq_len": 200
+  },
+  "available_seeds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "per_seed_baselines": {
+    "0": {
+      "model_accuracy": 1.0,
+      "best_baseline": 0.2763671875,
+      "induction_advantage": 0.7236328125
+    },
+    "1": {
+      "model_accuracy": 1.0,
+      "best_baseline": 0.2763671875,
+      "induction_advantage": 0.7236328125
+    },
+    "2": {
+      "model_accuracy": 1.0,
+      "best_baseline": 0.2763671875,
+      "induction_advantage": 0.7236328125
+    },
+    "3": {
+      "model_accuracy": 1.0,
+      "best_baseline": 0.2763671875,
+      "induction_advantage": 0.7236328125
+    }
+  },
+  "per_seed_critical_heads": {
+    "0": "L0H7",
+    "1": "L0H4",
+    "2": "L0H5",
+    "3": "L0H2"
+  },
+  "per_seed_ablation_sweeps": {
+    "0": {
+      "L0H0": {
+        "model_accuracy": 0.9912109375,
+        "induction_advantage": 0.71484375,
+        "advantage_drop": 0.0087890625
+      },
+      "L0H1": {
+        "model_accuracy": 1.0,
+        "induction_advantage": 0.7236328125,
+        "advantage_drop": 0.0
+      },
+      "L0H2": {
+        "model_accuracy": 0.8330078125,
+        "induction_advantage": 0.556640625,
+        "advantage_drop": 0.1669921875
+      },
+      "L0H3": {
+        "model_accuracy": 0.958984375,
+        "induction_advantage": 0.6826171875,
+        "advantage_drop": 0.041015625
+      },
+      "L0H4": {
+        "model_accuracy": 0.982421875,
+        "induction_advantage": 0.7060546875,
+        "advantage_drop": 0.017578125
+      },
+      "L0H5": {
+        "model_accuracy": 0.9873046875,
+        "induction_advantage": 0.7109375,
+        "advantage_drop": 0.0126953125
+      },
+      "L0H6": {
+        "model_accuracy": 1.0,
+        "induction_advantage": 0.7236328125,
+        "advantage_drop": 0.0
+      },
+      "L0H7": {
+        "model_accuracy": 0.3955078125,
+        "induction_advantage": 0.119140625,
+        "advantage_drop": 0.6044921875
+      },
+      "L1H0": {
+        "model_accuracy": 0.986328125,
+        "induction_advantage": 0.7099609375,
+        "advantage_drop": 0.013671875
+      },
+      "L1H1": {
+        "model_accuracy": 0.974609375,
+        "induction_advantage": 0.6982421875,
+        "advantage_drop": 0.025390625
+      },
+      "L1H2": {
+        "model_accuracy": 0.9775390625,
+        "induction_advantage": 0.701171875,
+        "advantage_drop": 0.0224609375
+      },
+      "L1H3": {
+        "model_accuracy": 0.9873046875,
+        "induction_advantage": 0.7109375,
+        "advantage_drop": 0.0126953125
+      },
+      "L1H4": {
+        "model_accuracy": 0.9814453125,
+        "induction_advantage": 0.705078125,
+        "advantage_drop": 0.0185546875
+      },
+      "L1H5": {
+        "model_accuracy": 0.984375,
+        "induction_advantage": 0.7080078125,
+        "advantage_drop": 0.015625
+      },
+      "L1H6": {
+        "model_accuracy": 0.9609375,
+        "induction_advantage": 0.6845703125,
+        "advantage_drop": 0.0390625
+      },
+      "L1H7": {
+        "model_accuracy": 0.9931640625,
+        "induction_advantage": 0.716796875,
+        "advantage_drop": 0.0068359375
+      }
+    },
+    "1": {
+      "L0H0": {
+        "model_accuracy": 0.8935546875,
+        "induction_advantage": 0.6171875,
+        "advantage_drop": 0.1064453125
+      },
+      "L0H1": {
+        "model_accuracy": 1.0,
+        "induction_advantage": 0.7236328125,
+        "advantage_drop": 0.0
+      },
+      "L0H2": {
+        "model_accuracy": 0.9990234375,
+        "induction_advantage": 0.72265625,
+        "advantage_drop": 0.0009765625
+      },
+      "L0H3": {
+        "model_accuracy": 0.9990234375,
+        "induction_advantage": 0.72265625,
+        "advantage_drop": 0.0009765625
+      },
+      "L0H4": {
+        "model_accuracy": 0.419921875,
+        "induction_advantage": 0.1435546875,
+        "advantage_drop": 0.580078125
+      },
+      "L0H5": {
+        "model_accuracy": 0.9404296875,
+        "induction_advantage": 0.6640625,
+        "advantage_drop": 0.0595703125
+      },
+      "L0H6": {
+        "model_accuracy": 0.9765625,
+        "induction_advantage": 0.7001953125,
+        "advantage_drop": 0.0234375
+      },
+      "L0H7": {
+        "model_accuracy": 0.9091796875,
+        "induction_advantage": 0.6328125,
+        "advantage_drop": 0.0908203125
+      },
+      "L1H0": {
+        "model_accuracy": 0.9697265625,
+        "induction_advantage": 0.693359375,
+        "advantage_drop": 0.0302734375
+      },
+      "L1H1": {
+        "model_accuracy": 0.9677734375,
+        "induction_advantage": 0.69140625,
+        "advantage_drop": 0.0322265625
+      },
+      "L1H2": {
+        "model_accuracy": 0.978515625,
+        "induction_advantage": 0.7021484375,
+        "advantage_drop": 0.021484375
+      },
+      "L1H3": {
+        "model_accuracy": 0.9853515625,
+        "induction_advantage": 0.708984375,
+        "advantage_drop": 0.0146484375
+      },
+      "L1H4": {
+        "model_accuracy": 0.9658203125,
+        "induction_advantage": 0.689453125,
+        "advantage_drop": 0.0341796875
+      },
+      "L1H5": {
+        "model_accuracy": 0.9892578125,
+        "induction_advantage": 0.712890625,
+        "advantage_drop": 0.0107421875
+      },
+      "L1H6": {
+        "model_accuracy": 0.98828125,
+        "induction_advantage": 0.7119140625,
+        "advantage_drop": 0.01171875
+      },
+      "L1H7": {
+        "model_accuracy": 0.994140625,
+        "induction_advantage": 0.7177734375,
+        "advantage_drop": 0.005859375
+      }
+    },
+    "2": {
+      "L0H0": {
+        "model_accuracy": 1.0,
+        "induction_advantage": 0.7236328125,
+        "advantage_drop": 0.0
+      },
+      "L0H1": {
+        "model_accuracy": 0.7998046875,
+        "induction_advantage": 0.5234375,
+        "advantage_drop": 0.2001953125
+      },
+      "L0H2": {
+        "model_accuracy": 0.9765625,
+        "induction_advantage": 0.7001953125,
+        "advantage_drop": 0.0234375
+      },
+      "L0H3": {
+        "model_accuracy": 0.9521484375,
+        "induction_advantage": 0.67578125,
+        "advantage_drop": 0.0478515625
+      },
+      "L0H4": {
+        "model_accuracy": 1.0,
+        "induction_advantage": 0.7236328125,
+        "advantage_drop": 0.0
+      },
+      "L0H5": {
+        "model_accuracy": 0.419921875,
+        "induction_advantage": 0.1435546875,
+        "advantage_drop": 0.580078125
+      },
+      "L0H6": {
+        "model_accuracy": 0.9931640625,
+        "induction_advantage": 0.716796875,
+        "advantage_drop": 0.0068359375
+      },
+      "L0H7": {
+        "model_accuracy": 0.96875,
+        "induction_advantage": 0.6923828125,
+        "advantage_drop": 0.03125
+      },
+      "L1H0": {
+        "model_accuracy": 0.98828125,
+        "induction_advantage": 0.7119140625,
+        "advantage_drop": 0.01171875
+      },
+      "L1H1": {
+        "model_accuracy": 0.9814453125,
+        "induction_advantage": 0.705078125,
+        "advantage_drop": 0.0185546875
+      },
+      "L1H2": {
+        "model_accuracy": 0.97265625,
+        "induction_advantage": 0.6962890625,
+        "advantage_drop": 0.02734375
+      },
+      "L1H3": {
+        "model_accuracy": 0.9755859375,
+        "induction_advantage": 0.69921875,
+        "advantage_drop": 0.0244140625
+      },
+      "L1H4": {
+        "model_accuracy": 0.98828125,
+        "induction_advantage": 0.7119140625,
+        "advantage_drop": 0.01171875
+      },
+      "L1H5": {
+        "model_accuracy": 0.966796875,
+        "induction_advantage": 0.6904296875,
+        "advantage_drop": 0.033203125
+      },
+      "L1H6": {
+        "model_accuracy": 0.9716796875,
+        "induction_advantage": 0.6953125,
+        "advantage_drop": 0.0283203125
+      },
+      "L1H7": {
+        "model_accuracy": 0.9833984375,
+        "induction_advantage": 0.70703125,
+        "advantage_drop": 0.0166015625
+      }
+    },
+    "3": {
+      "L0H0": {
+        "model_accuracy": 0.9873046875,
+        "induction_advantage": 0.7109375,
+        "advantage_drop": 0.0126953125
+      },
+      "L0H1": {
+        "model_accuracy": 0.96484375,
+        "induction_advantage": 0.6884765625,
+        "advantage_drop": 0.03515625
+      },
+      "L0H2": {
+        "model_accuracy": 0.388671875,
+        "induction_advantage": 0.1123046875,
+        "advantage_drop": 0.611328125
+      },
+      "L0H3": {
+        "model_accuracy": 0.8583984375,
+        "induction_advantage": 0.58203125,
+        "advantage_drop": 0.1416015625
+      },
+      "L0H4": {
+        "model_accuracy": 1.0,
+        "induction_advantage": 0.7236328125,
+        "advantage_drop": 0.0
+      },
+      "L0H5": {
+        "model_accuracy": 1.0,
+        "induction_advantage": 0.7236328125,
+        "advantage_drop": 0.0
+      },
+      "L0H6": {
+        "model_accuracy": 0.9853515625,
+        "induction_advantage": 0.708984375,
+        "advantage_drop": 0.0146484375
+      },
+      "L0H7": {
+        "model_accuracy": 0.896484375,
+        "induction_advantage": 0.6201171875,
+        "advantage_drop": 0.103515625
+      },
+      "L1H0": {
+        "model_accuracy": 0.9873046875,
+        "induction_advantage": 0.7109375,
+        "advantage_drop": 0.0126953125
+      },
+      "L1H1": {
+        "model_accuracy": 0.97265625,
+        "induction_advantage": 0.6962890625,
+        "advantage_drop": 0.02734375
+      },
+      "L1H2": {
+        "model_accuracy": 0.9873046875,
+        "induction_advantage": 0.7109375,
+        "advantage_drop": 0.0126953125
+      },
+      "L1H3": {
+        "model_accuracy": 0.9853515625,
+        "induction_advantage": 0.708984375,
+        "advantage_drop": 0.0146484375
+      },
+      "L1H4": {
+        "model_accuracy": 0.9814453125,
+        "induction_advantage": 0.705078125,
+        "advantage_drop": 0.0185546875
+      },
+      "L1H5": {
+        "model_accuracy": 0.9609375,
+        "induction_advantage": 0.6845703125,
+        "advantage_drop": 0.0390625
+      },
+      "L1H6": {
+        "model_accuracy": 0.9619140625,
+        "induction_advantage": 0.685546875,
+        "advantage_drop": 0.0380859375
+      },
+      "L1H7": {
+        "model_accuracy": 0.986328125,
+        "induction_advantage": 0.7099609375,
+        "advantage_drop": 0.013671875
+      }
+    }
+  },
+  "transplant_matrix": {
+    "seed0_to_seed1": {
+      "donor_seed": 0,
+      "recipient_seed": 1,
+      "recipient_baseline_advantage": 0.7236328125,
+      "experiments": {
+        "a_slot_matched": {
+          "description": "seed0 L0H7 -> recipient L0H7 (slot-matched)",
+          "model_accuracy": 0.90625,
+          "induction_advantage": 0.6298828125,
+          "advantage_drop": 0.09375
+        },
+        "b_func_matched": {
+          "description": "seed0 L0H7 -> recipient L0H4 (func-matched)",
+          "target_head": "L0H4",
+          "model_accuracy": 0.4306640625,
+          "induction_advantage": 0.154296875,
+          "advantage_drop": 0.5693359375
+        },
+        "c_procrustes": {
+          "description": "seed0 L0H7 -> recipient L0H7, two-interface Procrustes aligned",
+          "model_accuracy": 0.8642578125,
+          "induction_advantage": 0.587890625,
+          "advantage_drop": 0.1357421875
+        },
+        "d_whole_l0_attn": {
+          "description": "seed0 L0 qkv_proj + out_proj -> recipient (all 8 heads)",
+          "model_accuracy": 0.3994140625,
+          "induction_advantage": 0.123046875,
+          "advantage_drop": 0.6005859375
+        },
+        "e_full_l0_block": {
+          "description": "seed0 entire L0 block (ln1 + attn + ln2 + mlp) -> recipient",
+          "model_accuracy": 0.07421875,
+          "induction_advantage": -0.2021484375,
+          "advantage_drop": 0.92578125
+        },
+        "f_full_transplant": {
+          "description": "full transplant (all weights from seed0) \u2014 sanity check",
+          "model_accuracy": 1.0,
+          "induction_advantage": 0.7236328125,
+          "advantage_drop": 0.0,
+          "sanity_check_passed": true
+        }
+      }
+    },
+    "seed0_to_seed2": {
+      "donor_seed": 0,
+      "recipient_seed": 2,
+      "recipient_baseline_advantage": 0.7236328125,
+      "experiments": {
+        "a_slot_matched": {
+          "description": "seed0 L0H7 -> recipient L0H7 (slot-matched)",
+          "model_accuracy": 0.9677734375,
+          "induction_advantage": 0.69140625,
+          "advantage_drop": 0.0322265625
+        },
+        "b_func_matched": {
+          "description": "seed0 L0H7 -> recipient L0H5 (func-matched)",
+          "target_head": "L0H5",
+          "model_accuracy": 0.4111328125,
+          "induction_advantage": 0.134765625,
+          "advantage_drop": 0.5888671875
+        },
+        "c_procrustes": {
+          "description": "seed0 L0H7 -> recipient L0H7, two-interface Procrustes aligned",
+          "model_accuracy": 0.9140625,
+          "induction_advantage": 0.6376953125,
+          "advantage_drop": 0.0859375
+        },
+        "d_whole_l0_attn": {
+          "description": "seed0 L0 qkv_proj + out_proj -> recipient (all 8 heads)",
+          "model_accuracy": 0.3662109375,
+          "induction_advantage": 0.08984375,
+          "advantage_drop": 0.6337890625
+        },
+        "e_full_l0_block": {
+          "description": "seed0 entire L0 block (ln1 + attn + ln2 + mlp) -> recipient",
+          "model_accuracy": 0.0439453125,
+          "induction_advantage": -0.232421875,
+          "advantage_drop": 0.9560546875
+        },
+        "f_full_transplant": {
+          "description": "full transplant (all weights from seed0) \u2014 sanity check",
+          "model_accuracy": 1.0,
+          "induction_advantage": 0.7236328125,
+          "advantage_drop": 0.0,
+          "sanity_check_passed": true
+        }
+      }
+    },
+    "seed0_to_seed3": {
+      "donor_seed": 0,
+      "recipient_seed": 3,
+      "recipient_baseline_advantage": 0.7236328125,
+      "experiments": {
+        "a_slot_matched": {
+          "description": "seed0 L0H7 -> recipient L0H7 (slot-matched)",
+          "model_accuracy": 0.8955078125,
+          "induction_advantage": 0.619140625,
+          "advantage_drop": 0.1044921875
+        },
+        "b_func_matched": {
+          "description": "seed0 L0H7 -> recipient L0H2 (func-matched)",
+          "target_head": "L0H2",
+          "model_accuracy": 0.3857421875,
+          "induction_advantage": 0.109375,
+          "advantage_drop": 0.6142578125
+        },
+        "c_procrustes": {
+          "description": "seed0 L0H7 -> recipient L0H7, two-interface Procrustes aligned",
+          "model_accuracy": 0.845703125,
+          "induction_advantage": 0.5693359375,
+          "advantage_drop": 0.154296875
+        },
+        "d_whole_l0_attn": {
+          "description": "seed0 L0 qkv_proj + out_proj -> recipient (all 8 heads)",
+          "model_accuracy": 0.341796875,
+          "induction_advantage": 0.0654296875,
+          "advantage_drop": 0.658203125
+        },
+        "e_full_l0_block": {
+          "description": "seed0 entire L0 block (ln1 + attn + ln2 + mlp) -> recipient",
+          "model_accuracy": 0.0166015625,
+          "induction_advantage": -0.259765625,
+          "advantage_drop": 0.9833984375
+        },
+        "f_full_transplant": {
+          "description": "full transplant (all weights from seed0) \u2014 sanity check",
+          "model_accuracy": 1.0,
+          "induction_advantage": 0.7236328125,
+          "advantage_drop": 0.0,
+          "sanity_check_passed": true
+        }
+      }
+    }
+  },
+  "reference_800k": {
+    "baseline_accuracy": 0.964,
+    "single_head_transplant_accuracy": 0.095,
+    "single_head_transplant_drop": 0.869
+  },
+  "cross_seed_aggregation": {
+    "a_slot_matched": {
+      "drops_per_recipient": [
+        0.09375,
+        0.0322265625,
+        0.1044921875
+      ],
+      "mean_drop": 0.07682291666666667,
+      "sd_drop": 0.03899326546713374,
+      "range_drop": [
+        0.0322265625,
+        0.1044921875
+      ],
+      "n_recipients": 3
+    },
+    "b_func_matched": {
+      "drops_per_recipient": [
+        0.5693359375,
+        0.5888671875,
+        0.6142578125
+      ],
+      "mean_drop": 0.5908203125,
+      "sd_drop": 0.0225245363177164,
+      "range_drop": [
+        0.5693359375,
+        0.6142578125
+      ],
+      "n_recipients": 3
+    },
+    "c_procrustes": {
+      "drops_per_recipient": [
+        0.1357421875,
+        0.0859375,
+        0.154296875
+      ],
+      "mean_drop": 0.12532552083333334,
+      "sd_drop": 0.0353501237046066,
+      "range_drop": [
+        0.0859375,
+        0.154296875
+      ],
+      "n_recipients": 3
+    },
+    "d_whole_l0_attn": {
+      "drops_per_recipient": [
+        0.6005859375,
+        0.6337890625,
+        0.658203125
+      ],
+      "mean_drop": 0.630859375,
+      "sd_drop": 0.028920103310470405,
+      "range_drop": [
+        0.6005859375,
+        0.658203125
+      ],
+      "n_recipients": 3
+    },
+    "e_full_l0_block": {
+      "drops_per_recipient": [
+        0.92578125,
+        0.9560546875,
+        0.9833984375
+      ],
+      "mean_drop": 0.955078125,
+      "sd_drop": 0.02882100500658927,
+      "range_drop": [
+        0.92578125,
+        0.9833984375
+      ],
+      "n_recipients": 3
+    },
+    "f_full_transplant": {
+      "drops_per_recipient": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_drop": 0.0,
+      "sd_drop": 0.0,
+      "range_drop": [
+        0.0,
+        0.0
+      ],
+      "n_recipients": 3
+    }
+  },
+  "summary": {
+    "per_pair": [
+      {
+        "pair": "seed0_to_seed1",
+        "single_head_slot_drop_19m": 0.09375,
+        "single_head_func_drop_19m": 0.5693359375,
+        "single_head_drop_800k": 0.869,
+        "non_portability_reproduced_at_19m": false,
+        "procrustes_drop_19m": 0.1357421875,
+        "full_transplant_drop": 0.0
+      },
+      {
+        "pair": "seed0_to_seed2",
+        "single_head_slot_drop_19m": 0.0322265625,
+        "single_head_func_drop_19m": 0.5888671875,
+        "single_head_drop_800k": 0.869,
+        "non_portability_reproduced_at_19m": false,
+        "procrustes_drop_19m": 0.0859375,
+        "full_transplant_drop": 0.0
+      },
+      {
+        "pair": "seed0_to_seed3",
+        "single_head_slot_drop_19m": 0.1044921875,
+        "single_head_func_drop_19m": 0.6142578125,
+        "single_head_drop_800k": 0.869,
+        "non_portability_reproduced_at_19m": false,
+        "procrustes_drop_19m": 0.154296875,
+        "full_transplant_drop": 0.0
+      }
+    ],
+    "non_portability_reproduced_at_19m_scale": false,
+    "cross_seed_aggregation": {
+      "a_slot_matched": {
+        "mean_drop": 0.07682291666666667,
+        "sd_drop": 0.03899326546713374,
+        "range_drop": [
+          0.0322265625,
+          0.1044921875
+        ],
+        "n": 3
+      },
+      "b_func_matched": {
+        "mean_drop": 0.5908203125,
+        "sd_drop": 0.0225245363177164,
+        "range_drop": [
+          0.5693359375,
+          0.6142578125
+        ],
+        "n": 3
+      },
+      "c_procrustes": {
+        "mean_drop": 0.12532552083333334,
+        "sd_drop": 0.0353501237046066,
+        "range_drop": [
+          0.0859375,
+          0.154296875
+        ],
+        "n": 3
+      },
+      "d_whole_l0_attn": {
+        "mean_drop": 0.630859375,
+        "sd_drop": 0.028920103310470405,
+        "range_drop": [
+          0.6005859375,
+          0.658203125
+        ],
+        "n": 3
+      },
+      "e_full_l0_block": {
+        "mean_drop": 0.955078125,
+        "sd_drop": 0.02882100500658927,
+        "range_drop": [
+          0.92578125,
+          0.9833984375
+        ],
+        "n": 3
+      },
+      "f_full_transplant": {
+        "mean_drop": 0.0,
+        "sd_drop": 0.0,
+        "range_drop": [
+          0.0,
+          0.0
+        ],
+        "n": 3
+      }
+    },
+    "slot_matched_mean_drop": 0.07682291666666667,
+    "func_matched_mean_drop": 0.5908203125,
+    "slot_vs_func_asymmetry_consistent": false,
+    "interpretation": "Non-portability result at 19M scale is MIXED or NOT REPRODUCED \u2014 check per-pair results for details."
+  }
+}

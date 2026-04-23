@@ -1,0 +1,38 @@
+.DS_Store
+.omc/
+.venv/
+docs/
+logs/
+__pycache__/
+*.py[cod]
+
+# Local model/data artifacts that are too large for git.
+checkpoints/
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+
+# Local run noise.
+*.log
+train_seeds_output.log
+progress.md
+REPORT.md
+PAPER_DRAFT*.md
+PAPER_SECTIONS.md
+
+# LaTeX build products. Keep paper/main.pdf and paper/main.bbl committed.
+paper/*.aux
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.out
+paper/*.synctex.gz
+paper/*.toc
+paper/missfont.log
+
+# Editor/system files.
+.idea/
+.vscode/
+*.swp
+*.swo

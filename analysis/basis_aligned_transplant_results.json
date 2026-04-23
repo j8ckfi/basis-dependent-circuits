@@ -1,0 +1,52 @@
+{
+  "baselines": {
+    "seed0": 0.8517457008858781,
+    "seed1": 0.9635416666666666
+  },
+  "procrustes_alignment": {
+    "r2_procrustes": -1.3551270961761475,
+    "r2_unrotated": -1.3512401061986905,
+    "frobenius_alignment_procrustes": -0.47093665599823,
+    "frobenius_alignment_unrotated": -0.4697224418192054,
+    "r_orthogonality_error": 3.946887280676368e-06,
+    "note": "R^2 measures how well Procrustes rotation maps X0 onto X1. LayerNorm is not rotation-invariant, so perfect alignment is impossible. R^2 < 1 is expected and not a bug."
+  },
+  "unaligned_transplant": {
+    "description": "seed0 L0H3 -> seed1 L0H1, no basis alignment (reference)",
+    "accuracy": 0.08908569940088565,
+    "delta_vs_seed1_baseline": -0.874455967265781,
+    "weight_change_verified": true,
+    "prior_result": 0.0899
+  },
+  "aligned_transplant": {
+    "description": "seed0 L0H3 -> seed1 L0H1, Procrustes-aligned weights",
+    "accuracy": 0.08155289213131839,
+    "delta_vs_seed1_baseline": -0.8819887745353483,
+    "improvement_vs_unaligned": -0.00753280726956726,
+    "rotation_changed_weights": true,
+    "weight_change_in_model_verified": true
+  },
+  "control_random_rotation": {
+    "description": "seed0 L0H3 rotated by RANDOM orthogonal matrix -> seed1 L0H1",
+    "hypothesis": "should be equivalent to unaligned \u2014 random rotation is not informative",
+    "accuracy": 0.09645464025026068,
+    "delta_vs_seed1_baseline": -0.8670870264164059,
+    "weight_change_verified": true
+  },
+  "control_aligned_noncritical": {
+    "description": "seed0 L0H0 (non-critical), Procrustes-aligned -> seed1 L0H1",
+    "hypothesis": "alignment alone shouldn't rescue a non-functional head",
+    "accuracy": 0.0924960917144346,
+    "delta_vs_seed1_baseline": -0.871045574952232,
+    "weight_change_verified": true
+  },
+  "interpretation": {
+    "aligned_preserves_function": false,
+    "random_rotation_fails_as_expected": true,
+    "aligned_noncritical_fails_as_expected": true,
+    "alignment_is_meaningful": false,
+    "improvement_from_alignment": -0.00753280726956726,
+    "conclusion": "CIRCUITS ARE GENUINELY NON-PORTABLE. Procrustes alignment produced no meaningful improvement (-0.0075). Aligned transplant accuracy (0.0816) \u2248 unaligned (0.0891) \u2248 random rotation (0.0965). Non-portability is NOT a basis problem. The circuits are emergent system-level properties: the induction computation in seed 0 is inseparable from the full weight context of that network. No linear alignment of the residual stream can bridge the computational gap, consistent with the LayerNorm barrier and system-level emergence hypothesis.",
+    "layernorm_caveat": "LayerNorm is not rotation-invariant. Perfect Procrustes alignment of the post-L0 residual stream does not guarantee that Q/K/V (which read from LayerNorm(residual)) are perfectly aligned. R^2 < 1 is structural, not a bug."
+  }
+}

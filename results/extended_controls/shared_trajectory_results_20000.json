@@ -1,0 +1,226 @@
+{
+  "backend_status": "REAL_BACKEND",
+  "manifest": {
+    "args": {
+      "command": "shared-trajectory",
+      "fork_points": [
+        20000
+      ],
+      "func": "run_shared_trajectory",
+      "pairs": 1
+    },
+    "config": {
+      "evaluation": {
+        "batch_size": 32,
+        "data_seed": 9999,
+        "n_bigrams": 6,
+        "n_sequences": 1024
+      },
+      "experiments": {
+        "partial_retrain_rescue": {
+          "checkpoints": [
+            0,
+            100,
+            500,
+            1000,
+            2000,
+            5000,
+            10000,
+            20000
+          ],
+          "pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "recovery_fraction": 0.8
+        },
+        "shared_basis_training": {
+          "lambdas": [
+            0.0,
+            0.01,
+            0.1,
+            1.0
+          ],
+          "pairs_per_lambda": 1
+        },
+        "shared_trajectory": {
+          "branch_data_seed_base": 10000,
+          "fork_points": [
+            0,
+            500,
+            2000,
+            5000,
+            10000,
+            15000,
+            18000,
+            19500,
+            20000
+          ],
+          "init_seed": 0,
+          "pairs": 3
+        },
+        "stitching_adapters": {
+          "batch_size": 32,
+          "conditions": [
+            "none",
+            "post_l0_linear",
+            "all4_linear",
+            "all4_mlp"
+          ],
+          "learning_rate": 0.0003,
+          "steps": 2000
+        }
+      },
+      "heads": {
+        "seed0_critical": [
+          0,
+          3
+        ],
+        "seed0_noncritical": [
+          0,
+          0
+        ],
+        "seed1_critical": [
+          0,
+          1
+        ]
+      },
+      "pythia": {
+        "include_patterns": [
+          "config.json",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "special_tokens_map.json",
+          "model.safetensors",
+          "*.safetensors.index.json"
+        ],
+        "models": [
+          {
+            "repo_id": "EleutherAI/pythia-160m",
+            "required": true,
+            "scale": "160m",
+            "seed": "default"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed1",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed1"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed2",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed2"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed3",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed3"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed4",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed4"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed5",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed5"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-1.4b",
+            "required": false,
+            "scale": "1.4b",
+            "seed": "default"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-1.4b-seed1",
+            "required": false,
+            "scale": "1.4b",
+            "seed": "seed1"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-1.4b-seed2",
+            "required": false,
+            "scale": "1.4b",
+            "seed": "seed2"
+          }
+        ]
+      },
+      "small_model": {
+        "ctx_len": 64,
+        "d_ff": 512,
+        "d_model": 128,
+        "dropout": 0.0,
+        "n_heads": 4,
+        "n_layers": 2,
+        "vocab_size": 512
+      },
+      "training": {
+        "batch_size": 64,
+        "data_seed": 42,
+        "grad_clip": 1.0,
+        "learning_rate": 0.001,
+        "total_steps": 20000,
+        "warmup_steps": 500,
+        "weight_decay": 0.01
+      }
+    },
+    "name": "shared_trajectory",
+    "real_backend_policy": "REAL_BACKEND_ONLY_FOR_REPORTED_METRICS",
+    "repo_root": ".",
+    "system": {
+      "gpu": "Graphics/Displays:\n\n    Apple M4 Max:\n\n      Chipset Model: Apple M4 Max\n      Type: GPU\n      Bus: Built-In\n      Total Number of Cores: 40\n      Vendor: Apple (0x106b)\n      Metal Support: Metal 4\n      Displays:\n        Color LCD:\n          Display Type: Built-in Liquid Retina XDR Display\n          Resolution: 3024 x 1964 Retina\n          Main Display: Yes\n          Mirror: Off\n          Online: Yes\n          Automatically Adjust Brightness: Yes\n          Display Asleep: Yes\n          Connection Type: Internal",
+      "hardware": "2026-04-22 09:31:32.544 system_profiler[23820:4274125] hw.cpufamily: 0x17d5b93a\nHardware:\n\n    Hardware Overview:\n\n      Model Name: MacBook Pro\n      Model Identifier: Mac16,6\n      Model Number: Z1FG000AULL/A\n      Chip: Apple M4 Max\n      Total Number of Cores: 16 (12 Performance and 4 Efficiency)\n      Memory: 64 GB\n      System Firmware Version: 13822.81.10\n      OS Loader Version: 13822.81.10\n      Serial Number (system): FJW43GVG60\n      Hardware UUID: C6061F50-3532-5D2B-83B8-67321EBA7F0A\n      Provisioning UDID: 00006041-001221EE3E0A401C\n      Activation Lock Status: Enabled",
+      "machine": "arm64",
+      "memory_bytes": "68719476736",
+      "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+      "processor": "arm",
+      "python": "3.14.3",
+      "timestamp": "2026-04-22T09:31:32-0600"
+    }
+  },
+  "results": [
+    {
+      "branch_a_baseline_accuracy": 0.9622395833333335,
+      "branch_a_seed": 210000,
+      "branch_a_train_stats": null,
+      "branch_b_baseline_accuracy": 0.9622395833333335,
+      "branch_b_seed": 210001,
+      "branch_b_train_stats": null,
+      "fork_point": 20000,
+      "pair_idx": 0,
+      "prefix_stats": {
+        "elapsed_seconds": 139.5809489999956,
+        "final_batch_accuracy": 0.9609375,
+        "final_loss": 0.11835790425539017,
+        "steps": 20000,
+        "steps_per_second": 143.28602967157525
+      },
+      "procrustes_transplant_accuracy": 0.09261067708333333,
+      "unaligned_transplant_accuracy": 0.09261067708333333
+    }
+  ]
+}

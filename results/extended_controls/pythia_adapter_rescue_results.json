@@ -1,0 +1,729 @@
+{
+  "backend_status": "REAL_BACKEND",
+  "device": "mps",
+  "dtype": "torch.float32",
+  "elapsed_seconds": 819.1520519999904,
+  "manifest": {
+    "args": {
+      "adapter_lr": 0.0003,
+      "adapter_steps": 500,
+      "align_sequences": 256,
+      "eval_batch_size": 8,
+      "eval_sequences": 1024,
+      "limit_pairs": null,
+      "train_batch_size": 4
+    },
+    "head_source_path": "results/extended_controls/pythia_scale_portability_results.json",
+    "name": "pythia_adapter_rescue",
+    "real_backend_policy": "REAL_BACKEND_ONLY_FOR_REPORTED_METRICS",
+    "repo_root": ".",
+    "system": {
+      "gpu": "Graphics/Displays:\n\n    Apple M4 Max:\n\n      Chipset Model: Apple M4 Max\n      Type: GPU\n      Bus: Built-In\n      Total Number of Cores: 40\n      Vendor: Apple (0x106b)\n      Metal Support: Metal 4\n      Displays:\n        Color LCD:\n          Display Type: Built-in Liquid Retina XDR Display\n          Resolution: 3024 x 1964 Retina\n          Main Display: Yes\n          Mirror: Off\n          Online: Yes\n          Automatically Adjust Brightness: Yes\n          Display Asleep: Yes\n          Connection Type: Internal",
+      "hardware": "2026-04-22 21:51:20.731 system_profiler[62887:4806519] hw.cpufamily: 0x17d5b93a\nHardware:\n\n    Hardware Overview:\n\n      Model Name: MacBook Pro\n      Model Identifier: Mac16,6\n      Model Number: Z1FG000AULL/A\n      Chip: Apple M4 Max\n      Total Number of Cores: 16 (12 Performance and 4 Efficiency)\n      Memory: 64 GB\n      System Firmware Version: 13822.81.10\n      OS Loader Version: 13822.81.10\n      Serial Number (system): FJW43GVG60\n      Hardware UUID: C6061F50-3532-5D2B-83B8-67321EBA7F0A\n      Provisioning UDID: 00006041-001221EE3E0A401C\n      Activation Lock Status: Enabled",
+      "machine": "arm64",
+      "memory_bytes": "68719476736",
+      "platform": "macOS-26.3.1-arm64-arm-64bit",
+      "processor": "arm",
+      "python": "3.11.15",
+      "timestamp": "2026-04-22T21:51:20-0600"
+    },
+    "torch_version": "2.11.0",
+    "transformers_model_class": "AutoModelForCausalLM"
+  },
+  "model_summaries": {
+    "EleutherAI/pythia-160m": {
+      "baseline_accuracy": 0.0830078125,
+      "selected_head": {
+        "head": 2,
+        "layer": 8,
+        "score": 0.4978070327392966
+      }
+    },
+    "EleutherAI/pythia-160m-seed1": {
+      "baseline_accuracy": 0.091796875,
+      "selected_head": {
+        "head": 2,
+        "layer": 6,
+        "score": 0.6919664632087716
+      }
+    },
+    "EleutherAI/pythia-160m-seed2": {
+      "baseline_accuracy": 0.130859375,
+      "selected_head": {
+        "head": 11,
+        "layer": 4,
+        "score": 0.5518038843897557
+      }
+    },
+    "EleutherAI/pythia-160m-seed3": {
+      "baseline_accuracy": 0.142578125,
+      "selected_head": {
+        "head": 2,
+        "layer": 7,
+        "score": 0.5376091073879241
+      }
+    },
+    "EleutherAI/pythia-160m-seed4": {
+      "baseline_accuracy": 0.107421875,
+      "selected_head": {
+        "head": 4,
+        "layer": 3,
+        "score": 0.5899322779820295
+      }
+    },
+    "EleutherAI/pythia-160m-seed5": {
+      "baseline_accuracy": 0.06640625,
+      "selected_head": {
+        "head": 1,
+        "layer": 7,
+        "score": 0.6407259109079178
+      }
+    }
+  },
+  "pairs": [
+    {
+      "adapter_accuracy": 0.8115234375,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 21.521459667012095,
+        "final_loss": 4.064526557922363,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 23.23262491188716
+      },
+      "donor": "EleutherAI/pythia-160m",
+      "donor_head": {
+        "head": 2,
+        "layer": 8,
+        "score": 0.4978070327392966
+      },
+      "post_layer_r2_procrustes": 0.7390908564109984,
+      "post_layer_r2_unrotated": -1.4056715381073381,
+      "pre_l0_r2_procrustes": -0.5177568254139373,
+      "pre_l0_r2_unrotated": -3.1092404688020023,
+      "procrustes_transplant_accuracy": 0.0771484375,
+      "recipient": "EleutherAI/pythia-160m-seed1",
+      "recipient_baseline_accuracy": 0.091796875,
+      "recipient_head": {
+        "head": 2,
+        "layer": 6,
+        "score": 0.6919664632087716
+      },
+      "unaligned_transplant_accuracy": 0.0654296875,
+      "zero_adapter_accuracy_for_recipient": 0.8095703125,
+      "zero_head_accuracy": 0.0634765625
+    },
+    {
+      "adapter_accuracy": 0.82421875,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 23.026737958018202,
+        "final_loss": 0.0514710433781147,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 21.7138876080315
+      },
+      "donor": "EleutherAI/pythia-160m",
+      "donor_head": {
+        "head": 2,
+        "layer": 8,
+        "score": 0.4978070327392966
+      },
+      "post_layer_r2_procrustes": 0.5505971865455074,
+      "post_layer_r2_unrotated": -0.9337568940476193,
+      "pre_l0_r2_procrustes": -1.3111992874852358,
+      "pre_l0_r2_unrotated": -4.201527903520241,
+      "procrustes_transplant_accuracy": 0.0712890625,
+      "recipient": "EleutherAI/pythia-160m-seed2",
+      "recipient_baseline_accuracy": 0.130859375,
+      "recipient_head": {
+        "head": 11,
+        "layer": 4,
+        "score": 0.5518038843897557
+      },
+      "unaligned_transplant_accuracy": 0.076171875,
+      "zero_adapter_accuracy_for_recipient": 0.8798828125,
+      "zero_head_accuracy": 0.0703125
+    },
+    {
+      "adapter_accuracy": 0.8515625,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 23.381367874972057,
+        "final_loss": 1.4515913724899292,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 21.38454870021575
+      },
+      "donor": "EleutherAI/pythia-160m-seed1",
+      "donor_head": {
+        "head": 2,
+        "layer": 6,
+        "score": 0.6919664632087716
+      },
+      "post_layer_r2_procrustes": 0.5901223270543332,
+      "post_layer_r2_unrotated": -0.677680234124302,
+      "pre_l0_r2_procrustes": 0.34310182939488854,
+      "pre_l0_r2_unrotated": -1.3158109743950246,
+      "procrustes_transplant_accuracy": 0.0869140625,
+      "recipient": "EleutherAI/pythia-160m-seed2",
+      "recipient_baseline_accuracy": 0.130859375,
+      "recipient_head": {
+        "head": 11,
+        "layer": 4,
+        "score": 0.5518038843897557
+      },
+      "unaligned_transplant_accuracy": 0.0556640625,
+      "zero_adapter_accuracy_for_recipient": 0.8798828125,
+      "zero_head_accuracy": 0.0703125
+    },
+    {
+      "adapter_accuracy": 0.7958984375,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 23.11730699997861,
+        "final_loss": 1.1056005954742432,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 21.62881688600072
+      },
+      "donor": "EleutherAI/pythia-160m",
+      "donor_head": {
+        "head": 2,
+        "layer": 8,
+        "score": 0.4978070327392966
+      },
+      "post_layer_r2_procrustes": 0.8085891436794763,
+      "post_layer_r2_unrotated": -1.0153075547327721,
+      "pre_l0_r2_procrustes": 0.3464000703721454,
+      "pre_l0_r2_unrotated": -1.788202924042611,
+      "procrustes_transplant_accuracy": 0.099609375,
+      "recipient": "EleutherAI/pythia-160m-seed3",
+      "recipient_baseline_accuracy": 0.142578125,
+      "recipient_head": {
+        "head": 2,
+        "layer": 7,
+        "score": 0.5376091073879241
+      },
+      "unaligned_transplant_accuracy": 0.080078125,
+      "zero_adapter_accuracy_for_recipient": 0.7890625,
+      "zero_head_accuracy": 0.080078125
+    },
+    {
+      "adapter_accuracy": 0.79296875,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 23.18166691600345,
+        "final_loss": 1.3268730640411377,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 21.568768191334218
+      },
+      "donor": "EleutherAI/pythia-160m-seed1",
+      "donor_head": {
+        "head": 2,
+        "layer": 6,
+        "score": 0.6919664632087716
+      },
+      "post_layer_r2_procrustes": 0.8344517836128794,
+      "post_layer_r2_unrotated": -0.7375583583307845,
+      "pre_l0_r2_procrustes": 0.5772237061802992,
+      "pre_l0_r2_unrotated": -0.5808677183594784,
+      "procrustes_transplant_accuracy": 0.1005859375,
+      "recipient": "EleutherAI/pythia-160m-seed3",
+      "recipient_baseline_accuracy": 0.142578125,
+      "recipient_head": {
+        "head": 2,
+        "layer": 7,
+        "score": 0.5376091073879241
+      },
+      "unaligned_transplant_accuracy": 0.076171875,
+      "zero_adapter_accuracy_for_recipient": 0.7890625,
+      "zero_head_accuracy": 0.080078125
+    },
+    {
+      "adapter_accuracy": 0.771484375,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 25.394105416955426,
+        "final_loss": 0.03247709199786186,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 19.689608741489838
+      },
+      "donor": "EleutherAI/pythia-160m-seed2",
+      "donor_head": {
+        "head": 11,
+        "layer": 4,
+        "score": 0.5518038843897557
+      },
+      "post_layer_r2_procrustes": 0.5743167138259367,
+      "post_layer_r2_unrotated": -1.1037553902336765,
+      "pre_l0_r2_procrustes": 0.5262202579088241,
+      "pre_l0_r2_unrotated": -0.41959573456106547,
+      "procrustes_transplant_accuracy": 0.08984375,
+      "recipient": "EleutherAI/pythia-160m-seed3",
+      "recipient_baseline_accuracy": 0.142578125,
+      "recipient_head": {
+        "head": 2,
+        "layer": 7,
+        "score": 0.5376091073879241
+      },
+      "unaligned_transplant_accuracy": 0.0654296875,
+      "zero_adapter_accuracy_for_recipient": 0.7890625,
+      "zero_head_accuracy": 0.080078125
+    },
+    {
+      "adapter_accuracy": 0.78125,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 25.481999457988422,
+        "final_loss": 3.8997347354888916,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 19.621694161964736
+      },
+      "donor": "EleutherAI/pythia-160m",
+      "donor_head": {
+        "head": 2,
+        "layer": 8,
+        "score": 0.4978070327392966
+      },
+      "post_layer_r2_procrustes": -1.814290959500819,
+      "post_layer_r2_unrotated": -4.633248813020485,
+      "pre_l0_r2_procrustes": -1.6435131104792986,
+      "pre_l0_r2_unrotated": -4.771271450549657,
+      "procrustes_transplant_accuracy": 0.046875,
+      "recipient": "EleutherAI/pythia-160m-seed4",
+      "recipient_baseline_accuracy": 0.107421875,
+      "recipient_head": {
+        "head": 4,
+        "layer": 3,
+        "score": 0.5899322779820295
+      },
+      "unaligned_transplant_accuracy": 0.052734375,
+      "zero_adapter_accuracy_for_recipient": 0.8154296875,
+      "zero_head_accuracy": 0.0478515625
+    },
+    {
+      "adapter_accuracy": 0.8349609375,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 25.352202917041723,
+        "final_loss": 0.14746887981891632,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 19.722152021112947
+      },
+      "donor": "EleutherAI/pythia-160m-seed1",
+      "donor_head": {
+        "head": 2,
+        "layer": 6,
+        "score": 0.6919664632087716
+      },
+      "post_layer_r2_procrustes": -0.8532468198062764,
+      "post_layer_r2_unrotated": -3.3095963945777758,
+      "pre_l0_r2_procrustes": 0.2570595820175525,
+      "pre_l0_r2_unrotated": -1.5050747936891322,
+      "procrustes_transplant_accuracy": 0.0458984375,
+      "recipient": "EleutherAI/pythia-160m-seed4",
+      "recipient_baseline_accuracy": 0.107421875,
+      "recipient_head": {
+        "head": 4,
+        "layer": 3,
+        "score": 0.5899322779820295
+      },
+      "unaligned_transplant_accuracy": 0.04296875,
+      "zero_adapter_accuracy_for_recipient": 0.8154296875,
+      "zero_head_accuracy": 0.0478515625
+    },
+    {
+      "adapter_accuracy": 0.828125,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 25.25556354195578,
+        "final_loss": 0.05670316144824028,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 19.797618024613683
+      },
+      "donor": "EleutherAI/pythia-160m-seed2",
+      "donor_head": {
+        "head": 11,
+        "layer": 4,
+        "score": 0.5518038843897557
+      },
+      "post_layer_r2_procrustes": -2.807323687191735,
+      "post_layer_r2_unrotated": -4.934240067764738,
+      "pre_l0_r2_procrustes": 0.40661292876054145,
+      "pre_l0_r2_unrotated": -1.1047370622351607,
+      "procrustes_transplant_accuracy": 0.0458984375,
+      "recipient": "EleutherAI/pythia-160m-seed4",
+      "recipient_baseline_accuracy": 0.107421875,
+      "recipient_head": {
+        "head": 4,
+        "layer": 3,
+        "score": 0.5899322779820295
+      },
+      "unaligned_transplant_accuracy": 0.0390625,
+      "zero_adapter_accuracy_for_recipient": 0.8154296875,
+      "zero_head_accuracy": 0.0478515625
+    },
+    {
+      "adapter_accuracy": 0.7666015625,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 25.224751666013617,
+        "final_loss": 1.9414159059524536,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 19.82180069085363
+      },
+      "donor": "EleutherAI/pythia-160m-seed3",
+      "donor_head": {
+        "head": 2,
+        "layer": 7,
+        "score": 0.5376091073879241
+      },
+      "post_layer_r2_procrustes": -1.7620078371728085,
+      "post_layer_r2_unrotated": -4.450973123767807,
+      "pre_l0_r2_procrustes": -0.24112660964163846,
+      "pre_l0_r2_unrotated": -2.7580776269179887,
+      "procrustes_transplant_accuracy": 0.0517578125,
+      "recipient": "EleutherAI/pythia-160m-seed4",
+      "recipient_baseline_accuracy": 0.107421875,
+      "recipient_head": {
+        "head": 4,
+        "layer": 3,
+        "score": 0.5899322779820295
+      },
+      "unaligned_transplant_accuracy": 0.0517578125,
+      "zero_adapter_accuracy_for_recipient": 0.8154296875,
+      "zero_head_accuracy": 0.0478515625
+    },
+    {
+      "adapter_accuracy": 0.8671875,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 25.384893459035084,
+        "final_loss": 0.03287871554493904,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 19.69675392992592
+      },
+      "donor": "EleutherAI/pythia-160m",
+      "donor_head": {
+        "head": 2,
+        "layer": 8,
+        "score": 0.4978070327392966
+      },
+      "post_layer_r2_procrustes": 0.7610452121347537,
+      "post_layer_r2_unrotated": -0.5485421770895145,
+      "pre_l0_r2_procrustes": 0.26965054872643346,
+      "pre_l0_r2_unrotated": -1.7492205979059476,
+      "procrustes_transplant_accuracy": 0.0126953125,
+      "recipient": "EleutherAI/pythia-160m-seed5",
+      "recipient_baseline_accuracy": 0.06640625,
+      "recipient_head": {
+        "head": 1,
+        "layer": 7,
+        "score": 0.6407259109079178
+      },
+      "unaligned_transplant_accuracy": 0.013671875,
+      "zero_adapter_accuracy_for_recipient": 0.861328125,
+      "zero_head_accuracy": 0.013671875
+    },
+    {
+      "adapter_accuracy": 0.8134765625,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 25.377411458990537,
+        "final_loss": 3.3606083393096924,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 19.70256110667518
+      },
+      "donor": "EleutherAI/pythia-160m-seed1",
+      "donor_head": {
+        "head": 2,
+        "layer": 6,
+        "score": 0.6919664632087716
+      },
+      "post_layer_r2_procrustes": 0.7202419764017642,
+      "post_layer_r2_unrotated": -0.40065803172816317,
+      "pre_l0_r2_procrustes": 0.560729972233982,
+      "pre_l0_r2_unrotated": -0.5740168008772828,
+      "procrustes_transplant_accuracy": 0.0224609375,
+      "recipient": "EleutherAI/pythia-160m-seed5",
+      "recipient_baseline_accuracy": 0.06640625,
+      "recipient_head": {
+        "head": 1,
+        "layer": 7,
+        "score": 0.6407259109079178
+      },
+      "unaligned_transplant_accuracy": 0.009765625,
+      "zero_adapter_accuracy_for_recipient": 0.861328125,
+      "zero_head_accuracy": 0.013671875
+    },
+    {
+      "adapter_accuracy": 0.859375,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 25.417328457988333,
+        "final_loss": 0.007097525522112846,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 19.671618943998677
+      },
+      "donor": "EleutherAI/pythia-160m-seed2",
+      "donor_head": {
+        "head": 11,
+        "layer": 4,
+        "score": 0.5518038843897557
+      },
+      "post_layer_r2_procrustes": 0.6901592754538671,
+      "post_layer_r2_unrotated": -0.5892263909041979,
+      "pre_l0_r2_procrustes": 0.5208497268773356,
+      "pre_l0_r2_unrotated": -0.4008614573605429,
+      "procrustes_transplant_accuracy": 0.0400390625,
+      "recipient": "EleutherAI/pythia-160m-seed5",
+      "recipient_baseline_accuracy": 0.06640625,
+      "recipient_head": {
+        "head": 1,
+        "layer": 7,
+        "score": 0.6407259109079178
+      },
+      "unaligned_transplant_accuracy": 0.0087890625,
+      "zero_adapter_accuracy_for_recipient": 0.861328125,
+      "zero_head_accuracy": 0.013671875
+    },
+    {
+      "adapter_accuracy": 0.8798828125,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 25.477760583977215,
+        "final_loss": 0.006186232902109623,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 19.624958730260087
+      },
+      "donor": "EleutherAI/pythia-160m-seed3",
+      "donor_head": {
+        "head": 2,
+        "layer": 7,
+        "score": 0.5376091073879241
+      },
+      "post_layer_r2_procrustes": 0.8006935167275718,
+      "post_layer_r2_unrotated": -0.5279919527943371,
+      "pre_l0_r2_procrustes": 0.5552754763608858,
+      "pre_l0_r2_unrotated": -0.9013890161727778,
+      "procrustes_transplant_accuracy": 0.015625,
+      "recipient": "EleutherAI/pythia-160m-seed5",
+      "recipient_baseline_accuracy": 0.06640625,
+      "recipient_head": {
+        "head": 1,
+        "layer": 7,
+        "score": 0.6407259109079178
+      },
+      "unaligned_transplant_accuracy": 0.0126953125,
+      "zero_adapter_accuracy_for_recipient": 0.861328125,
+      "zero_head_accuracy": 0.013671875
+    },
+    {
+      "adapter_accuracy": 0.8037109375,
+      "adapter_params": 2359296,
+      "adapter_train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 25.464974499947857,
+        "final_loss": 3.06270170211792,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 19.634812514774904
+      },
+      "donor": "EleutherAI/pythia-160m-seed4",
+      "donor_head": {
+        "head": 4,
+        "layer": 3,
+        "score": 0.5899322779820295
+      },
+      "post_layer_r2_procrustes": 0.2720903969144354,
+      "post_layer_r2_unrotated": -0.12440266097010055,
+      "pre_l0_r2_procrustes": 0.5128704948395262,
+      "pre_l0_r2_unrotated": -0.39451796610230105,
+      "procrustes_transplant_accuracy": 0.0546875,
+      "recipient": "EleutherAI/pythia-160m-seed5",
+      "recipient_baseline_accuracy": 0.06640625,
+      "recipient_head": {
+        "head": 1,
+        "layer": 7,
+        "score": 0.6407259109079178
+      },
+      "unaligned_transplant_accuracy": 0.0087890625,
+      "zero_adapter_accuracy_for_recipient": 0.861328125,
+      "zero_head_accuracy": 0.013671875
+    }
+  ],
+  "probe_config": {
+    "align_seed": 22345,
+    "eval_seed": 12345,
+    "n_align_sequences": 256,
+    "n_eval_sequences": 1024,
+    "pos1": 20,
+    "pos2": 80,
+    "seq_len": 128,
+    "train_seed": 32345,
+    "vocab_size": 50304
+  },
+  "scope": "PYTHIA_160M_PROCRUSTES_AND_ADAPTERS",
+  "summary": {
+    "adapter_accuracy": {
+      "max": 0.8798828125,
+      "mean": 0.8188151041666667,
+      "min": 0.7666015625,
+      "sd": 0.0348914777454543
+    },
+    "all_procrustes_below_baseline": true,
+    "all_unaligned_below_baseline": true,
+    "mean_adapter_minus_baseline": 0.7159505208333333,
+    "mean_adapter_minus_zero_control": -0.01484375,
+    "mean_procrustes_minus_baseline": -0.04544270833333333,
+    "mean_unaligned_minus_baseline": -0.058919270833333336,
+    "n_pairs": 15,
+    "n_zero_controls": 5,
+    "procrustes_transplant_accuracy": {
+      "max": 0.1005859375,
+      "mean": 0.057421875,
+      "min": 0.0126953125,
+      "sd": 0.029073272443081898
+    },
+    "recipient_baseline_accuracy": {
+      "max": 0.142578125,
+      "mean": 0.10286458333333333,
+      "min": 0.06640625,
+      "sd": 0.030648389657492125
+    },
+    "unaligned_transplant_accuracy": {
+      "max": 0.080078125,
+      "mean": 0.0439453125,
+      "min": 0.0087890625,
+      "sd": 0.026911847274323587
+    },
+    "zero_head_accuracy": {
+      "max": 0.080078125,
+      "mean": 0.04694010416666667,
+      "min": 0.013671875,
+      "sd": 0.026988854693113958
+    }
+  },
+  "zero_controls": {
+    "EleutherAI/pythia-160m-seed1": {
+      "adapter_params": 2359296,
+      "recipient": "EleutherAI/pythia-160m-seed1",
+      "recipient_head": {
+        "head": 2,
+        "layer": 6,
+        "score": 0.6919664632087716
+      },
+      "train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 22.687907042040024,
+        "final_loss": 2.3468990325927734,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 22.03817210082511
+      },
+      "zero_adapter_accuracy": 0.8095703125,
+      "zero_head_accuracy": 0.0634765625
+    },
+    "EleutherAI/pythia-160m-seed2": {
+      "adapter_params": 2359296,
+      "recipient": "EleutherAI/pythia-160m-seed2",
+      "recipient_head": {
+        "head": 11,
+        "layer": 4,
+        "score": 0.5518038843897557
+      },
+      "train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 22.440748291963246,
+        "final_loss": 0.6823956966400146,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 22.28089694224083
+      },
+      "zero_adapter_accuracy": 0.8798828125,
+      "zero_head_accuracy": 0.0703125
+    },
+    "EleutherAI/pythia-160m-seed3": {
+      "adapter_params": 2359296,
+      "recipient": "EleutherAI/pythia-160m-seed3",
+      "recipient_head": {
+        "head": 2,
+        "layer": 7,
+        "score": 0.5376091073879241
+      },
+      "train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 23.302991416014265,
+        "final_loss": 0.1473335176706314,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 21.45647273664575
+      },
+      "zero_adapter_accuracy": 0.7890625,
+      "zero_head_accuracy": 0.080078125
+    },
+    "EleutherAI/pythia-160m-seed4": {
+      "adapter_params": 2359296,
+      "recipient": "EleutherAI/pythia-160m-seed4",
+      "recipient_head": {
+        "head": 4,
+        "layer": 3,
+        "score": 0.5899322779820295
+      },
+      "train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 25.32031341601396,
+        "final_loss": 1.6518601179122925,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 19.746990954850208
+      },
+      "zero_adapter_accuracy": 0.8154296875,
+      "zero_head_accuracy": 0.0478515625
+    },
+    "EleutherAI/pythia-160m-seed5": {
+      "adapter_params": 2359296,
+      "recipient": "EleutherAI/pythia-160m-seed5",
+      "recipient_head": {
+        "head": 1,
+        "layer": 7,
+        "score": 0.6407259109079178
+      },
+      "train_stats": {
+        "batch_size": 4,
+        "elapsed_seconds": 25.277215000009164,
+        "final_loss": 0.015097838826477528,
+        "learning_rate": 0.0003,
+        "steps": 500,
+        "steps_per_second": 19.780660171613793
+      },
+      "zero_adapter_accuracy": 0.861328125,
+      "zero_head_accuracy": 0.013671875
+    }
+  }
+}

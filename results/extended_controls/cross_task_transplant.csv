@@ -1,0 +1,4 @@
+"metric","value"
+"baseline_accuracy",0.9640299479166667
+"cross_task_transplant_accuracy",0.11393229166666667
+"n_eval_sequences",1024

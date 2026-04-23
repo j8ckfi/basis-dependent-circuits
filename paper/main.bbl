@@ -1,0 +1,186 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ainsworth et~al.(2022)Ainsworth, Hayase, and
+  Srinivasa]{ainsworth2022git}
+Samuel~K Ainsworth, Jonathan Hayase, and Siddhartha Srinivasa.
+\newblock Git re-basin: Merging models modulo permutation symmetries.
+\newblock \emph{arXiv preprint arXiv:2209.04836}, 2022.
+
+\bibitem[Ameisen et~al.(2025)Ameisen, Lindsey, Batson, Goh, Carter, Henighan,
+  and Olah]{ameisen2025attribution}
+Emmanuel Ameisen, Jack Lindsey, Joshua Batson, Gabriel Goh, Shan Carter, Tom
+  Henighan, and Chris Olah.
+\newblock Circuit tracing: Revealing computational graphs in language models.
+\newblock \emph{Anthropic Technical Report}, 2025.
+\newblock URL
+  \url{https://transformer-circuits.pub/2025/attribution-graphs/methods.html}.
+
+\bibitem[Bali et~al.(2026)Bali, Stanley, Suresh, and
+  Bzdok]{bali2026headstability}
+Karan Bali, Jack Stanley, Praneet Suresh, and Danilo Bzdok.
+\newblock Quantifying {LLM} attention-head stability: Implications for circuit
+  universality.
+\newblock \emph{arXiv preprint arXiv:2602.16740}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2602.16740}.
+
+\bibitem[Edelman et~al.(2024)Edelman, Edelman, Goel, Malach, and
+  Tsilivis]{edelman2024evolution}
+Benjamin~L. Edelman, Ezra Edelman, Surbhi Goel, Eran Malach, and Nikolaos
+  Tsilivis.
+\newblock Evolution of statistical induction heads: In-context learning
+  {Markov} chains.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2402.11004}.
+
+\bibitem[Gurnee et~al.(2024)Gurnee, Horsley, Ghandeharioun, Elhage, Nanda,
+  Conerly, Hernandez, and Lindsey]{gurnee2024universal}
+Wes Gurnee, Theo Horsley, Asma Ghandeharioun, Nelson Elhage, Neel Nanda, Tom
+  Conerly, Danny Hernandez, and Jack Lindsey.
+\newblock Universal neurons in {GPT2} language models.
+\newblock In \emph{Transactions on Machine Learning Research}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2401.12181}.
+
+\bibitem[Kawata et~al.(2025)Kawata, Song, Bietti, Nishikawa, Suzuki, Vaiter,
+  and Wu]{kawata2025shortcut}
+Ryotaro Kawata, Yujin Song, Alberto Bietti, Naoki Nishikawa, Taiji Suzuki,
+  Samuel Vaiter, and Denny Wu.
+\newblock From shortcut to induction head: How data diversity shapes algorithm
+  selection in transformers.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2512.18634}.
+
+\bibitem[Kumar et~al.(2024)Kumar, Bordelon, Gershman, and
+  Pehlevan]{kumar2024lazyrich}
+Tanishq Kumar, Blake Bordelon, Samuel~J. Gershman, and Cengiz Pehlevan.
+\newblock Grokking as the transition from lazy to rich training dynamics.
+\newblock In \emph{International Conference on Learning Representations}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2310.06110}.
+
+\bibitem[Lan et~al.(2024)Lan, Torr, Meek, Khakzar, Krueger, and
+  Barez]{lan2025universal}
+Michael Lan, Philip Torr, Austin Meek, Ashkan Khakzar, David Krueger, and Fazl
+  Barez.
+\newblock Quantifying feature space universality across large language models
+  via sparse autoencoders.
+\newblock \emph{arXiv preprint}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2410.06981}.
+
+\bibitem[Marks et~al.(2024)Marks, Rager, Michaud, Belinkov, Bau, and
+  Mueller]{marks2024sparse}
+Samuel Marks, Can Rager, Eric~J. Michaud, Yonatan Belinkov, David Bau, and
+  Aaron Mueller.
+\newblock Sparse feature circuits: Discovering and editing interpretable causal
+  graphs in language models.
+\newblock In \emph{arXiv preprint arXiv:2403.19647}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2403.19647}.
+
+\bibitem[McDougall et~al.(2024)McDougall, Conmy, Rushing, McGrath, and
+  Nanda]{mcdougall2024copysuppression}
+Callum McDougall, Arthur Conmy, Cody Rushing, Thomas McGrath, and Neel Nanda.
+\newblock Copy suppression: Comprehensively understanding a motif in language
+  model attention heads.
+\newblock \emph{arXiv preprint arXiv:2310.04625}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2310.04625}.
+
+\bibitem[Meng et~al.(2022)Meng, Bau, Andonian, and
+  Belinkov]{meng2022activation}
+Kevin Meng, David Bau, Alex Andonian, and Yonatan Belinkov.
+\newblock Locating and editing factual associations in {GPT}.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2022.
+\newblock URL \url{https://arxiv.org/abs/2202.05262}.
+
+\bibitem[Minegishi et~al.(2025)Minegishi, Furuta, Taniguchi, Iwasawa, and
+  Matsuo]{minegishi2025beyond}
+Gouki Minegishi, Hiroki Furuta, Shohei Taniguchi, Yusuke Iwasawa, and Yutaka
+  Matsuo.
+\newblock Beyond induction heads: Multi-phase circuit emergence in in-context
+  meta-learning.
+\newblock In \emph{International Conference on Machine Learning}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.16694}.
+
+\bibitem[Nanda et~al.(2023)Nanda, Chan, Lieberum, Smith, and
+  Steinhardt]{nanda2023grokking}
+Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt.
+\newblock Progress measures for grokking via mechanistic interpretability.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2301.05217}.
+
+\bibitem[Nandan et~al.(2025)Nandan, Chou, Kurakula, Blondin, Zhu, Sharma, and
+  O'Brien]{nandan2025universal}
+Advey Nandan, Cheng-Ting Chou, Amrit Kurakula, Cole Blondin, Kevin Zhu, Vasu
+  Sharma, and Sean O'Brien.
+\newblock Universal neurons in {GPT}-2: Emergence, persistence, and functional
+  impact.
+\newblock In \emph{Conference on Language Modeling}, 2025.
+\newblock URL \url{https://openreview.net/pdf?id=4ROJYAbqr8}.
+
+\bibitem[Olsson et~al.(2022)Olsson, Elhage, Nanda, Joseph, DasSarma, Henighan,
+  Mann, Askell, Bai, Chen, Conerly, Drain, Ganguli, Hatfield-Dodds, Hernandez,
+  Johnston, Jones, Kernion, Lovitt, Ndousse, Amodei, Brown, Clark, Kaplan,
+  McCandlish, and Olah]{olsson2022induction}
+Catherine Olsson, Nelson Elhage, Neel Nanda, Nicholas Joseph, Nova DasSarma,
+  Tom Henighan, Ben Mann, Amanda Askell, Yuntao Bai, Anna Chen, Tom Conerly,
+  Dawn Drain, Deep Ganguli, Zac Hatfield-Dodds, Danny Hernandez, Scott
+  Johnston, Andy Jones, Jackson Kernion, Liane Lovitt, Kamal Ndousse, Dario
+  Amodei, Tom Brown, Jack Clark, Jared Kaplan, Sam McCandlish, and Chris Olah.
+\newblock In-context learning and induction heads.
+\newblock In \emph{Transformer Circuits Thread}, 2022.
+\newblock URL
+  \url{https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html}.
+
+\bibitem[Power et~al.(2022)Power, Burda, Edwards, Babuschkin, and
+  Misra]{power2022grokking}
+Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra.
+\newblock Grokking: Generalization beyond overfitting on small algorithmic
+  datasets.
+\newblock In \emph{ICLR Workshop on Objects, Structure and Causality}, 2022.
+\newblock URL \url{https://arxiv.org/abs/2201.02177}.
+
+\bibitem[Rende et~al.(2024)Rende, Gerace, Laio, and Goldt]{rende2024simplicity}
+Riccardo Rende, Federica Gerace, Alessandro Laio, and Sebastian Goldt.
+\newblock A distributional simplicity bias in the learning dynamics of
+  transformers.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2410.19637}.
+
+\bibitem[Singh et~al.(2024)Singh, Moskovitz, Hill, Chan, and
+  Saxe]{singh2024induction}
+Aaditya~K. Singh, Ted Moskovitz, Felix Hill, Stephanie~C.Y. Chan, and Andrew~M.
+  Saxe.
+\newblock What needs to go right for an induction head? a mechanistic study of
+  in-context learning circuits and their formation.
+\newblock In \emph{International Conference on Machine Learning}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2404.07129}.
+
+\bibitem[Varma et~al.(2023)Varma, Shah, Kenton, Kram{\'a}r, and
+  Kumar]{varma2023grokking}
+Vikrant Varma, Rohin Shah, Zachary Kenton, J{\'a}nos Kram{\'a}r, and Ramana
+  Kumar.
+\newblock Explaining grokking through circuit efficiency.
+\newblock \emph{arXiv preprint arXiv:2309.02390}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2309.02390}.
+
+\bibitem[Wang et~al.(2025)Wang, Ge, Shu, Tang, Zhou, He, and
+  Qiu]{wang2024transformers}
+Junxuan Wang, Xuyang Ge, Wentao Shu, Qiong Tang, Yunhua Zhou, Zhengfu He, and
+  Xipeng Qiu.
+\newblock Towards universality: Studying mechanistic similarity across language
+  model architectures.
+\newblock In \emph{International Conference on Learning Representations}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2410.06672}.
+
+\bibitem[Wang et~al.(2023)Wang, Variengien, Conmy, Shlegeris, and
+  Steinhardt]{wang2023ioi}
+Kevin Wang, Alexandre Variengien, Arthur Conmy, Buck Shlegeris, and Jacob
+  Steinhardt.
+\newblock Interpretability in the wild: a circuit for indirect object
+  identification in {GPT}-2 small.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2211.00593}.
+
+\end{thebibliography}

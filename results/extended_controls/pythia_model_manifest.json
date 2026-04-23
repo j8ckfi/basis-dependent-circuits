@@ -1,0 +1,336 @@
+{
+  "backend_policy": "REAL_BACKEND_OR_UNAVAILABLE",
+  "dry_run": false,
+  "manifest": {
+    "args": {
+      "dry_run": false,
+      "max_workers": 2,
+      "only_scale": null
+    },
+    "config_path": "configs/extended_controls.json",
+    "name": "pythia_download",
+    "real_backend_policy": "REAL_BACKEND_ONLY_FOR_REPORTED_METRICS",
+    "repo_root": ".",
+    "system": {
+      "gpu": "Graphics/Displays:\n\n    Apple M4 Max:\n\n      Chipset Model: Apple M4 Max\n      Type: GPU\n      Bus: Built-In\n      Total Number of Cores: 40\n      Vendor: Apple (0x106b)\n      Metal Support: Metal 4\n      Displays:\n        Color LCD:\n          Display Type: Built-in Liquid Retina XDR Display\n          Resolution: 3024 x 1964 Retina\n          Main Display: Yes\n          Mirror: Off\n          Online: Yes\n          Automatically Adjust Brightness: Yes\n          Connection Type: Internal",
+      "hardware": "2026-04-22 09:41:40.309 system_profiler[24800:4283499] hw.cpufamily: 0x17d5b93a\nHardware:\n\n    Hardware Overview:\n\n      Model Name: MacBook Pro\n      Model Identifier: Mac16,6\n      Model Number: Z1FG000AULL/A\n      Chip: Apple M4 Max\n      Total Number of Cores: 16 (12 Performance and 4 Efficiency)\n      Memory: 64 GB\n      System Firmware Version: 13822.81.10\n      OS Loader Version: 13822.81.10\n      Serial Number (system): FJW43GVG60\n      Hardware UUID: C6061F50-3532-5D2B-83B8-67321EBA7F0A\n      Provisioning UDID: 00006041-001221EE3E0A401C\n      Activation Lock Status: Enabled",
+      "machine": "arm64",
+      "memory_bytes": "68719476736",
+      "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+      "processor": "arm",
+      "python": "3.14.3",
+      "timestamp": "2026-04-22T09:41:40-0600"
+    }
+  },
+  "models": [
+    {
+      "command": [
+        "hf",
+        "download",
+        "EleutherAI/pythia-160m",
+        "--max-workers",
+        "2",
+        "--include",
+        "config.json",
+        "--include",
+        "generation_config.json",
+        "--include",
+        "tokenizer.json",
+        "--include",
+        "tokenizer_config.json",
+        "--include",
+        "special_tokens_map.json",
+        "--include",
+        "model.safetensors",
+        "--include",
+        "*.safetensors.index.json"
+      ],
+      "details": "\nFetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]\nFetching 5 files: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 5/5 [00:00<00:00, 7092.16it/s]\n<hf-cache>/hub/models--EleutherAI--pythia-160m/snapshots/50f5173d932e8e61f858120bcb800b97af589f46\n",
+      "elapsed_seconds": 0.8468955410062335,
+      "include_patterns": [
+        "config.json",
+        "generation_config.json",
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "special_tokens_map.json",
+        "model.safetensors",
+        "*.safetensors.index.json"
+      ],
+      "repo_id": "EleutherAI/pythia-160m",
+      "required": true,
+      "scale": "160m",
+      "seed": "default",
+      "status": "DOWNLOADED",
+      "weight_files": [
+        "<hf-cache>/hub/models--EleutherAI--pythia-160m/snapshots/50f5173d932e8e61f858120bcb800b97af589f46/model.safetensors",
+        "<hf-cache>/hub/models--EleutherAI--pythia-160m/snapshots/50f5173d932e8e61f858120bcb800b97af589f46/pytorch_model.bin"
+      ]
+    },
+    {
+      "command": [
+        "hf",
+        "download",
+        "EleutherAI/pythia-160m-seed1",
+        "--max-workers",
+        "2",
+        "--include",
+        "config.json",
+        "--include",
+        "generation_config.json",
+        "--include",
+        "tokenizer.json",
+        "--include",
+        "tokenizer_config.json",
+        "--include",
+        "special_tokens_map.json",
+        "--include",
+        "model.safetensors",
+        "--include",
+        "*.safetensors.index.json"
+      ],
+      "details": "\nFetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]\nFetching 5 files: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 5/5 [00:00<00:00, 8531.94it/s]\n<hf-cache>/hub/models--EleutherAI--pythia-160m-seed1/snapshots/5ed55222b3092e69edcfa5fa646b7aac0b7e03d9\n",
+      "elapsed_seconds": 0.8960924999846611,
+      "include_patterns": [
+        "config.json",
+        "generation_config.json",
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "special_tokens_map.json",
+        "model.safetensors",
+        "*.safetensors.index.json"
+      ],
+      "repo_id": "EleutherAI/pythia-160m-seed1",
+      "required": true,
+      "scale": "160m",
+      "seed": "seed1",
+      "status": "DOWNLOADED",
+      "weight_files": [
+        "<hf-cache>/hub/models--EleutherAI--pythia-160m-seed1/snapshots/5ed55222b3092e69edcfa5fa646b7aac0b7e03d9/model.safetensors"
+      ]
+    },
+    {
+      "command": [
+        "hf",
+        "download",
+        "EleutherAI/pythia-160m-seed2",
+        "--max-workers",
+        "2",
+        "--include",
+        "config.json",
+        "--include",
+        "generation_config.json",
+        "--include",
+        "tokenizer.json",
+        "--include",
+        "tokenizer_config.json",
+        "--include",
+        "special_tokens_map.json",
+        "--include",
+        "model.safetensors",
+        "--include",
+        "*.safetensors.index.json"
+      ],
+      "details": "\nFetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]\nFetching 5 files: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 5/5 [00:00<00:00, 12350.72it/s]\n<hf-cache>/hub/models--EleutherAI--pythia-160m-seed2/snapshots/6e9b9f6270d1d624f9d7188c1e8909600c4efae2\n",
+      "elapsed_seconds": 0.7448311659973115,
+      "include_patterns": [
+        "config.json",
+        "generation_config.json",
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "special_tokens_map.json",
+        "model.safetensors",
+        "*.safetensors.index.json"
+      ],
+      "repo_id": "EleutherAI/pythia-160m-seed2",
+      "required": true,
+      "scale": "160m",
+      "seed": "seed2",
+      "status": "DOWNLOADED",
+      "weight_files": [
+        "<hf-cache>/hub/models--EleutherAI--pythia-160m-seed2/snapshots/6e9b9f6270d1d624f9d7188c1e8909600c4efae2/model.safetensors"
+      ]
+    },
+    {
+      "command": [
+        "hf",
+        "download",
+        "EleutherAI/pythia-160m-seed3",
+        "--max-workers",
+        "2",
+        "--include",
+        "config.json",
+        "--include",
+        "generation_config.json",
+        "--include",
+        "tokenizer.json",
+        "--include",
+        "tokenizer_config.json",
+        "--include",
+        "special_tokens_map.json",
+        "--include",
+        "model.safetensors",
+        "--include",
+        "*.safetensors.index.json"
+      ],
+      "details": "\nFetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]\nFetching 5 files: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 5/5 [00:00<00:00, 5143.86it/s]\n<hf-cache>/hub/models--EleutherAI--pythia-160m-seed3/snapshots/a74886a25b5f4ffb3b9a0fa80bd02750f13461bd\n",
+      "elapsed_seconds": 0.8836215000192169,
+      "include_patterns": [
+        "config.json",
+        "generation_config.json",
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "special_tokens_map.json",
+        "model.safetensors",
+        "*.safetensors.index.json"
+      ],
+      "repo_id": "EleutherAI/pythia-160m-seed3",
+      "required": true,
+      "scale": "160m",
+      "seed": "seed3",
+      "status": "DOWNLOADED",
+      "weight_files": [
+        "<hf-cache>/hub/models--EleutherAI--pythia-160m-seed3/snapshots/a74886a25b5f4ffb3b9a0fa80bd02750f13461bd/model.safetensors"
+      ]
+    },
+    {
+      "command": [
+        "hf",
+        "download",
+        "EleutherAI/pythia-160m-seed4",
+        "--max-workers",
+        "2",
+        "--include",
+        "config.json",
+        "--include",
+        "generation_config.json",
+        "--include",
+        "tokenizer.json",
+        "--include",
+        "tokenizer_config.json",
+        "--include",
+        "special_tokens_map.json",
+        "--include",
+        "pytorch_model.bin"
+      ],
+      "details": "\nFetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]\nFetching 6 files:  33%|\u2588\u2588\u2588\u258e      | 2/6 [00:00<00:00,  4.58it/s]\nFetching 6 files:  50%|\u2588\u2588\u2588\u2588\u2588     | 3/6 [01:38<02:02, 40.93s/it]\nFetching 6 files: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 6/6 [01:38<00:00, 16.39s/it]\n<hf-cache>/hub/models--EleutherAI--pythia-160m-seed4/snapshots/c7a7ebcc54c75407bfd8cdea09c5cfa2c7961b4d\n",
+      "elapsed_seconds": 99.43071979199885,
+      "include_patterns": [
+        "config.json",
+        "generation_config.json",
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "special_tokens_map.json",
+        "pytorch_model.bin"
+      ],
+      "repo_id": "EleutherAI/pythia-160m-seed4",
+      "required": true,
+      "scale": "160m",
+      "seed": "seed4",
+      "status": "DOWNLOADED",
+      "weight_files": [
+        "<hf-cache>/hub/models--EleutherAI--pythia-160m-seed4/snapshots/c7a7ebcc54c75407bfd8cdea09c5cfa2c7961b4d/pytorch_model.bin"
+      ]
+    },
+    {
+      "command": [
+        "hf",
+        "download",
+        "EleutherAI/pythia-160m-seed5",
+        "--max-workers",
+        "2",
+        "--include",
+        "config.json",
+        "--include",
+        "generation_config.json",
+        "--include",
+        "tokenizer.json",
+        "--include",
+        "tokenizer_config.json",
+        "--include",
+        "special_tokens_map.json",
+        "--include",
+        "pytorch_model.bin"
+      ],
+      "details": "\nFetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]\nFetching 6 files:  33%|\u2588\u2588\u2588\u258e      | 2/6 [00:00<00:00,  5.57it/s]\nFetching 6 files:  50%|\u2588\u2588\u2588\u2588\u2588     | 3/6 [04:51<06:03, 121.32s/it]\nFetching 6 files: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 6/6 [04:51<00:00, 48.54s/it] \n<hf-cache>/hub/models--EleutherAI--pythia-160m-seed5/snapshots/7682ee9da4d8d399d3ecc3ad468500b3e99cddf3\n",
+      "elapsed_seconds": 292.0853079590015,
+      "include_patterns": [
+        "config.json",
+        "generation_config.json",
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "special_tokens_map.json",
+        "pytorch_model.bin"
+      ],
+      "repo_id": "EleutherAI/pythia-160m-seed5",
+      "required": true,
+      "scale": "160m",
+      "seed": "seed5",
+      "status": "DOWNLOADED",
+      "weight_files": [
+        "<hf-cache>/hub/models--EleutherAI--pythia-160m-seed5/snapshots/7682ee9da4d8d399d3ecc3ad468500b3e99cddf3/pytorch_model.bin"
+      ]
+    },
+    {
+      "command": [
+        "hf",
+        "download",
+        "EleutherAI/pythia-1.4b",
+        "--max-workers",
+        "2",
+        "--include",
+        "config.json",
+        "--include",
+        "generation_config.json",
+        "--include",
+        "tokenizer.json",
+        "--include",
+        "tokenizer_config.json",
+        "--include",
+        "special_tokens_map.json",
+        "--include",
+        "model.safetensors",
+        "--include",
+        "*.safetensors.index.json"
+      ],
+      "details": "\nFetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]\nFetching 5 files: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 5/5 [00:00<00:00, 6974.23it/s]\n<hf-cache>/hub/models--EleutherAI--pythia-1.4b/snapshots/fedc38a16eea3bd36a96b906d78d11d2ce18ed79\n",
+      "elapsed_seconds": 1.0300275000045076,
+      "include_patterns": [
+        "config.json",
+        "generation_config.json",
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "special_tokens_map.json",
+        "model.safetensors",
+        "*.safetensors.index.json"
+      ],
+      "repo_id": "EleutherAI/pythia-1.4b",
+      "required": false,
+      "scale": "1.4b",
+      "seed": "default",
+      "status": "DOWNLOADED",
+      "weight_files": [
+        "<hf-cache>/hub/models--EleutherAI--pythia-1.4b/snapshots/fedc38a16eea3bd36a96b906d78d11d2ce18ed79/model.safetensors"
+      ]
+    },
+    {
+      "details": "Error: Model 'EleutherAI/pythia-1.4b-seed1' not found.\nSet HF_DEBUG=1 as environment variable for full traceback.\n",
+      "elapsed_seconds": 0.3684144589933567,
+      "reason": "hf models info failed",
+      "repo_id": "EleutherAI/pythia-1.4b-seed1",
+      "required": false,
+      "scale": "1.4b",
+      "seed": "seed1",
+      "status": "UNAVAILABLE"
+    },
+    {
+      "details": "Error: Model 'EleutherAI/pythia-1.4b-seed2' not found.\nSet HF_DEBUG=1 as environment variable for full traceback.\n",
+      "elapsed_seconds": 0.42631995800184086,
+      "reason": "hf models info failed",
+      "repo_id": "EleutherAI/pythia-1.4b-seed2",
+      "required": false,
+      "scale": "1.4b",
+      "seed": "seed2",
+      "status": "UNAVAILABLE"
+    }
+  ]
+}

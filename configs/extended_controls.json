@@ -1,0 +1,68 @@
+{
+  "small_model": {
+    "n_layers": 2,
+    "n_heads": 4,
+    "d_model": 128,
+    "d_ff": 512,
+    "vocab_size": 512,
+    "ctx_len": 64,
+    "dropout": 0.0
+  },
+  "training": {
+    "total_steps": 20000,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "warmup_steps": 500,
+    "grad_clip": 1.0,
+    "data_seed": 42
+  },
+  "evaluation": {
+    "n_sequences": 1024,
+    "batch_size": 32,
+    "data_seed": 9999,
+    "n_bigrams": 6
+  },
+  "heads": {
+    "seed0_critical": [0, 3],
+    "seed1_critical": [0, 1],
+    "seed0_noncritical": [0, 0]
+  },
+  "experiments": {
+    "shared_trajectory": {
+      "fork_points": [0, 500, 2000, 5000, 10000, 15000, 18000, 19500, 20000],
+      "pairs": 3,
+      "init_seed": 0,
+      "branch_data_seed_base": 10000
+    },
+    "partial_retrain_rescue": {
+      "pairs": [[0, 1], [0, 3], [1, 4], [3, 5], [4, 6]],
+      "checkpoints": [0, 100, 500, 1000, 2000, 5000, 10000, 20000],
+      "recovery_fraction": 0.8
+    },
+    "shared_basis_training": {
+      "lambdas": [0.0, 0.01, 0.1, 1.0],
+      "pairs_per_lambda": 1
+    },
+    "stitching_adapters": {
+      "conditions": ["none", "post_l0_linear", "all4_linear", "all4_mlp"],
+      "steps": 2000,
+      "batch_size": 32,
+      "learning_rate": 0.0003
+    }
+  },
+  "pythia": {
+    "include_patterns": ["config.json", "generation_config.json", "tokenizer.json", "tokenizer_config.json", "special_tokens_map.json", "model.safetensors", "*.safetensors.index.json", "pytorch_model.bin"],
+    "models": [
+      {"repo_id": "EleutherAI/pythia-160m", "scale": "160m", "seed": "default", "required": true},
+      {"repo_id": "EleutherAI/pythia-160m-seed1", "scale": "160m", "seed": "seed1", "required": true},
+      {"repo_id": "EleutherAI/pythia-160m-seed2", "scale": "160m", "seed": "seed2", "required": true},
+      {"repo_id": "EleutherAI/pythia-160m-seed3", "scale": "160m", "seed": "seed3", "required": true},
+      {"repo_id": "EleutherAI/pythia-160m-seed4", "scale": "160m", "seed": "seed4", "required": true},
+      {"repo_id": "EleutherAI/pythia-160m-seed5", "scale": "160m", "seed": "seed5", "required": true},
+      {"repo_id": "EleutherAI/pythia-1.4b", "scale": "1.4b", "seed": "default", "required": false},
+      {"repo_id": "EleutherAI/pythia-1.4b-seed1", "scale": "1.4b", "seed": "seed1", "required": false},
+      {"repo_id": "EleutherAI/pythia-1.4b-seed2", "scale": "1.4b", "seed": "seed2", "required": false}
+    ]
+  }
+}

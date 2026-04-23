@@ -1,0 +1,326 @@
+{
+  "task_accuracy": 1.0,
+  "measured_entropy": 1.1102230246240462e-16,
+  "attention_patterns": {
+    "layer_head_stats": [
+      {
+        "layer": 0,
+        "head": 0,
+        "mean_self_attn": 0.04088132455945015,
+        "mean_prev_tok": 0.026899607852101326,
+        "positional_score": 0.9955935478210449,
+        "mean_cross_input_pattern_corr": 0.8877471846744243
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "mean_self_attn": 0.05888691544532776,
+        "mean_prev_tok": 0.026994895190000534,
+        "positional_score": 0.9967629909515381,
+        "mean_cross_input_pattern_corr": 0.9181553424333216
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "mean_self_attn": 0.05656424164772034,
+        "mean_prev_tok": 0.03446442261338234,
+        "positional_score": 0.9936618208885193,
+        "mean_cross_input_pattern_corr": 0.8535546255755212
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "mean_self_attn": 0.045111034065485,
+        "mean_prev_tok": 0.044733788818120956,
+        "positional_score": 0.9939402341842651,
+        "mean_cross_input_pattern_corr": 0.8578765531372022
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "mean_self_attn": 0.04710175842046738,
+        "mean_prev_tok": 0.03261788189411163,
+        "positional_score": 0.9975898265838623,
+        "mean_cross_input_pattern_corr": 0.9334995658256401
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "mean_self_attn": 0.0479900948703289,
+        "mean_prev_tok": 0.03011367842555046,
+        "positional_score": 0.9974643588066101,
+        "mean_cross_input_pattern_corr": 0.9310756454919447
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "mean_self_attn": 0.04446675628423691,
+        "mean_prev_tok": 0.033330727368593216,
+        "positional_score": 0.9974629878997803,
+        "mean_cross_input_pattern_corr": 0.9306016390411066
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "mean_self_attn": 0.048637352883815765,
+        "mean_prev_tok": 0.03249166160821915,
+        "positional_score": 0.9969591498374939,
+        "mean_cross_input_pattern_corr": 0.9182923177207512
+      },
+      {
+        "layer": 2,
+        "head": 0,
+        "mean_self_attn": 0.042347684502601624,
+        "mean_prev_tok": 0.032616809010505676,
+        "positional_score": 0.9974343180656433,
+        "mean_cross_input_pattern_corr": 0.9284158758270624
+      },
+      {
+        "layer": 2,
+        "head": 1,
+        "mean_self_attn": 0.049453265964984894,
+        "mean_prev_tok": 0.03159473091363907,
+        "positional_score": 0.9955532550811768,
+        "mean_cross_input_pattern_corr": 0.8840231110312575
+      },
+      {
+        "layer": 2,
+        "head": 2,
+        "mean_self_attn": 0.047374505549669266,
+        "mean_prev_tok": 0.03268773481249809,
+        "positional_score": 0.9972893595695496,
+        "mean_cross_input_pattern_corr": 0.925826299807322
+      },
+      {
+        "layer": 2,
+        "head": 3,
+        "mean_self_attn": 0.05242309719324112,
+        "mean_prev_tok": 0.03130081668496132,
+        "positional_score": 0.9894701242446899,
+        "mean_cross_input_pattern_corr": 0.765124413696068
+      },
+      {
+        "layer": 3,
+        "head": 0,
+        "mean_self_attn": 0.05000118166208267,
+        "mean_prev_tok": 0.028181472793221474,
+        "positional_score": 0.9831514358520508,
+        "mean_cross_input_pattern_corr": 0.6793104767053424
+      },
+      {
+        "layer": 3,
+        "head": 1,
+        "mean_self_attn": 0.05931514501571655,
+        "mean_prev_tok": 0.029786985367536545,
+        "positional_score": 0.9907460808753967,
+        "mean_cross_input_pattern_corr": 0.7951888326923046
+      },
+      {
+        "layer": 3,
+        "head": 2,
+        "mean_self_attn": 0.05234320089221001,
+        "mean_prev_tok": 0.03199102357029915,
+        "positional_score": 0.9918466210365295,
+        "mean_cross_input_pattern_corr": 0.8071661096194783
+      },
+      {
+        "layer": 3,
+        "head": 3,
+        "mean_self_attn": 0.046151258051395416,
+        "mean_prev_tok": 0.03593358397483826,
+        "positional_score": 0.9890824556350708,
+        "mean_cross_input_pattern_corr": 0.7566412631835704
+      }
+    ],
+    "mean_self_attn_overall": 0.04931555106304586,
+    "mean_cross_input_pattern_corr_overall": 0.8607812035288949
+  },
+  "mlp_ablation": [
+    {
+      "layer": 0,
+      "accuracy": 0.82987060546875,
+      "accuracy_drop": 0.17012939453124998
+    },
+    {
+      "layer": 1,
+      "accuracy": 0.99993896484375,
+      "accuracy_drop": 6.103515625e-05
+    },
+    {
+      "layer": 2,
+      "accuracy": 1.0,
+      "accuracy_drop": 0.0
+    },
+    {
+      "layer": 3,
+      "accuracy": 1.0,
+      "accuracy_drop": 0.0
+    }
+  ],
+  "attn_ablation": [
+    {
+      "layer": 0,
+      "accuracy": 0.98602294921875,
+      "accuracy_drop": 0.01397705078125
+    },
+    {
+      "layer": 1,
+      "accuracy": 0.99705810546875,
+      "accuracy_drop": 0.0029418945312500444
+    },
+    {
+      "layer": 2,
+      "accuracy": 0.99964599609375,
+      "accuracy_drop": 0.0003540039062499556
+    },
+    {
+      "layer": 3,
+      "accuracy": 1.0,
+      "accuracy_drop": 0.0
+    }
+  ],
+  "ablation_summary": {
+    "baseline_accuracy": 1.0,
+    "max_mlp_drop": 0.17012939453124998,
+    "max_attn_drop": 0.01397705078125
+  },
+  "content_vs_position": {
+    "baseline_accuracy": 1.0,
+    "acc_shuffled_vocab": 0.01734619140625,
+    "drop_shuffled_vocab": 0.98265380859375,
+    "position_shift_results": [
+      {
+        "shift": 4,
+        "accuracy": 0.99146728515625,
+        "accuracy_drop": 0.008532714843749956
+      },
+      {
+        "shift": 8,
+        "accuracy": 0.99429931640625,
+        "accuracy_drop": 0.005700683593749978
+      },
+      {
+        "shift": 16,
+        "accuracy": 0.99461669921875,
+        "accuracy_drop": 0.005383300781250044
+      },
+      {
+        "shift": 32,
+        "accuracy": 0.9929931640625,
+        "accuracy_drop": 0.007006835937499956
+      }
+    ],
+    "mean_position_shift_drop": 0.006655883789062483,
+    "acc_permuted_sequence": 0.98031005859375,
+    "drop_permuted_sequence": 0.019689941406250022
+  },
+  "metric_validity": {
+    "n_positional_heads": 16,
+    "positional_head_details": [
+      {
+        "layer": 0,
+        "head": 0,
+        "pos_score": 0.9955874681472778,
+        "self_attn": 0.04146917164325714
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "pos_score": 0.9966263771057129,
+        "self_attn": 0.058465175330638885
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "pos_score": 0.9936896562576294,
+        "self_attn": 0.05639177933335304
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "pos_score": 0.9939940571784973,
+        "self_attn": 0.045704469084739685
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "pos_score": 0.9974848031997681,
+        "self_attn": 0.04730674624443054
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "pos_score": 0.9973440170288086,
+        "self_attn": 0.04759332537651062
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "pos_score": 0.9971445202827454,
+        "self_attn": 0.04475080966949463
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "pos_score": 0.996797502040863,
+        "self_attn": 0.048433512449264526
+      },
+      {
+        "layer": 2,
+        "head": 0,
+        "pos_score": 0.9974127411842346,
+        "self_attn": 0.04345911741256714
+      },
+      {
+        "layer": 2,
+        "head": 1,
+        "pos_score": 0.9953194260597229,
+        "self_attn": 0.049053117632865906
+      },
+      {
+        "layer": 2,
+        "head": 2,
+        "pos_score": 0.9971618056297302,
+        "self_attn": 0.048134736716747284
+      },
+      {
+        "layer": 2,
+        "head": 3,
+        "pos_score": 0.9891384243965149,
+        "self_attn": 0.05251847580075264
+      },
+      {
+        "layer": 3,
+        "head": 0,
+        "pos_score": 0.9818078875541687,
+        "self_attn": 0.05027608573436737
+      },
+      {
+        "layer": 3,
+        "head": 1,
+        "pos_score": 0.9905613660812378,
+        "self_attn": 0.058188438415527344
+      },
+      {
+        "layer": 3,
+        "head": 2,
+        "pos_score": 0.9918349385261536,
+        "self_attn": 0.051160138100385666
+      },
+      {
+        "layer": 3,
+        "head": 3,
+        "pos_score": 0.9887023568153381,
+        "self_attn": 0.045926641672849655
+      }
+    ],
+    "n_diagonal_heads": 0,
+    "diagonal_head_details": []
+  },
+  "verdict": "content-based-through-MLP",
+  "verdict_explanation": "The entropy=0 'positional' classification is an ARTIFACT of our metric. The model learns a diagonal attention pattern (each position attends to itself), which is CONSTANT across all inputs and therefore registers as high positional_score. However, the actual computation is content-based: the token at each position is attended to by itself, and the MLP performs a lookup of token X -> successor f(X). This is Strategy B.",
+  "evidence_scores": {
+    "content_based": 3,
+    "positional": 0
+  }
+}

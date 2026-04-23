@@ -1,0 +1,260 @@
+% =============================================================================
+% Section 3: Methods
+% =============================================================================
+
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Model Architecture}
+\label{sec:arch}
+
+All models follow a standard decoder-only transformer architecture \cite{vaswani2017attention,radford2019language}
+with the following fixed design choices: pre-layer normalization \cite{xiong2020layer}, weight-tied
+input and output embeddings, no bias terms in any linear projection, no dropout, and a learned positional
+embedding table. These choices simplify the residual stream algebra used in circuit analysis
+\cite{elhage2021mathematical}.
+
+The configurable axes are depth $L$ (number of blocks), width $d_{\text{model}}$, feed-forward
+expansion $d_{\text{ff}}$, and number of attention heads $H$. Each attention block implements
+$H$ heads in parallel. For head $h$, the attention-weighted value is
+
+\begin{equation}
+\label{eq:attn}
+\text{attn}_h(x) = \operatorname{softmax}\!\left(\frac{Q_h K_h^T}{\sqrt{d_k}}\right) V_h,
+\end{equation}
+
+\noindent where $Q_h = x W_Q^{(h)}$, $K_h = x W_K^{(h)}$, $V_h = x W_V^{(h)}$, and
+$d_k = d_{\text{model}} / H$. A causal mask is applied before the softmax to enforce
+autoregressive conditioning. All heads are projected and summed via a shared output matrix $W_O$.
+
+Attention weights at each layer are cached during inference to support the circuit-extraction
+methods described in Section~\ref{sec:circuit_methods}. Table~\ref{tab:model_configs} lists
+the specific configurations used in each experiment.
+
+\begin{table}[h]
+\centering
+\caption{Model configurations used across experiments.}
+\label{tab:model_configs}
+\begin{tabular}{lrrrrrr}
+\toprule
+Experiment & $L$ & $H$ & $d_{\text{model}}$ & $d_{\text{ff}}$ & Vocab & Params \\
+\midrule
+Positional induction (seed divergence) & 4 & 4 & 128 & 512 & 50 & $\approx$800K \\
+IOI (seed divergence) & 4 & 4 & 128 & 512 & variable & $\approx$800K \\
+Content-matching induction & 2 & 4 & 128 & 512 & 512 & $\approx$460K \\
+Markov entropy continuum & 4 & 4 & 128 & 512 & 64 & $\approx$800K \\
+Shakespeare (6-layer) & 6 & 8 & 512 & 2048 & 65 & $\approx$19M \\
+Depth scaling ($L \in \{2,4,6,8\}$) & var & 8 & 512 & 2048 & 65 & 6.3M--25.2M \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Training Protocol}
+\label{sec:training}
+
+All models are trained with AdamW \cite{loshchilov2018decoupled} using a cosine learning rate
+schedule with linear warmup. Gradient entries are clipped elementwise to $[-1, 1]$ before
+each parameter update. The default learning rate is $10^{-3}$ with weight decay in $[0.01, 0.1]$
+(see Appendix~\ref{app:training_details} for per-experiment values). There is no dropout, as our
+primary interest is the converged weight structure rather than generalization.
+
+The loss function is masked cross-entropy: on tasks with sparse prediction targets (induction,
+IOI), we mask the loss to positions where the model must predict a specific non-trivial token,
+ignoring filler positions where any prediction is acceptable. On dense prediction tasks
+(Shakespeare, Markov chains), loss is computed over all positions.
+
+Checkpoints are saved every 25 training steps for the seed-divergence experiments and every
+100--500 steps for all other experiments, enabling post-hoc analysis of circuit formation
+dynamics (Section~\ref{sec:formation}). All training is performed using the MLX framework
+\cite{mlx2023} on Apple Silicon (M-series) hardware using the Metal GPU backend.
+The total compute budget for all reported experiments is approximately six hours of wall-clock time.
+
+\subsection{Tasks}
+\label{sec:tasks}
+
+We study five task families chosen to span a range of computational demands.
+
+\paragraph{Positional induction.}
+Sequences have the form $[T_1, \ldots, T_n, T_1, \ldots, T_n]$ where $T_i$ are drawn uniformly
+from a vocabulary of size 50 and $n = 32$ (total sequence length 64). Every position in the
+second half is a prediction target: the model must output the token at the corresponding position
+in the first half. This implements the Olsson et al.\ \cite{olsson2022context} dense induction
+signal and avoids the positional-sparsity failure mode. Because the repeated token always appears
+at a fixed positional offset ($i - n$), a pure positional attention mechanism is sufficient;
+no content matching is required.
+
+\paragraph{Content-matching induction.}
+To force the model to develop genuine token-identity-based induction, we use random-position
+bigrams. Each sequence of length 64 contains $k = 6$ token pairs $(A_i, B_i)$ placed at two
+randomly chosen positions each. The model must predict $B_i$ when it encounters the second
+occurrence of $A_i$. Vocabulary size is 512, so random token collisions are low but nonzero
+under the fixed generator and evaluation seeds. No fixed positional shortcut exists; the model
+must attend to the first occurrence of the matching token.
+
+\paragraph{Indirect object identification (IOI).}
+Synthetic sentences of the form \textit{``[Name1] and [Name2] went to [place]. [Name2] gave the
+[object] to''} require the model to predict \textit{Name1} (the indirect object). We use a
+pool of 20 first names, 10 action verbs, and 30 filler words, generating sequences programmatically.
+This task requires suppression of the subject name (Name2) and promotion of the indirect object
+(Name1), matching the structure of the GPT-2 IOI circuit \cite{wang2022interpretability}.
+
+\paragraph{Markov chains with varying entropy.}
+A first-order Markov chain over vocabulary size 64 is parameterized by an entropy level
+$\alpha \in [0, 1]$. At $\alpha = 0$ the chain is deterministic (each token has exactly one
+successor); at $\alpha = 1$ the chain is uniform (each token is equally likely to follow any
+other). Intermediate values interpolate via temperature scaling of the transition matrix.
+We train 11 models at $\alpha \in \{0.0, 0.1, 0.2, \ldots, 1.0\}$ with sequences of length 64.
+This family allows us to measure how circuit architecture varies continuously with task entropy.
+
+\paragraph{Shakespeare (natural language).}
+Character-level language modeling on the TinyShakespeare corpus \cite{karpathy2015char},
+consisting of approximately $1.1 \times 10^6$ characters from Shakespeare's plays.
+Vocabulary size is 65 (printable ASCII characters). This task serves as an ecological validity
+check: do circuit motifs identified on synthetic tasks generalize to natural language?
+
+\subsection{Circuit Extraction Methods}
+\label{sec:circuit_methods}
+
+We use four complementary tools to map and quantify circuits.
+
+\paragraph{Activation patching.}
+For a clean input $x_{\text{clean}}$ and a corrupted input $x_{\text{corr}}$, activation
+patching measures the causal contribution of component $(i, j)$ (layer $i$, component type $j$)
+by replacing its activations with the corrupted version and measuring the logit difference:
+\begin{equation}
+\label{eq:patching}
+\Delta_{ij} = \ell_{\text{clean}} - \ell_{\text{patched}(i,j)},
+\end{equation}
+where $\ell$ denotes the logit of the target token. A large $\Delta_{ij}$ indicates the component
+is causally load-bearing for the prediction.
+
+\paragraph{Direct logit attribution.}
+Each component $c$'s contribution to the final logit for target token $t$ is computed as
+\begin{equation}
+\label{eq:logit_attr}
+\text{attr}_c = \langle \text{contrib}_c,\, W_U[t] \rangle,
+\end{equation}
+where $\text{contrib}_c$ is the component's output projected to the residual stream basis and
+$W_U[t]$ is the unembedding vector for token $t$. Because the architecture uses weight tying,
+$W_U = W_E^T$. Positive attribution means the component promotes the target token; negative
+attribution means it suppresses competitors or the target itself.
+
+\paragraph{OV circuit decomposition.}
+The output-value (OV) matrix of head $h$ captures what the head copies or transforms when it
+attends. Written in terms of the full embedding space:
+\begin{equation}
+\label{eq:ov}
+\text{OV}_h = W_E\, W_V^{(h)}\, W_O^{(h)}\, W_E^T.
+\end{equation}
+A head implements identity copying if this matrix is close to diagonal: the token attended to
+is the token written to the residual stream. We measure the \emph{copy score} as the mean diagonal
+of $\text{OV}_h$ minus the mean off-diagonal, normalized by the off-diagonal standard deviation.
+A high positive copy score indicates the head aggressively copies the token identity it attends
+to; a negative score (suppression) indicates the head promotes tokens \emph{other} than the one
+it attends to.
+
+\paragraph{Permutation-sensitivity metric.}
+Standard positional-dependence metrics measure how much a head's attention pattern varies across
+different inputs at fixed positions. This metric correctly identifies positional heads (which attend
+to fixed positions regardless of input content) but systematically misclassifies content-based heads
+in deep layers where the residual stream already carries rich, stable semantic structure. The
+attention pattern can be highly correlated across inputs while still being content-conditioned, if
+the content is itself stable.
+
+We introduce a permutation-sensitivity metric that directly tests whether a head's attention pattern
+depends on token identity. Given a batch of inputs $X$, we apply a random vocabulary permutation
+$\pi$ (shuffling the token-to-embedding mapping) and measure how much the head's attention
+matrix changes:
+\begin{equation}
+\label{eq:perm_sens}
+\text{sens}_h = \frac{1}{N} \sum_{\pi} \|A_h(X) - A_h(\pi(X))\|_F,
+\end{equation}
+where $A_h(\cdot)$ denotes the attention weight matrix of head $h$ and the average is over $N$
+random permutations. A content-based head will show large sensitivity (its pattern changes when
+token identities are shuffled); a truly positional head will show near-zero sensitivity (it
+attends to fixed positions regardless of token content). This metric resolves the misclassification
+of deep-layer suppression heads that the standard $\text{pos\_dep}$ score misidentifies as
+positional (Section~\ref{sec:metric_correction}; Appendix~\ref{app:metric_validation}).
+
+\subsection{Surgical Ablation Protocol}
+\label{sec:ablation}
+
+To causally validate circuit maps, we zero out individual components during the forward pass.
+For a single attention head $(l, h)$, we multiply the head's value-weighted output by zero
+\emph{before} the output projection:
+\begin{equation*}
+\tilde{o}_{l,h} = 0 \cdot (A_{l,h}\, V_{l,h}),
+\end{equation*}
+leaving all other heads' contributions to the output projection unchanged. For whole-layer
+ablations (all heads in layer $l$, or the MLP in layer $l$), the corresponding residual stream
+contribution is zeroed entirely.
+
+Because MLX \cite{mlx2023} uses lazy, functional evaluation and does not support in-place tensor
+mutation, ablations are implemented by constructing a head-selection mask at run time:
+\texttt{head\_mask} $= [0 \text{ if } h = h_{\text{ablate}} \text{ else } 1]$, reshaped to
+broadcast over the \texttt{(B, H, T, d\_head)} output tensor. Multiple simultaneous ablations are
+supported by iterating over the ablation set before the output projection. Full pseudocode is given
+in Appendix~\ref{app:ablation_protocols}.
+
+We report task accuracy (for induction tasks) or cross-entropy loss (for Shakespeare) relative to
+the unablated baseline. A component is considered \emph{individually critical} if its ablation
+causes an accuracy drop exceeding 0.5 (i.e., more than halving the task accuracy).
+
+\subsection{Transplantation Protocol}
+\label{sec:transplant}
+
+To test whether circuit weights are portable across independently trained networks, we implement
+a surgical weight-transplantation procedure. Given a donor network (seed 0) with critical
+head at $(l_0, h_0)$ and a recipient network (seed 1) with critical head at $(l_1, h_1)$, we:
+\begin{enumerate}
+    \item Extract the weight slices $W_Q^{(h_0)}, W_K^{(h_0)}, W_V^{(h_0)}$ (rows in the fused
+          QKV projection) and the corresponding columns of $W_O^{(l_0)}$ from the donor.
+    \item Overwrite the corresponding slices in the recipient's $(l_1, h_1)$ slot.
+    \item Verify the transplant via a parameter checksum: confirm the transplanted weights differ
+          from the recipient's original weights and match the donor's.
+\end{enumerate}
+
+To test whether basis mismatch (rather than fundamental non-portability) explains transplant
+failure, we additionally apply Procrustes basis alignment \cite{schonemann1966procrustes}.
+We collect residual stream activations $X_0, X_1 \in \mathbb{R}^{n \times d}$ at the boundary
+between layers $l-1$ and $l$ from both networks on identical inputs, then solve for the optimal
+orthogonal rotation:
+\begin{equation}
+\label{eq:procrustes}
+R^* = \arg\min_{R:\, R^T R = I} \|X_0 R - X_1\|_F.
+\end{equation}
+Via the SVD $X_1^T X_0 = U S V^T$, the solution is $R^* = U V^T$ \cite{horn1994topics}.
+We apply $R^*$ to rotate the donor head's weight matrices into the recipient's activation basis
+before transplantation, then re-evaluate task accuracy. A negative or negligible improvement
+over the unaligned transplant indicates the two networks' residual stream bases are not related
+by any orthogonal rotation.
+
+\subsection{Statistical Methods}
+\label{sec:stats}
+
+All confidence intervals are bootstrap 95\% CIs with 1000 resamples. Agreement rates
+(fraction of seed-pairs sharing the same critical head identity) are tested against a null of
+$1/H$ (uniform random assignment over $H$ heads) using a two-sided permutation test with 10,000
+permutations. Ablation drop means are tested against zero using a paired $t$-test across seeds.
+The suppression-fraction scaling law is estimated by ordinary least squares:
+$\text{frac\_suppression} \sim \beta_0 + \beta_1 \cdot L$, with bootstrap CIs on $\beta_1$.
+
+Results are reported as point estimate [CI$_{\text{low}}$, CI$_{\text{high}}$] with $p$-value.
+Statistical significance threshold is $\alpha = 0.05$ throughout. The four key statistics and
+their bootstrap CIs are summarized in Table~\ref{tab:statistics}.
+
+\begin{table}[h]
+\centering
+\caption{Key quantitative claims with bootstrap 95\% confidence intervals.}
+\label{tab:statistics}
+\begin{tabular}{lcccc}
+\toprule
+Claim & Estimate & 95\% CI & Null & $p$ \\
+\midrule
+Cross-seed circuit similarity & 0.985 & [0.982, 0.988] & 0 & $<0.001$ \\
+Head-level agreement (20 seeds) & 13.2\% & [11.6\%, 27.4\%] & 6.25\% & 0.001 \\
+Critical-head ablation drop (4 seeds) & 0.775 & [0.590, 0.906] & 0 & 0.004 \\
+Suppression fraction slope (per layer) & 0.059 & [0.023, 0.109] & 0 & 0.052 \\
+\bottomrule
+\end{tabular}
+\end{table}

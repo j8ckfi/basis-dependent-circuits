@@ -1,0 +1,802 @@
+{
+  "induction": {
+    "model_name": "Induction (2L4H)",
+    "n_heads_total": 8,
+    "n_agree": 5,
+    "n_disagree": 3,
+    "false_positional_by_old": [
+      "L1H0",
+      "L1H2",
+      "L1H3"
+    ],
+    "false_content_by_old": [],
+    "pos_dep_threshold": 0.6,
+    "perm_sens_threshold": 0.3,
+    "heads": [
+      {
+        "head_id": "L0H0",
+        "layer": 0,
+        "head": 0,
+        "pos_dep": 0.9953107833862305,
+        "perm_sensitivity": 0.08047406375408173,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L0H1",
+        "layer": 0,
+        "head": 1,
+        "pos_dep": 0.9959840774536133,
+        "perm_sensitivity": 0.07932538818567991,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L0H2",
+        "layer": 0,
+        "head": 2,
+        "pos_dep": 0.9948837161064148,
+        "perm_sensitivity": 0.08952469658106565,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L0H3",
+        "layer": 0,
+        "head": 3,
+        "pos_dep": 0.9974132776260376,
+        "perm_sensitivity": 0.0577719584107399,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L1H0",
+        "layer": 1,
+        "head": 0,
+        "pos_dep": 0.6789195537567139,
+        "perm_sensitivity": 0.3910611681640148,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L1H1",
+        "layer": 1,
+        "head": 1,
+        "pos_dep": 0.7292013168334961,
+        "perm_sensitivity": 0.23253021575510502,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L1H2",
+        "layer": 1,
+        "head": 2,
+        "pos_dep": 0.6715226769447327,
+        "perm_sensitivity": 0.43040842562913895,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L1H3",
+        "layer": 1,
+        "head": 3,
+        "pos_dep": 0.6783633828163147,
+        "perm_sensitivity": 0.3896579183638096,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      }
+    ]
+  },
+  "shakespeare": {
+    "model_name": "Shakespeare (6L8H)",
+    "n_heads_total": 48,
+    "n_agree": 9,
+    "n_disagree": 39,
+    "false_positional_by_old": [
+      "L1H0",
+      "L1H1",
+      "L1H2",
+      "L1H3",
+      "L1H4",
+      "L1H5",
+      "L1H7",
+      "L2H0",
+      "L2H1",
+      "L2H2",
+      "L2H3",
+      "L2H4",
+      "L2H5",
+      "L2H6",
+      "L2H7",
+      "L3H0",
+      "L3H1",
+      "L3H2",
+      "L3H3",
+      "L3H4",
+      "L3H5",
+      "L3H6",
+      "L3H7",
+      "L4H0",
+      "L4H1",
+      "L4H2",
+      "L4H3",
+      "L4H4",
+      "L4H5",
+      "L4H6",
+      "L4H7",
+      "L5H0",
+      "L5H1",
+      "L5H2",
+      "L5H3",
+      "L5H4",
+      "L5H5",
+      "L5H6",
+      "L5H7"
+    ],
+    "false_content_by_old": [],
+    "pos_dep_threshold": 0.6,
+    "perm_sens_threshold": 0.3,
+    "heads": [
+      {
+        "head_id": "L0H0",
+        "layer": 0,
+        "head": 0,
+        "pos_dep": 0.9960563778877258,
+        "perm_sensitivity": 0.09054776839911938,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L0H1",
+        "layer": 0,
+        "head": 1,
+        "pos_dep": 0.9973230957984924,
+        "perm_sensitivity": 0.06566213071346283,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L0H2",
+        "layer": 0,
+        "head": 2,
+        "pos_dep": 0.9997667074203491,
+        "perm_sensitivity": 0.02079148916527629,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L0H3",
+        "layer": 0,
+        "head": 3,
+        "pos_dep": 0.9996247887611389,
+        "perm_sensitivity": 0.02777133136987686,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L0H4",
+        "layer": 0,
+        "head": 4,
+        "pos_dep": 0.9994800686836243,
+        "perm_sensitivity": 0.03282339312136173,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L0H5",
+        "layer": 0,
+        "head": 5,
+        "pos_dep": 0.9992963671684265,
+        "perm_sensitivity": 0.0383455827832222,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L0H6",
+        "layer": 0,
+        "head": 6,
+        "pos_dep": 0.9939980506896973,
+        "perm_sensitivity": 0.09920156002044678,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L0H7",
+        "layer": 0,
+        "head": 7,
+        "pos_dep": 0.9951063394546509,
+        "perm_sensitivity": 0.1894836239516735,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L1H0",
+        "layer": 1,
+        "head": 0,
+        "pos_dep": 0.7589444518089294,
+        "perm_sensitivity": 0.6104460880160332,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L1H1",
+        "layer": 1,
+        "head": 1,
+        "pos_dep": 0.74405437707901,
+        "perm_sensitivity": 0.6438082680106163,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L1H2",
+        "layer": 1,
+        "head": 2,
+        "pos_dep": 0.6950426697731018,
+        "perm_sensitivity": 0.6562279388308525,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L1H3",
+        "layer": 1,
+        "head": 3,
+        "pos_dep": 0.7888454794883728,
+        "perm_sensitivity": 0.5676310360431671,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L1H4",
+        "layer": 1,
+        "head": 4,
+        "pos_dep": 0.7162626385688782,
+        "perm_sensitivity": 0.6584849953651428,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L1H5",
+        "layer": 1,
+        "head": 5,
+        "pos_dep": 0.7709582448005676,
+        "perm_sensitivity": 0.5788827762007713,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L1H6",
+        "layer": 1,
+        "head": 6,
+        "pos_dep": 0.5662391185760498,
+        "perm_sensitivity": 0.7836873903870583,
+        "old_classification": "content",
+        "new_classification": "content",
+        "agreement": true
+      },
+      {
+        "head_id": "L1H7",
+        "layer": 1,
+        "head": 7,
+        "pos_dep": 0.8505377173423767,
+        "perm_sensitivity": 0.5027435794472694,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L2H0",
+        "layer": 2,
+        "head": 0,
+        "pos_dep": 0.6875889897346497,
+        "perm_sensitivity": 0.6791891679167747,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L2H1",
+        "layer": 2,
+        "head": 1,
+        "pos_dep": 0.7443628311157227,
+        "perm_sensitivity": 0.5914638936519623,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L2H2",
+        "layer": 2,
+        "head": 2,
+        "pos_dep": 0.719092845916748,
+        "perm_sensitivity": 0.6131405979394913,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L2H3",
+        "layer": 2,
+        "head": 3,
+        "pos_dep": 0.6982589364051819,
+        "perm_sensitivity": 0.6152163967490196,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L2H4",
+        "layer": 2,
+        "head": 4,
+        "pos_dep": 0.6567120552062988,
+        "perm_sensitivity": 0.6799251958727837,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L2H5",
+        "layer": 2,
+        "head": 5,
+        "pos_dep": 0.7176992297172546,
+        "perm_sensitivity": 0.6162535473704338,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L2H6",
+        "layer": 2,
+        "head": 6,
+        "pos_dep": 0.7808883786201477,
+        "perm_sensitivity": 0.5287507697939873,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L2H7",
+        "layer": 2,
+        "head": 7,
+        "pos_dep": 0.7349835634231567,
+        "perm_sensitivity": 0.6141005605459213,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L3H0",
+        "layer": 3,
+        "head": 0,
+        "pos_dep": 0.7342799305915833,
+        "perm_sensitivity": 0.5860124230384827,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L3H1",
+        "layer": 3,
+        "head": 1,
+        "pos_dep": 0.7439883947372437,
+        "perm_sensitivity": 0.5708387941122055,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L3H2",
+        "layer": 3,
+        "head": 2,
+        "pos_dep": 0.7322017550468445,
+        "perm_sensitivity": 0.5694512501358986,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L3H3",
+        "layer": 3,
+        "head": 3,
+        "pos_dep": 0.6985361576080322,
+        "perm_sensitivity": 0.6195147931575775,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L3H4",
+        "layer": 3,
+        "head": 4,
+        "pos_dep": 0.7513088583946228,
+        "perm_sensitivity": 0.5561120212078094,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L3H5",
+        "layer": 3,
+        "head": 5,
+        "pos_dep": 0.7421751618385315,
+        "perm_sensitivity": 0.5869271978735924,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L3H6",
+        "layer": 3,
+        "head": 6,
+        "pos_dep": 0.7717102766036987,
+        "perm_sensitivity": 0.5371026769280434,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L3H7",
+        "layer": 3,
+        "head": 7,
+        "pos_dep": 0.7366213202476501,
+        "perm_sensitivity": 0.5832830518484116,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L4H0",
+        "layer": 4,
+        "head": 0,
+        "pos_dep": 0.8200441002845764,
+        "perm_sensitivity": 0.47392697632312775,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L4H1",
+        "layer": 4,
+        "head": 1,
+        "pos_dep": 0.8105661273002625,
+        "perm_sensitivity": 0.47294387221336365,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L4H2",
+        "layer": 4,
+        "head": 2,
+        "pos_dep": 0.7953084707260132,
+        "perm_sensitivity": 0.5188331939280033,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L4H3",
+        "layer": 4,
+        "head": 3,
+        "pos_dep": 0.8056778907775879,
+        "perm_sensitivity": 0.4817733131349087,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L4H4",
+        "layer": 4,
+        "head": 4,
+        "pos_dep": 0.8036887645721436,
+        "perm_sensitivity": 0.4814561940729618,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L4H5",
+        "layer": 4,
+        "head": 5,
+        "pos_dep": 0.8403825759887695,
+        "perm_sensitivity": 0.4469211921095848,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L4H6",
+        "layer": 4,
+        "head": 6,
+        "pos_dep": 0.8117433786392212,
+        "perm_sensitivity": 0.5019124671816826,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L4H7",
+        "layer": 4,
+        "head": 7,
+        "pos_dep": 0.8111188411712646,
+        "perm_sensitivity": 0.48369288817048073,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L5H0",
+        "layer": 5,
+        "head": 0,
+        "pos_dep": 0.8547755479812622,
+        "perm_sensitivity": 0.4208512455224991,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L5H1",
+        "layer": 5,
+        "head": 1,
+        "pos_dep": 0.8901732563972473,
+        "perm_sensitivity": 0.3572050668299198,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L5H2",
+        "layer": 5,
+        "head": 2,
+        "pos_dep": 0.8360970616340637,
+        "perm_sensitivity": 0.4661494866013527,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L5H3",
+        "layer": 5,
+        "head": 3,
+        "pos_dep": 0.8498532176017761,
+        "perm_sensitivity": 0.4179479740560055,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L5H4",
+        "layer": 5,
+        "head": 4,
+        "pos_dep": 0.8670752048492432,
+        "perm_sensitivity": 0.3934495151042938,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L5H5",
+        "layer": 5,
+        "head": 5,
+        "pos_dep": 0.8754037022590637,
+        "perm_sensitivity": 0.3885396681725979,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L5H6",
+        "layer": 5,
+        "head": 6,
+        "pos_dep": 0.8463131189346313,
+        "perm_sensitivity": 0.428850669413805,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      },
+      {
+        "head_id": "L5H7",
+        "layer": 5,
+        "head": 7,
+        "pos_dep": 0.8683520555496216,
+        "perm_sensitivity": 0.39124565571546555,
+        "old_classification": "positional",
+        "new_classification": "content",
+        "agreement": false
+      }
+    ]
+  },
+  "entropy0_markov": {
+    "model_name": "Entropy=0 Markov (4L4H)",
+    "n_heads_total": 16,
+    "n_agree": 16,
+    "n_disagree": 0,
+    "false_positional_by_old": [],
+    "false_content_by_old": [],
+    "pos_dep_threshold": 0.6,
+    "perm_sens_threshold": 0.3,
+    "heads": [
+      {
+        "head_id": "L0H0",
+        "layer": 0,
+        "head": 0,
+        "pos_dep": 0.9957021474838257,
+        "perm_sensitivity": 0.06730254553258419,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L0H1",
+        "layer": 0,
+        "head": 1,
+        "pos_dep": 0.996650218963623,
+        "perm_sensitivity": 0.06592404702678323,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L0H2",
+        "layer": 0,
+        "head": 2,
+        "pos_dep": 0.9937172532081604,
+        "perm_sensitivity": 0.0779340686276555,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L0H3",
+        "layer": 0,
+        "head": 3,
+        "pos_dep": 0.9939299821853638,
+        "perm_sensitivity": 0.07554712891578674,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L1H0",
+        "layer": 1,
+        "head": 0,
+        "pos_dep": 0.9975694417953491,
+        "perm_sensitivity": 0.051498102489858866,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L1H1",
+        "layer": 1,
+        "head": 1,
+        "pos_dep": 0.9972672462463379,
+        "perm_sensitivity": 0.05240299832075834,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L1H2",
+        "layer": 1,
+        "head": 2,
+        "pos_dep": 0.9972968697547913,
+        "perm_sensitivity": 0.053134425077587366,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L1H3",
+        "layer": 1,
+        "head": 3,
+        "pos_dep": 0.9969468712806702,
+        "perm_sensitivity": 0.05339851835742593,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L2H0",
+        "layer": 2,
+        "head": 0,
+        "pos_dep": 0.9975072741508484,
+        "perm_sensitivity": 0.05062281573191285,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L2H1",
+        "layer": 2,
+        "head": 1,
+        "pos_dep": 0.9956556558609009,
+        "perm_sensitivity": 0.06788219884037971,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L2H2",
+        "layer": 2,
+        "head": 2,
+        "pos_dep": 0.9972940683364868,
+        "perm_sensitivity": 0.050677201710641384,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L2H3",
+        "layer": 2,
+        "head": 3,
+        "pos_dep": 0.9898750185966492,
+        "perm_sensitivity": 0.09973514173179865,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L3H0",
+        "layer": 3,
+        "head": 0,
+        "pos_dep": 0.9828238487243652,
+        "perm_sensitivity": 0.11990181542932987,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L3H1",
+        "layer": 3,
+        "head": 1,
+        "pos_dep": 0.9907201528549194,
+        "perm_sensitivity": 0.09717590734362602,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L3H2",
+        "layer": 3,
+        "head": 2,
+        "pos_dep": 0.992300808429718,
+        "perm_sensitivity": 0.08448405936360359,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      },
+      {
+        "head_id": "L3H3",
+        "layer": 3,
+        "head": 3,
+        "pos_dep": 0.9887791275978088,
+        "perm_sensitivity": 0.09539985097944736,
+        "old_classification": "positional",
+        "new_classification": "positional",
+        "agreement": true
+      }
+    ]
+  }
+}

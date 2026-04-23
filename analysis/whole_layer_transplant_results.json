@@ -1,0 +1,233 @@
+{
+  "baselines": {
+    "seed0": 0.8517457008858781,
+    "seed1": 0.9635416666666666
+  },
+  "reference_single_head": {
+    "label": "Single-head transplant (L0H3 -> L0H1)",
+    "description": "seed0 L0H3 -> seed1 L0H1 (rows/cols of qkv/out only)",
+    "accuracy": 0.082,
+    "delta_vs_seed1_baseline": -0.8815416666666667,
+    "source": "circuit_transplant.py and basis_aligned_transplant.py",
+    "note": "Catastrophic failure; Procrustes alignment also failed (R2 < 0)"
+  },
+  "experiments": [
+    {
+      "label": "Whole L0 attention block (all 4 heads)",
+      "description": "Replace seed1's L0 qkv_proj and out_proj with seed0's",
+      "hypothesis": "If circuits are self-contained at the attention-layer level, accuracy should be preserved (near seed1 baseline).",
+      "transplant_keys": [
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight"
+      ],
+      "n_keys_transplanted": 2,
+      "accuracy": 0.005209690023443605,
+      "delta_vs_seed1_baseline": -0.958331976643223,
+      "delta_vs_seed0_baseline": -0.8465360108624345,
+      "weight_change_verified": true
+    },
+    {
+      "label": "Whole L0 block (attn + MLP + LayerNorms)",
+      "description": "Replace seed1's entire L0 transformer block with seed0's",
+      "hypothesis": "If circuits require attention+MLP together, this should work but Exp1 might fail.",
+      "transplant_keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight"
+      ],
+      "n_keys_transplanted": 6,
+      "accuracy": 0.0033871808233454925,
+      "delta_vs_seed1_baseline": -0.9601544858433211,
+      "delta_vs_seed0_baseline": -0.8483585200625325,
+      "weight_change_verified": true
+    },
+    {
+      "label": "Whole L0 block + final LayerNorm",
+      "description": "Replace seed1's L0 block and ln_f with seed0's",
+      "hypothesis": "Tests whether final LayerNorm mismatch matters.",
+      "transplant_keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "ln_f.weight"
+      ],
+      "n_keys_transplanted": 7,
+      "accuracy": 0.004171011470281543,
+      "delta_vs_seed1_baseline": -0.9593706551963851,
+      "delta_vs_seed0_baseline": -0.8475746894155965,
+      "weight_change_verified": true
+    },
+    {
+      "label": "Embeddings only (wte + wpe)",
+      "description": "Replace seed1's token and position embeddings with seed0's",
+      "hypothesis": "Embeddings alone shouldn't change induction accuracy much if the downstream weights adapt to the embedding basis.",
+      "transplant_keys": [
+        "wte.weight",
+        "wpe.weight"
+      ],
+      "n_keys_transplanted": 2,
+      "accuracy": 0.010422094841063054,
+      "delta_vs_seed1_baseline": -0.9531195718256036,
+      "delta_vs_seed0_baseline": -0.841323606044815,
+      "weight_change_verified": true
+    },
+    {
+      "label": "Embeddings + L0 attention",
+      "description": "Replace seed1's embeddings and L0 qkv/out with seed0's",
+      "hypothesis": "Embeddings define the input basis for L0; transplanting both may allow L0 attention to work correctly in seed1's context.",
+      "transplant_keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight"
+      ],
+      "n_keys_transplanted": 4,
+      "accuracy": 0.005209690023443605,
+      "delta_vs_seed1_baseline": -0.958331976643223,
+      "delta_vs_seed0_baseline": -0.8465360108624345,
+      "weight_change_verified": true
+    },
+    {
+      "label": "Embeddings + L0 full block",
+      "description": "Replace seed1's embeddings and entire L0 block with seed0's",
+      "hypothesis": "Adding MLP and LayerNorms may help if L0 block needs its own basis.",
+      "transplant_keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight"
+      ],
+      "n_keys_transplanted": 8,
+      "accuracy": 0.005475880052151239,
+      "delta_vs_seed1_baseline": -0.9580657866145154,
+      "delta_vs_seed0_baseline": -0.8462698208337268,
+      "weight_change_verified": true
+    },
+    {
+      "label": "All except L1 block (embed + L0 + ln_f)",
+      "description": "Replace everything from seed1 except the L1 transformer block",
+      "hypothesis": "Tests whether L1 is the bottleneck: if this works, L1 alone can adapt; if not, L1 is incompatible with seed0's L0 output.",
+      "transplant_keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "ln_f.weight"
+      ],
+      "n_keys_transplanted": 9,
+      "accuracy": 0.0049479166666666664,
+      "delta_vs_seed1_baseline": -0.9585937499999999,
+      "delta_vs_seed0_baseline": -0.8467977842192114,
+      "weight_change_verified": true
+    },
+    {
+      "label": "Full transplant (all weights, sanity check)",
+      "description": "Replace ALL seed1 weights with seed0's \u2014 should reproduce seed0 accuracy",
+      "hypothesis": "This must reproduce seed0 baseline (~0.85). If it doesn't, the transplant machinery is broken.",
+      "transplant_keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ],
+      "n_keys_transplanted": 15,
+      "accuracy": 0.8494007295466389,
+      "delta_vs_seed1_baseline": -0.11414093712002771,
+      "delta_vs_seed0_baseline": -0.002344971339239166,
+      "weight_change_verified": true,
+      "sanity_check_passed": true
+    }
+  ],
+  "analysis": {
+    "preservation_threshold": 0.8671875,
+    "seed1_baseline": 0.9635416666666666,
+    "seed0_baseline": 0.8517457008858781,
+    "n_experiments_working": 0,
+    "n_experiments_failing": 8,
+    "working_experiments": [],
+    "failing_experiments": [
+      "Whole L0 attention block (all 4 heads)",
+      "Whole L0 block (attn + MLP + LayerNorms)",
+      "Whole L0 block + final LayerNorm",
+      "Embeddings only (wte + wpe)",
+      "Embeddings + L0 attention",
+      "Embeddings + L0 full block",
+      "All except L1 block (embed + L0 + ln_f)",
+      "Full transplant (all weights, sanity check)"
+    ],
+    "minimal_functional_unit": "full network (everything)",
+    "interpretation": "CIRCUITS ARE GENUINELY SYSTEM-LEVEL. Only transplanting the complete network reproduces seed0 accuracy. No proper subset of weights is independently portable. The induction computation is an emergent property of the full weight configuration \u2014 there is no 'module' that can be surgically extracted and re-implanted. The circuit is truly system-level, consistent with the Procrustes alignment failure (R\u00b2 < 0): the two networks don't share any common representational subspace that would allow partial reuse.",
+    "summary_table": [
+      {
+        "scope": "Single-head L0H3->L0H1 (prior work)",
+        "accuracy": 0.082,
+        "delta_vs_seed1": -0.8815
+      },
+      {
+        "scope": "Whole L0 attention block (all 4 heads)",
+        "accuracy": 0.0052,
+        "delta_vs_seed1": -0.9583
+      },
+      {
+        "scope": "Whole L0 block (attn + MLP + LayerNorms)",
+        "accuracy": 0.0034,
+        "delta_vs_seed1": -0.9602
+      },
+      {
+        "scope": "Whole L0 block + final LayerNorm",
+        "accuracy": 0.0042,
+        "delta_vs_seed1": -0.9594
+      },
+      {
+        "scope": "Embeddings only (wte + wpe)",
+        "accuracy": 0.0104,
+        "delta_vs_seed1": -0.9531
+      },
+      {
+        "scope": "Embeddings + L0 attention",
+        "accuracy": 0.0052,
+        "delta_vs_seed1": -0.9583
+      },
+      {
+        "scope": "Embeddings + L0 full block",
+        "accuracy": 0.0055,
+        "delta_vs_seed1": -0.9581
+      },
+      {
+        "scope": "All except L1 block (embed + L0 + ln_f)",
+        "accuracy": 0.0049,
+        "delta_vs_seed1": -0.9586
+      },
+      {
+        "scope": "Full transplant (all weights, sanity check)",
+        "accuracy": 0.8494,
+        "delta_vs_seed1": -0.1141
+      }
+    ]
+  }
+}

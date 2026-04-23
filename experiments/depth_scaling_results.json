@@ -1,0 +1,1805 @@
+[
+  {
+    "n_layers": 2,
+    "model_path": "checkpoints/depth_scaling/depth_2/model.safetensors",
+    "final_loss": 1.04781165599823,
+    "eval_loss": 1.0454565346240998,
+    "elapsed_s": 191.1185007095337,
+    "analysis": {
+      "n_layers": 2,
+      "n_heads": 8,
+      "total_heads": 16,
+      "role_counts": {
+        "copy": 7,
+        "previous_token": 1,
+        "suppression": 8
+      },
+      "n_suppression": 8,
+      "frac_suppression": 0.5,
+      "layer_suppression": [
+        0.0,
+        1.3277971893548965
+      ],
+      "layer_copy": [
+        0.9200286641716957,
+        -1.3287554159760475
+      ],
+      "layer_attn_attr": [
+        3.7862937450408936,
+        5.318557262420654
+      ],
+      "layer_mlp_attr": [
+        5.189023017883301,
+        7.38760232925415
+      ]
+    },
+    "head_profiles": [
+      {
+        "layer": 0,
+        "head": 0,
+        "role": "copy",
+        "copy_score": 0.3092587888240814,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.12551254034042358,
+        "entropy": 2.0141544342041016,
+        "positional_score": 0.9742007255554199
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "role": "copy",
+        "copy_score": 2.38700270652771,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.053352583199739456,
+        "entropy": 3.33347225189209,
+        "positional_score": 0.9817006587982178
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "role": "copy",
+        "copy_score": 1.1706335544586182,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.05385187640786171,
+        "entropy": 3.5588016510009766,
+        "positional_score": 0.9911901354789734
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "role": "copy",
+        "copy_score": 0.7586950063705444,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.1129714846611023,
+        "entropy": 2.6087071895599365,
+        "positional_score": 0.9749298691749573
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "role": "previous_token",
+        "copy_score": 0.27053287625312805,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.7146207094192505,
+        "entropy": 1.5212340354919434,
+        "positional_score": 0.9902824759483337
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "role": "copy",
+        "copy_score": 0.8695068359375,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.04847712442278862,
+        "entropy": 3.642453193664551,
+        "positional_score": 0.9932853579521179
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "role": "copy",
+        "copy_score": 1.0771152973175049,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.09948176890611649,
+        "entropy": 3.2402937412261963,
+        "positional_score": 0.9802088737487793
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "role": "copy",
+        "copy_score": 0.5174842476844788,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.06611891090869904,
+        "entropy": 2.677541971206665,
+        "positional_score": 0.981268048286438
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -2.1368017196655273,
+        "suppression_score": 2.152256965637207,
+        "prev_token_score": 0.20124070346355438,
+        "entropy": 1.6601557731628418,
+        "positional_score": 0.7386658191680908
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -1.2571139335632324,
+        "suppression_score": 1.3326597213745117,
+        "prev_token_score": 0.18861953914165497,
+        "entropy": 1.590564250946045,
+        "positional_score": 0.7289278507232666
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -1.268599033355713,
+        "suppression_score": 1.270195484161377,
+        "prev_token_score": 0.14815233647823334,
+        "entropy": 1.7074646949768066,
+        "positional_score": 0.7490954995155334
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -0.6039534211158752,
+        "suppression_score": 0.5654350519180298,
+        "prev_token_score": 0.07806110382080078,
+        "entropy": 1.5535995960235596,
+        "positional_score": 0.6098012924194336
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -1.347726821899414,
+        "suppression_score": 1.3741272687911987,
+        "prev_token_score": 0.22692739963531494,
+        "entropy": 1.7333712577819824,
+        "positional_score": 0.7643714547157288
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "role": "suppression",
+        "copy_score": -1.0801582336425781,
+        "suppression_score": 1.0285649299621582,
+        "prev_token_score": 0.11029455065727234,
+        "entropy": 1.961085319519043,
+        "positional_score": 0.8058902621269226
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -1.3584964275360107,
+        "suppression_score": 1.3422504663467407,
+        "prev_token_score": 0.24514666199684143,
+        "entropy": 1.6903241872787476,
+        "positional_score": 0.7614323496818542
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -1.5771937370300293,
+        "suppression_score": 1.5568876266479492,
+        "prev_token_score": 0.18737880885601044,
+        "entropy": 1.774306058883667,
+        "positional_score": 0.7652570009231567
+      }
+    ],
+    "cascade_monotonic": true
+  },
+  {
+    "n_layers": 4,
+    "model_path": "checkpoints/depth_scaling/depth_4/model.safetensors",
+    "final_loss": 0.8245045065879821,
+    "eval_loss": 0.8236620098352432,
+    "elapsed_s": 379.2654218673706,
+    "analysis": {
+      "n_layers": 4,
+      "n_heads": 8,
+      "total_heads": 32,
+      "role_counts": {
+        "copy": 7,
+        "previous_token": 1,
+        "suppression": 23,
+        "positional": 1
+      },
+      "n_suppression": 23,
+      "frac_suppression": 0.71875,
+      "layer_suppression": [
+        0.0,
+        0.7475128974765539,
+        1.5405458509922028,
+        2.051189735531807
+      ],
+      "layer_copy": [
+        1.2216464467346668,
+        -0.7433985248208046,
+        -1.542892225086689,
+        -2.06428599357605
+      ],
+      "layer_attn_attr": [
+        3.9077014923095703,
+        5.626225471496582,
+        5.667881965637207,
+        5.049533843994141
+      ],
+      "layer_mlp_attr": [
+        5.252681732177734,
+        4.33437967300415,
+        4.738314151763916,
+        8.750469207763672
+      ]
+    },
+    "head_profiles": [
+      {
+        "layer": 0,
+        "head": 0,
+        "role": "copy",
+        "copy_score": 1.1959818601608276,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.10290408879518509,
+        "entropy": 2.914194107055664,
+        "positional_score": 0.9842963218688965
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "role": "copy",
+        "copy_score": 3.1917762756347656,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.04303426295518875,
+        "entropy": 3.5430493354797363,
+        "positional_score": 0.9916521906852722
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "role": "copy",
+        "copy_score": 1.2660263776779175,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.04969790205359459,
+        "entropy": 3.686589479446411,
+        "positional_score": 0.994245171546936
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "role": "copy",
+        "copy_score": 0.7168713808059692,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.10711698234081268,
+        "entropy": 2.3238587379455566,
+        "positional_score": 0.9861478209495544
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "role": "previous_token",
+        "copy_score": 0.4060046970844269,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.7636906504631042,
+        "entropy": 1.2991042137145996,
+        "positional_score": 0.99165278673172
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "role": "copy",
+        "copy_score": 1.246760606765747,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.052376266568899155,
+        "entropy": 3.597349166870117,
+        "positional_score": 0.9935010671615601
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "role": "copy",
+        "copy_score": 1.0654723644256592,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.09573280811309814,
+        "entropy": 3.349817991256714,
+        "positional_score": 0.9843431115150452
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "role": "copy",
+        "copy_score": 0.6842780113220215,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.07403567433357239,
+        "entropy": 2.9089648723602295,
+        "positional_score": 0.9904289245605469
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -1.0166488885879517,
+        "suppression_score": 1.0309017896652222,
+        "prev_token_score": 0.24141502380371094,
+        "entropy": 1.5159260034561157,
+        "positional_score": 0.7268930673599243
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -0.7169530391693115,
+        "suppression_score": 0.7675517201423645,
+        "prev_token_score": 0.1627034693956375,
+        "entropy": 1.7156121730804443,
+        "positional_score": 0.7638055086135864
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -0.6775071024894714,
+        "suppression_score": 0.6688860654830933,
+        "prev_token_score": 0.21068745851516724,
+        "entropy": 1.5304615497589111,
+        "positional_score": 0.7183237075805664
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -0.9637864828109741,
+        "suppression_score": 0.9516658782958984,
+        "prev_token_score": 0.20099300146102905,
+        "entropy": 1.557598352432251,
+        "positional_score": 0.727180004119873
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -0.6767699122428894,
+        "suppression_score": 0.7209901809692383,
+        "prev_token_score": 0.15309979021549225,
+        "entropy": 1.7588727474212646,
+        "positional_score": 0.7725458145141602
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "role": "positional",
+        "copy_score": -0.2273164987564087,
+        "suppression_score": 0.1716187447309494,
+        "prev_token_score": 0.23406857252120972,
+        "entropy": 1.6591596603393555,
+        "positional_score": 0.7772901654243469
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -1.0467863082885742,
+        "suppression_score": 1.0390921831130981,
+        "prev_token_score": 0.14974550902843475,
+        "entropy": 1.853324294090271,
+        "positional_score": 0.8096965551376343
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -0.6214199662208557,
+        "suppression_score": 0.6293966174125671,
+        "prev_token_score": 0.2684471309185028,
+        "entropy": 1.4484297037124634,
+        "positional_score": 0.706986129283905
+      },
+      {
+        "layer": 2,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -0.7988094091415405,
+        "suppression_score": 0.823296070098877,
+        "prev_token_score": 0.17618179321289062,
+        "entropy": 1.6123660802841187,
+        "positional_score": 0.7307668328285217
+      },
+      {
+        "layer": 2,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -0.6824098229408264,
+        "suppression_score": 0.7101678848266602,
+        "prev_token_score": 0.057043787091970444,
+        "entropy": 1.6874208450317383,
+        "positional_score": 0.6319591999053955
+      },
+      {
+        "layer": 2,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -1.799780011177063,
+        "suppression_score": 1.8121674060821533,
+        "prev_token_score": 0.186675027012825,
+        "entropy": 1.6728365421295166,
+        "positional_score": 0.7454794645309448
+      },
+      {
+        "layer": 2,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -2.0147409439086914,
+        "suppression_score": 1.99307119846344,
+        "prev_token_score": 0.2057749330997467,
+        "entropy": 1.6433920860290527,
+        "positional_score": 0.737684428691864
+      },
+      {
+        "layer": 2,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -2.070695400238037,
+        "suppression_score": 2.0560922622680664,
+        "prev_token_score": 0.12528879940509796,
+        "entropy": 1.6358251571655273,
+        "positional_score": 0.7339504957199097
+      },
+      {
+        "layer": 2,
+        "head": 5,
+        "role": "suppression",
+        "copy_score": -1.5102277994155884,
+        "suppression_score": 1.5144580602645874,
+        "prev_token_score": 0.13974136114120483,
+        "entropy": 1.7966394424438477,
+        "positional_score": 0.7736456394195557
+      },
+      {
+        "layer": 2,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -1.9245597124099731,
+        "suppression_score": 1.9154077768325806,
+        "prev_token_score": 0.10917322337627411,
+        "entropy": 1.862346887588501,
+        "positional_score": 0.7751727104187012
+      },
+      {
+        "layer": 2,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -1.541914701461792,
+        "suppression_score": 1.4997061491012573,
+        "prev_token_score": 0.18914547562599182,
+        "entropy": 1.4969050884246826,
+        "positional_score": 0.7075021862983704
+      },
+      {
+        "layer": 3,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -2.168062686920166,
+        "suppression_score": 2.151388645172119,
+        "prev_token_score": 0.08443130552768707,
+        "entropy": 2.205709457397461,
+        "positional_score": 0.8160077333450317
+      },
+      {
+        "layer": 3,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -2.565852642059326,
+        "suppression_score": 2.6211905479431152,
+        "prev_token_score": 0.09575997292995453,
+        "entropy": 2.0432958602905273,
+        "positional_score": 0.7896775007247925
+      },
+      {
+        "layer": 3,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -1.9724091291427612,
+        "suppression_score": 1.922802209854126,
+        "prev_token_score": 0.12221961468458176,
+        "entropy": 2.017703056335449,
+        "positional_score": 0.7887845635414124
+      },
+      {
+        "layer": 3,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -2.057544708251953,
+        "suppression_score": 2.0409152507781982,
+        "prev_token_score": 0.07386244833469391,
+        "entropy": 1.9069104194641113,
+        "positional_score": 0.77008056640625
+      },
+      {
+        "layer": 3,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -1.6862763166427612,
+        "suppression_score": 1.6470932960510254,
+        "prev_token_score": 0.07342098653316498,
+        "entropy": 2.199505567550659,
+        "positional_score": 0.8171674013137817
+      },
+      {
+        "layer": 3,
+        "head": 5,
+        "role": "suppression",
+        "copy_score": -2.0232784748077393,
+        "suppression_score": 2.0226099491119385,
+        "prev_token_score": 0.12874357402324677,
+        "entropy": 1.9590215682983398,
+        "positional_score": 0.7770127058029175
+      },
+      {
+        "layer": 3,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -2.2227344512939453,
+        "suppression_score": 2.193768262863159,
+        "prev_token_score": 0.08425411581993103,
+        "entropy": 2.1264185905456543,
+        "positional_score": 0.8054176568984985
+      },
+      {
+        "layer": 3,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -1.818129539489746,
+        "suppression_score": 1.809749722480774,
+        "prev_token_score": 0.15624991059303284,
+        "entropy": 1.957087516784668,
+        "positional_score": 0.7851330041885376
+      }
+    ],
+    "cascade_monotonic": true
+  },
+  {
+    "n_layers": 6,
+    "model_path": "checkpoints/depth_scaling/depth_6/model.safetensors",
+    "final_loss": 0.6668596976995468,
+    "eval_loss": 0.6626161515712738,
+    "elapsed_s": 578.2882409095764,
+    "analysis": {
+      "n_layers": 6,
+      "n_heads": 8,
+      "total_heads": 48,
+      "role_counts": {
+        "copy": 7,
+        "previous_token": 2,
+        "suppression": 38,
+        "positional": 1
+      },
+      "n_suppression": 39,
+      "frac_suppression": 0.8125,
+      "layer_suppression": [
+        0.0,
+        0.5584223456680775,
+        1.4777726233005524,
+        1.728598564863205,
+        1.9097301363945007,
+        2.0368026793003082
+      ],
+      "layer_copy": [
+        1.3764590099453926,
+        -0.5449324641376734,
+        -1.4633923470973969,
+        -1.722840279340744,
+        -1.9163366556167603,
+        -2.0643411725759506
+      ],
+      "layer_attn_attr": [
+        4.17258882522583,
+        6.167623519897461,
+        6.0521392822265625,
+        5.5421223640441895,
+        5.207724571228027,
+        4.909343719482422
+      ],
+      "layer_mlp_attr": [
+        5.778811454772949,
+        4.2265095710754395,
+        4.084035873413086,
+        4.057351112365723,
+        4.657315254211426,
+        10.53038501739502
+      ]
+    },
+    "head_profiles": [
+      {
+        "layer": 0,
+        "head": 0,
+        "role": "copy",
+        "copy_score": 0.9334297776222229,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.13516856729984283,
+        "entropy": 2.4628958702087402,
+        "positional_score": 0.9759564995765686
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "role": "copy",
+        "copy_score": 3.1322498321533203,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.03974806144833565,
+        "entropy": 3.5293216705322266,
+        "positional_score": 0.9912322759628296
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "role": "copy",
+        "copy_score": 1.0908647775650024,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.04930160939693451,
+        "entropy": 3.694197416305542,
+        "positional_score": 0.9941123723983765
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "role": "copy",
+        "copy_score": 1.9125326871871948,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.0634441003203392,
+        "entropy": 3.3948659896850586,
+        "positional_score": 0.9900526404380798
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "role": "previous_token",
+        "copy_score": 0.4286015033721924,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.8100130558013916,
+        "entropy": 1.0992261171340942,
+        "positional_score": 0.9952157139778137
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "role": "copy",
+        "copy_score": 1.1500245332717896,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.06232302263379097,
+        "entropy": 3.507100820541382,
+        "positional_score": 0.9933135509490967
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "role": "copy",
+        "copy_score": 1.745440125465393,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.10733423382043839,
+        "entropy": 3.425649642944336,
+        "positional_score": 0.9898602366447449
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "role": "copy",
+        "copy_score": 0.6185288429260254,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.08215048909187317,
+        "entropy": 2.5143206119537354,
+        "positional_score": 0.9888229370117188
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -0.8106555342674255,
+        "suppression_score": 0.7873833775520325,
+        "prev_token_score": 0.24649810791015625,
+        "entropy": 1.4716378450393677,
+        "positional_score": 0.7384999394416809
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -0.7070363163948059,
+        "suppression_score": 0.7648537755012512,
+        "prev_token_score": 0.23306764662265778,
+        "entropy": 1.265048623085022,
+        "positional_score": 0.6599019765853882
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -0.40341100096702576,
+        "suppression_score": 0.3881719410419464,
+        "prev_token_score": 0.23690195381641388,
+        "entropy": 1.264467716217041,
+        "positional_score": 0.6532557606697083
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "role": "previous_token",
+        "copy_score": -0.6475640535354614,
+        "suppression_score": 0.6929448246955872,
+        "prev_token_score": 0.3023265302181244,
+        "entropy": 1.3788684606552124,
+        "positional_score": 0.7048065066337585
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -0.30004286766052246,
+        "suppression_score": 0.3225744664669037,
+        "prev_token_score": 0.1940700262784958,
+        "entropy": 1.397825002670288,
+        "positional_score": 0.6907093524932861
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "role": "positional",
+        "copy_score": -0.1794935017824173,
+        "suppression_score": 0.13257476687431335,
+        "prev_token_score": 0.12529151141643524,
+        "entropy": 1.3300819396972656,
+        "positional_score": 0.6013624668121338
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -0.860242486000061,
+        "suppression_score": 0.8774936199188232,
+        "prev_token_score": 0.17504917085170746,
+        "entropy": 1.7664952278137207,
+        "positional_score": 0.7917079329490662
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -0.4510139524936676,
+        "suppression_score": 0.5013819932937622,
+        "prev_token_score": 0.14359727501869202,
+        "entropy": 1.6930630207061768,
+        "positional_score": 0.7560389041900635
+      },
+      {
+        "layer": 2,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -1.0630433559417725,
+        "suppression_score": 1.1138311624526978,
+        "prev_token_score": 0.23852582275867462,
+        "entropy": 1.5498508214950562,
+        "positional_score": 0.7286484241485596
+      },
+      {
+        "layer": 2,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -1.7447800636291504,
+        "suppression_score": 1.7825225591659546,
+        "prev_token_score": 0.15306119620800018,
+        "entropy": 1.6927998065948486,
+        "positional_score": 0.742868959903717
+      },
+      {
+        "layer": 2,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -1.5724050998687744,
+        "suppression_score": 1.591336965560913,
+        "prev_token_score": 0.19342975318431854,
+        "entropy": 1.4920752048492432,
+        "positional_score": 0.6997023224830627
+      },
+      {
+        "layer": 2,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -1.3990459442138672,
+        "suppression_score": 1.3891441822052002,
+        "prev_token_score": 0.1984991431236267,
+        "entropy": 1.6038939952850342,
+        "positional_score": 0.7252230644226074
+      },
+      {
+        "layer": 2,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -1.8559244871139526,
+        "suppression_score": 1.8914437294006348,
+        "prev_token_score": 0.16066110134124756,
+        "entropy": 1.6827313899993896,
+        "positional_score": 0.7519052028656006
+      },
+      {
+        "layer": 2,
+        "head": 5,
+        "role": "suppression",
+        "copy_score": -0.9430856704711914,
+        "suppression_score": 0.9429219961166382,
+        "prev_token_score": 0.1534605622291565,
+        "entropy": 1.6531299352645874,
+        "positional_score": 0.7408894896507263
+      },
+      {
+        "layer": 2,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -1.4282723665237427,
+        "suppression_score": 1.4256914854049683,
+        "prev_token_score": 0.10197663307189941,
+        "entropy": 1.9145151376724243,
+        "positional_score": 0.7870658040046692
+      },
+      {
+        "layer": 2,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -1.7005817890167236,
+        "suppression_score": 1.685288906097412,
+        "prev_token_score": 0.17767678201198578,
+        "entropy": 1.5908000469207764,
+        "positional_score": 0.7172291278839111
+      },
+      {
+        "layer": 3,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -1.8662526607513428,
+        "suppression_score": 1.8888059854507446,
+        "prev_token_score": 0.1279829740524292,
+        "entropy": 2.082087993621826,
+        "positional_score": 0.8072150945663452
+      },
+      {
+        "layer": 3,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -1.2452431917190552,
+        "suppression_score": 1.302882194519043,
+        "prev_token_score": 0.06978202611207962,
+        "entropy": 2.10294246673584,
+        "positional_score": 0.7643471360206604
+      },
+      {
+        "layer": 3,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -1.608247995376587,
+        "suppression_score": 1.556710958480835,
+        "prev_token_score": 0.1679040789604187,
+        "entropy": 1.696306586265564,
+        "positional_score": 0.7403149604797363
+      },
+      {
+        "layer": 3,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -2.1233718395233154,
+        "suppression_score": 2.141009569168091,
+        "prev_token_score": 0.11468669027090073,
+        "entropy": 1.7411667108535767,
+        "positional_score": 0.7540545463562012
+      },
+      {
+        "layer": 3,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -1.9254605770111084,
+        "suppression_score": 1.8753366470336914,
+        "prev_token_score": 0.12068888545036316,
+        "entropy": 1.9799296855926514,
+        "positional_score": 0.7844730615615845
+      },
+      {
+        "layer": 3,
+        "head": 5,
+        "role": "suppression",
+        "copy_score": -1.375931978225708,
+        "suppression_score": 1.388830542564392,
+        "prev_token_score": 0.11235594749450684,
+        "entropy": 1.8831145763397217,
+        "positional_score": 0.7715449333190918
+      },
+      {
+        "layer": 3,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -1.7469183206558228,
+        "suppression_score": 1.7557435035705566,
+        "prev_token_score": 0.09727835655212402,
+        "entropy": 1.9360857009887695,
+        "positional_score": 0.7783539295196533
+      },
+      {
+        "layer": 3,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -1.8912956714630127,
+        "suppression_score": 1.9194691181182861,
+        "prev_token_score": 0.1742514967918396,
+        "entropy": 1.6366286277770996,
+        "positional_score": 0.7340622544288635
+      },
+      {
+        "layer": 4,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -1.8283778429031372,
+        "suppression_score": 1.8178234100341797,
+        "prev_token_score": 0.11940217763185501,
+        "entropy": 1.8371059894561768,
+        "positional_score": 0.7576836943626404
+      },
+      {
+        "layer": 4,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -1.6711740493774414,
+        "suppression_score": 1.6580811738967896,
+        "prev_token_score": 0.10363870114088058,
+        "entropy": 2.0705761909484863,
+        "positional_score": 0.8026915192604065
+      },
+      {
+        "layer": 4,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -2.0454533100128174,
+        "suppression_score": 2.054607629776001,
+        "prev_token_score": 0.0754585787653923,
+        "entropy": 2.072267770767212,
+        "positional_score": 0.790302038192749
+      },
+      {
+        "layer": 4,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -2.256413221359253,
+        "suppression_score": 2.254612922668457,
+        "prev_token_score": 0.07759919762611389,
+        "entropy": 2.127690553665161,
+        "positional_score": 0.8095403909683228
+      },
+      {
+        "layer": 4,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -1.9501757621765137,
+        "suppression_score": 1.9542850255966187,
+        "prev_token_score": 0.09736625850200653,
+        "entropy": 2.117941379547119,
+        "positional_score": 0.808362603187561
+      },
+      {
+        "layer": 4,
+        "head": 5,
+        "role": "suppression",
+        "copy_score": -1.9286085367202759,
+        "suppression_score": 1.8934167623519897,
+        "prev_token_score": 0.09302442520856857,
+        "entropy": 2.0119881629943848,
+        "positional_score": 0.7801532745361328
+      },
+      {
+        "layer": 4,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -1.9702328443527222,
+        "suppression_score": 1.986376166343689,
+        "prev_token_score": 0.147281676530838,
+        "entropy": 1.712273120880127,
+        "positional_score": 0.7322667837142944
+      },
+      {
+        "layer": 4,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -1.6802576780319214,
+        "suppression_score": 1.6586380004882812,
+        "prev_token_score": 0.13196948170661926,
+        "entropy": 1.8901233673095703,
+        "positional_score": 0.7734096646308899
+      },
+      {
+        "layer": 5,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -1.9734145402908325,
+        "suppression_score": 1.959718942642212,
+        "prev_token_score": 0.07952103763818741,
+        "entropy": 2.149384021759033,
+        "positional_score": 0.7957231998443604
+      },
+      {
+        "layer": 5,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -2.3989415168762207,
+        "suppression_score": 2.3843772411346436,
+        "prev_token_score": 0.07406996190547943,
+        "entropy": 2.1416068077087402,
+        "positional_score": 0.8013059496879578
+      },
+      {
+        "layer": 5,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -1.9220952987670898,
+        "suppression_score": 1.8565258979797363,
+        "prev_token_score": 0.06154685094952583,
+        "entropy": 2.411618709564209,
+        "positional_score": 0.8443617820739746
+      },
+      {
+        "layer": 5,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -2.5472888946533203,
+        "suppression_score": 2.5101208686828613,
+        "prev_token_score": 0.05424131453037262,
+        "entropy": 2.3020224571228027,
+        "positional_score": 0.830204963684082
+      },
+      {
+        "layer": 5,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -1.703275203704834,
+        "suppression_score": 1.650566816329956,
+        "prev_token_score": 0.08612407743930817,
+        "entropy": 1.8758028745651245,
+        "positional_score": 0.7514761090278625
+      },
+      {
+        "layer": 5,
+        "head": 5,
+        "role": "suppression",
+        "copy_score": -1.7160649299621582,
+        "suppression_score": 1.6937978267669678,
+        "prev_token_score": 0.052534595131874084,
+        "entropy": 2.1805005073547363,
+        "positional_score": 0.8020384907722473
+      },
+      {
+        "layer": 5,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -1.9127511978149414,
+        "suppression_score": 1.868037223815918,
+        "prev_token_score": 0.07364211231470108,
+        "entropy": 2.062060832977295,
+        "positional_score": 0.7888137698173523
+      },
+      {
+        "layer": 5,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -2.340897798538208,
+        "suppression_score": 2.371276617050171,
+        "prev_token_score": 0.08030636608600616,
+        "entropy": 2.3137097358703613,
+        "positional_score": 0.8226836919784546
+      }
+    ],
+    "cascade_monotonic": true
+  },
+  {
+    "n_layers": 8,
+    "model_path": "checkpoints/depth_scaling/depth_8/model.safetensors",
+    "final_loss": 0.5745610517263412,
+    "eval_loss": 0.5715030610561371,
+    "elapsed_s": 783.2167150974274,
+    "analysis": {
+      "n_layers": 8,
+      "n_heads": 8,
+      "total_heads": 64,
+      "role_counts": {
+        "copy": 7,
+        "previous_token": 1,
+        "suppression": 55,
+        "focused": 1
+      },
+      "n_suppression": 55,
+      "frac_suppression": 0.859375,
+      "layer_suppression": [
+        0.0,
+        0.6006274856626987,
+        1.2627504095435143,
+        1.645832136273384,
+        1.7287946939468384,
+        1.7485121116042137,
+        1.8005340099334717,
+        2.0330678522586823
+      ],
+      "layer_copy": [
+        1.3678745031356812,
+        -0.5844990089535713,
+        -1.2573357000946999,
+        -1.62537781894207,
+        -1.726489096879959,
+        -1.771719366312027,
+        -1.8247911185026169,
+        -2.038647770881653
+      ],
+      "layer_attn_attr": [
+        4.16865873336792,
+        6.342789649963379,
+        6.295276641845703,
+        5.57384729385376,
+        5.607017517089844,
+        5.354244232177734,
+        4.806390762329102,
+        4.741617679595947
+      ],
+      "layer_mlp_attr": [
+        6.081528663635254,
+        4.205392837524414,
+        3.9713454246520996,
+        3.7817625999450684,
+        3.744703769683838,
+        3.928600311279297,
+        5.012269973754883,
+        11.068376541137695
+      ]
+    },
+    "head_profiles": [
+      {
+        "layer": 0,
+        "head": 0,
+        "role": "copy",
+        "copy_score": 1.6508629322052002,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.10045912861824036,
+        "entropy": 3.1401736736297607,
+        "positional_score": 0.9857429265975952
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "role": "copy",
+        "copy_score": 3.431217670440674,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.04021833837032318,
+        "entropy": 3.507495880126953,
+        "positional_score": 0.9921584725379944
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "role": "copy",
+        "copy_score": 1.0749655961990356,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.047591421753168106,
+        "entropy": 3.713696002960205,
+        "positional_score": 0.994772732257843
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "role": "copy",
+        "copy_score": 1.020794153213501,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.09125986695289612,
+        "entropy": 2.758155345916748,
+        "positional_score": 0.9867510795593262
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "role": "previous_token",
+        "copy_score": 0.4669751524925232,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.7541128396987915,
+        "entropy": 1.3274102210998535,
+        "positional_score": 0.9919289946556091
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "role": "copy",
+        "copy_score": 1.704023003578186,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.08176982402801514,
+        "entropy": 3.1380577087402344,
+        "positional_score": 0.9874634742736816
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "role": "copy",
+        "copy_score": 1.0318870544433594,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.2858918309211731,
+        "entropy": 2.959801197052002,
+        "positional_score": 0.983677089214325
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "role": "copy",
+        "copy_score": 0.56227046251297,
+        "suppression_score": 0.0,
+        "prev_token_score": 0.08435433357954025,
+        "entropy": 2.5258755683898926,
+        "positional_score": 0.9893980622291565
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -1.015685796737671,
+        "suppression_score": 1.0388294458389282,
+        "prev_token_score": 0.2923903465270996,
+        "entropy": 1.4407353401184082,
+        "positional_score": 0.7271952629089355
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -0.5272902250289917,
+        "suppression_score": 0.588680624961853,
+        "prev_token_score": 0.2569223642349243,
+        "entropy": 1.362924337387085,
+        "positional_score": 0.6998763084411621
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -0.5382269620895386,
+        "suppression_score": 0.5445599555969238,
+        "prev_token_score": 0.210550919175148,
+        "entropy": 1.1657342910766602,
+        "positional_score": 0.6209337115287781
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -0.7306309938430786,
+        "suppression_score": 0.7575849294662476,
+        "prev_token_score": 0.21451863646507263,
+        "entropy": 1.4628791809082031,
+        "positional_score": 0.7034333944320679
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -0.39989498257637024,
+        "suppression_score": 0.44139838218688965,
+        "prev_token_score": 0.18951909244060516,
+        "entropy": 1.6861941814422607,
+        "positional_score": 0.7630638480186462
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "role": "focused",
+        "copy_score": -0.22996464371681213,
+        "suppression_score": 0.1828274428844452,
+        "prev_token_score": 0.09499538689851761,
+        "entropy": 1.3851162195205688,
+        "positional_score": 0.5890016555786133
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -0.6745319962501526,
+        "suppression_score": 0.6825922727584839,
+        "prev_token_score": 0.16370433568954468,
+        "entropy": 1.6473653316497803,
+        "positional_score": 0.755905032157898
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -0.5597664713859558,
+        "suppression_score": 0.5685468316078186,
+        "prev_token_score": 0.176944762468338,
+        "entropy": 1.5416650772094727,
+        "positional_score": 0.7258662581443787
+      },
+      {
+        "layer": 2,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -0.8123157620429993,
+        "suppression_score": 0.8468046188354492,
+        "prev_token_score": 0.28093987703323364,
+        "entropy": 1.433931827545166,
+        "positional_score": 0.7066048383712769
+      },
+      {
+        "layer": 2,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -1.7834703922271729,
+        "suppression_score": 1.815307378768921,
+        "prev_token_score": 0.1576385647058487,
+        "entropy": 1.682629108428955,
+        "positional_score": 0.7433726191520691
+      },
+      {
+        "layer": 2,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -1.542284607887268,
+        "suppression_score": 1.5475975275039673,
+        "prev_token_score": 0.18761789798736572,
+        "entropy": 1.5329912900924683,
+        "positional_score": 0.7145152688026428
+      },
+      {
+        "layer": 2,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -0.9062692523002625,
+        "suppression_score": 0.8951689600944519,
+        "prev_token_score": 0.15109939873218536,
+        "entropy": 1.639052152633667,
+        "positional_score": 0.7302596569061279
+      },
+      {
+        "layer": 2,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -1.7227030992507935,
+        "suppression_score": 1.7013462781906128,
+        "prev_token_score": 0.10740717500448227,
+        "entropy": 1.759178876876831,
+        "positional_score": 0.7628641128540039
+      },
+      {
+        "layer": 2,
+        "head": 5,
+        "role": "suppression",
+        "copy_score": -0.8427008986473083,
+        "suppression_score": 0.8617415428161621,
+        "prev_token_score": 0.16781245172023773,
+        "entropy": 1.540614366531372,
+        "positional_score": 0.7145816683769226
+      },
+      {
+        "layer": 2,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -1.2124824523925781,
+        "suppression_score": 1.2023977041244507,
+        "prev_token_score": 0.13292984664440155,
+        "entropy": 1.6558759212493896,
+        "positional_score": 0.7365128993988037
+      },
+      {
+        "layer": 2,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -1.2364591360092163,
+        "suppression_score": 1.2316392660140991,
+        "prev_token_score": 0.196958988904953,
+        "entropy": 1.5937706232070923,
+        "positional_score": 0.7277422547340393
+      },
+      {
+        "layer": 3,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -1.7254481315612793,
+        "suppression_score": 1.7361489534378052,
+        "prev_token_score": 0.12852004170417786,
+        "entropy": 1.825798511505127,
+        "positional_score": 0.7598882913589478
+      },
+      {
+        "layer": 3,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -0.9437602758407593,
+        "suppression_score": 1.0147719383239746,
+        "prev_token_score": 0.0693189725279808,
+        "entropy": 2.299602508544922,
+        "positional_score": 0.8295763731002808
+      },
+      {
+        "layer": 3,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -1.5118753910064697,
+        "suppression_score": 1.5023144483566284,
+        "prev_token_score": 0.15141163766384125,
+        "entropy": 1.6689460277557373,
+        "positional_score": 0.7322351932525635
+      },
+      {
+        "layer": 3,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -1.7875514030456543,
+        "suppression_score": 1.8024731874465942,
+        "prev_token_score": 0.11062514036893845,
+        "entropy": 1.802323341369629,
+        "positional_score": 0.7628219127655029
+      },
+      {
+        "layer": 3,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -1.8232247829437256,
+        "suppression_score": 1.8145395517349243,
+        "prev_token_score": 0.12205439805984497,
+        "entropy": 1.8718595504760742,
+        "positional_score": 0.7698796391487122
+      },
+      {
+        "layer": 3,
+        "head": 5,
+        "role": "suppression",
+        "copy_score": -1.7026987075805664,
+        "suppression_score": 1.7302420139312744,
+        "prev_token_score": 0.15633279085159302,
+        "entropy": 1.6367073059082031,
+        "positional_score": 0.7197088003158569
+      },
+      {
+        "layer": 3,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -1.8892138004302979,
+        "suppression_score": 1.912624478340149,
+        "prev_token_score": 0.11339099705219269,
+        "entropy": 1.8588190078735352,
+        "positional_score": 0.7634122371673584
+      },
+      {
+        "layer": 3,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -1.6192500591278076,
+        "suppression_score": 1.6535425186157227,
+        "prev_token_score": 0.17284351587295532,
+        "entropy": 1.690172553062439,
+        "positional_score": 0.7502520680427551
+      },
+      {
+        "layer": 4,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -1.675639033317566,
+        "suppression_score": 1.683868646621704,
+        "prev_token_score": 0.1471162587404251,
+        "entropy": 1.7147241830825806,
+        "positional_score": 0.7406814098358154
+      },
+      {
+        "layer": 4,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -1.7241746187210083,
+        "suppression_score": 1.73772132396698,
+        "prev_token_score": 0.10780424624681473,
+        "entropy": 2.084293842315674,
+        "positional_score": 0.8078122735023499
+      },
+      {
+        "layer": 4,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -1.5461928844451904,
+        "suppression_score": 1.5434452295303345,
+        "prev_token_score": 0.11456224322319031,
+        "entropy": 2.0069642066955566,
+        "positional_score": 0.8004447221755981
+      },
+      {
+        "layer": 4,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -2.1751036643981934,
+        "suppression_score": 2.176835536956787,
+        "prev_token_score": 0.10608520358800888,
+        "entropy": 1.8976675271987915,
+        "positional_score": 0.7833830118179321
+      },
+      {
+        "layer": 4,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -1.8305951356887817,
+        "suppression_score": 1.8588823080062866,
+        "prev_token_score": 0.12381798028945923,
+        "entropy": 1.8039984703063965,
+        "positional_score": 0.7517383694648743
+      },
+      {
+        "layer": 4,
+        "head": 5,
+        "role": "suppression",
+        "copy_score": -1.690701961517334,
+        "suppression_score": 1.632383942604065,
+        "prev_token_score": 0.09795645624399185,
+        "entropy": 1.8900721073150635,
+        "positional_score": 0.7614434361457825
+      },
+      {
+        "layer": 4,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -2.0236239433288574,
+        "suppression_score": 2.0722758769989014,
+        "prev_token_score": 0.14957651495933533,
+        "entropy": 1.613093376159668,
+        "positional_score": 0.7153885960578918
+      },
+      {
+        "layer": 4,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -1.1458815336227417,
+        "suppression_score": 1.1249446868896484,
+        "prev_token_score": 0.17282724380493164,
+        "entropy": 1.6791276931762695,
+        "positional_score": 0.7398530840873718
+      },
+      {
+        "layer": 5,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -1.9235284328460693,
+        "suppression_score": 1.8996095657348633,
+        "prev_token_score": 0.13423967361450195,
+        "entropy": 1.6055678129196167,
+        "positional_score": 0.7090839743614197
+      },
+      {
+        "layer": 5,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -2.2797188758850098,
+        "suppression_score": 2.269763708114624,
+        "prev_token_score": 0.103400819003582,
+        "entropy": 1.9515836238861084,
+        "positional_score": 0.7798478603363037
+      },
+      {
+        "layer": 5,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -1.8206204175949097,
+        "suppression_score": 1.795000433921814,
+        "prev_token_score": 0.1304519772529602,
+        "entropy": 1.8968274593353271,
+        "positional_score": 0.7666492462158203
+      },
+      {
+        "layer": 5,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -2.1789257526397705,
+        "suppression_score": 2.129565715789795,
+        "prev_token_score": 0.07601841539144516,
+        "entropy": 2.146131992340088,
+        "positional_score": 0.8181791305541992
+      },
+      {
+        "layer": 5,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -1.5126399993896484,
+        "suppression_score": 1.455373764038086,
+        "prev_token_score": 0.10326625406742096,
+        "entropy": 1.7849177122116089,
+        "positional_score": 0.7397820949554443
+      },
+      {
+        "layer": 5,
+        "head": 5,
+        "role": "suppression",
+        "copy_score": -0.786679744720459,
+        "suppression_score": 0.7703126072883606,
+        "prev_token_score": 0.13311564922332764,
+        "entropy": 1.8992524147033691,
+        "positional_score": 0.7719697952270508
+      },
+      {
+        "layer": 5,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -1.8335508108139038,
+        "suppression_score": 1.8232048749923706,
+        "prev_token_score": 0.1136464849114418,
+        "entropy": 1.8692179918289185,
+        "positional_score": 0.7748121023178101
+      },
+      {
+        "layer": 5,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -1.8380908966064453,
+        "suppression_score": 1.8452662229537964,
+        "prev_token_score": 0.09330739080905914,
+        "entropy": 2.1152877807617188,
+        "positional_score": 0.8179219961166382
+      },
+      {
+        "layer": 6,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -1.4810316562652588,
+        "suppression_score": 1.4537780284881592,
+        "prev_token_score": 0.07864875346422195,
+        "entropy": 2.0503830909729004,
+        "positional_score": 0.7889809608459473
+      },
+      {
+        "layer": 6,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -2.395179510116577,
+        "suppression_score": 2.377298593521118,
+        "prev_token_score": 0.0667341947555542,
+        "entropy": 2.1558361053466797,
+        "positional_score": 0.8120625615119934
+      },
+      {
+        "layer": 6,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -1.7765225172042847,
+        "suppression_score": 1.744830846786499,
+        "prev_token_score": 0.0843207910656929,
+        "entropy": 2.101440906524658,
+        "positional_score": 0.8009780645370483
+      },
+      {
+        "layer": 6,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -1.7664841413497925,
+        "suppression_score": 1.7522770166397095,
+        "prev_token_score": 0.06251794099807739,
+        "entropy": 2.351412534713745,
+        "positional_score": 0.8429098129272461
+      },
+      {
+        "layer": 6,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -1.685942530632019,
+        "suppression_score": 1.6829432249069214,
+        "prev_token_score": 0.0897701233625412,
+        "entropy": 1.9489758014678955,
+        "positional_score": 0.77253258228302
+      },
+      {
+        "layer": 6,
+        "head": 5,
+        "role": "suppression",
+        "copy_score": -2.152834177017212,
+        "suppression_score": 2.090648889541626,
+        "prev_token_score": 0.09762974083423615,
+        "entropy": 2.054847240447998,
+        "positional_score": 0.7839792966842651
+      },
+      {
+        "layer": 6,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -1.750854253768921,
+        "suppression_score": 1.7042595148086548,
+        "prev_token_score": 0.06573130190372467,
+        "entropy": 2.178194999694824,
+        "positional_score": 0.8082050085067749
+      },
+      {
+        "layer": 6,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -1.5894801616668701,
+        "suppression_score": 1.5982359647750854,
+        "prev_token_score": 0.13933587074279785,
+        "entropy": 1.8791942596435547,
+        "positional_score": 0.7552719116210938
+      },
+      {
+        "layer": 7,
+        "head": 0,
+        "role": "suppression",
+        "copy_score": -1.7628997564315796,
+        "suppression_score": 1.7184354066848755,
+        "prev_token_score": 0.06917662918567657,
+        "entropy": 2.1238999366760254,
+        "positional_score": 0.7940335869789124
+      },
+      {
+        "layer": 7,
+        "head": 1,
+        "role": "suppression",
+        "copy_score": -1.6575063467025757,
+        "suppression_score": 1.6261847019195557,
+        "prev_token_score": 0.05472039803862572,
+        "entropy": 2.2048587799072266,
+        "positional_score": 0.8036813139915466
+      },
+      {
+        "layer": 7,
+        "head": 2,
+        "role": "suppression",
+        "copy_score": -2.5549442768096924,
+        "suppression_score": 2.5738189220428467,
+        "prev_token_score": 0.07737268507480621,
+        "entropy": 2.349036931991577,
+        "positional_score": 0.821960985660553
+      },
+      {
+        "layer": 7,
+        "head": 3,
+        "role": "suppression",
+        "copy_score": -1.8512203693389893,
+        "suppression_score": 1.9264228343963623,
+        "prev_token_score": 0.04925471171736717,
+        "entropy": 2.4528589248657227,
+        "positional_score": 0.7944783568382263
+      },
+      {
+        "layer": 7,
+        "head": 4,
+        "role": "suppression",
+        "copy_score": -2.034822702407837,
+        "suppression_score": 2.0191473960876465,
+        "prev_token_score": 0.05144324526190758,
+        "entropy": 2.1963796615600586,
+        "positional_score": 0.8056976199150085
+      },
+      {
+        "layer": 7,
+        "head": 5,
+        "role": "suppression",
+        "copy_score": -1.9635746479034424,
+        "suppression_score": 1.974234700202942,
+        "prev_token_score": 0.07015720754861832,
+        "entropy": 2.5806884765625,
+        "positional_score": 0.857301652431488
+      },
+      {
+        "layer": 7,
+        "head": 6,
+        "role": "suppression",
+        "copy_score": -2.1597838401794434,
+        "suppression_score": 2.1332755088806152,
+        "prev_token_score": 0.045318055897951126,
+        "entropy": 2.3815689086914062,
+        "positional_score": 0.832510232925415
+      },
+      {
+        "layer": 7,
+        "head": 7,
+        "role": "suppression",
+        "copy_score": -2.324430227279663,
+        "suppression_score": 2.2930233478546143,
+        "prev_token_score": 0.06326755881309509,
+        "entropy": 2.284360647201538,
+        "positional_score": 0.8203736543655396
+      }
+    ],
+    "cascade_monotonic": true
+  }
+]

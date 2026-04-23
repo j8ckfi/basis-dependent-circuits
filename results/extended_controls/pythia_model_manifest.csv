@@ -1,0 +1,10 @@
+"repo_id","scale","seed","status","required"
+"EleutherAI/pythia-160m","160m","default","DOWNLOADED",true
+"EleutherAI/pythia-160m-seed1","160m","seed1","DOWNLOADED",true
+"EleutherAI/pythia-160m-seed2","160m","seed2","DOWNLOADED",true
+"EleutherAI/pythia-160m-seed3","160m","seed3","DOWNLOADED",true
+"EleutherAI/pythia-160m-seed4","160m","seed4","DOWNLOADED",true
+"EleutherAI/pythia-160m-seed5","160m","seed5","DOWNLOADED",true
+"EleutherAI/pythia-1.4b","1.4b","default","DOWNLOADED",false
+"EleutherAI/pythia-1.4b-seed1","1.4b","seed1","UNAVAILABLE",false
+"EleutherAI/pythia-1.4b-seed2","1.4b","seed2","UNAVAILABLE",false

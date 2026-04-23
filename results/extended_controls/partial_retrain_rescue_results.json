@@ -1,0 +1,867 @@
+{
+  "backend_status": "REAL_BACKEND",
+  "manifest": {
+    "args": {
+      "command": "partial-retrain",
+      "func": "run_partial_retrain",
+      "max_steps": 20000
+    },
+    "config": {
+      "evaluation": {
+        "batch_size": 32,
+        "data_seed": 9999,
+        "n_bigrams": 6,
+        "n_sequences": 1024
+      },
+      "experiments": {
+        "partial_retrain_rescue": {
+          "checkpoints": [
+            0,
+            100,
+            500,
+            1000,
+            2000,
+            5000,
+            10000,
+            20000
+          ],
+          "pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "recovery_fraction": 0.8
+        },
+        "shared_basis_training": {
+          "lambdas": [
+            0.0,
+            0.01,
+            0.1,
+            1.0
+          ],
+          "pairs_per_lambda": 1
+        },
+        "shared_trajectory": {
+          "branch_data_seed_base": 10000,
+          "fork_points": [
+            0,
+            500,
+            2000,
+            5000,
+            10000,
+            15000,
+            18000,
+            19500,
+            20000
+          ],
+          "init_seed": 0,
+          "pairs": 3
+        },
+        "stitching_adapters": {
+          "batch_size": 32,
+          "conditions": [
+            "none",
+            "post_l0_linear",
+            "all4_linear",
+            "all4_mlp"
+          ],
+          "learning_rate": 0.0003,
+          "steps": 2000
+        }
+      },
+      "heads": {
+        "seed0_critical": [
+          0,
+          3
+        ],
+        "seed0_noncritical": [
+          0,
+          0
+        ],
+        "seed1_critical": [
+          0,
+          1
+        ]
+      },
+      "pythia": {
+        "include_patterns": [
+          "config.json",
+          "generation_config.json",
+          "tokenizer.json",
+          "tokenizer_config.json",
+          "special_tokens_map.json",
+          "model.safetensors",
+          "*.safetensors.index.json",
+          "pytorch_model.bin"
+        ],
+        "models": [
+          {
+            "repo_id": "EleutherAI/pythia-160m",
+            "required": true,
+            "scale": "160m",
+            "seed": "default"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed1",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed1"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed2",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed2"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed3",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed3"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed4",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed4"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-160m-seed5",
+            "required": true,
+            "scale": "160m",
+            "seed": "seed5"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-1.4b",
+            "required": false,
+            "scale": "1.4b",
+            "seed": "default"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-1.4b-seed1",
+            "required": false,
+            "scale": "1.4b",
+            "seed": "seed1"
+          },
+          {
+            "repo_id": "EleutherAI/pythia-1.4b-seed2",
+            "required": false,
+            "scale": "1.4b",
+            "seed": "seed2"
+          }
+        ]
+      },
+      "small_model": {
+        "ctx_len": 64,
+        "d_ff": 512,
+        "d_model": 128,
+        "dropout": 0.0,
+        "n_heads": 4,
+        "n_layers": 2,
+        "vocab_size": 512
+      },
+      "training": {
+        "batch_size": 64,
+        "data_seed": 42,
+        "grad_clip": 1.0,
+        "learning_rate": 0.001,
+        "total_steps": 20000,
+        "warmup_steps": 500,
+        "weight_decay": 0.01
+      }
+    },
+    "name": "partial_retrain_rescue",
+    "real_backend_policy": "REAL_BACKEND_ONLY_FOR_REPORTED_METRICS",
+    "repo_root": ".",
+    "system": {
+      "gpu": "Graphics/Displays:\n\n    Apple M4 Max:\n\n      Chipset Model: Apple M4 Max\n      Type: GPU\n      Bus: Built-In\n      Total Number of Cores: 40\n      Vendor: Apple (0x106b)\n      Metal Support: Metal 4\n      Displays:\n        Color LCD:\n          Display Type: Built-in Liquid Retina XDR Display\n          Resolution: 3024 x 1964 Retina\n          Main Display: Yes\n          Mirror: Off\n          Online: Yes\n          Automatically Adjust Brightness: Yes\n          Connection Type: Internal",
+      "hardware": "2026-04-22 17:32:28.970 system_profiler[41033:4567631] hw.cpufamily: 0x17d5b93a\nHardware:\n\n    Hardware Overview:\n\n      Model Name: MacBook Pro\n      Model Identifier: Mac16,6\n      Model Number: Z1FG000AULL/A\n      Chip: Apple M4 Max\n      Total Number of Cores: 16 (12 Performance and 4 Efficiency)\n      Memory: 64 GB\n      System Firmware Version: 13822.81.10\n      OS Loader Version: 13822.81.10\n      Serial Number (system): FJW43GVG60\n      Hardware UUID: C6061F50-3532-5D2B-83B8-67321EBA7F0A\n      Provisioning UDID: 00006041-001221EE3E0A401C\n      Activation Lock Status: Enabled",
+      "machine": "arm64",
+      "memory_bytes": "68719476736",
+      "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+      "processor": "arm",
+      "python": "3.14.3",
+      "timestamp": "2026-04-22T17:32:28-0600"
+    }
+  },
+  "results": [
+    {
+      "baseline_accuracy": 0.9640299479166667,
+      "donor_head": [
+        0,
+        3
+      ],
+      "donor_seed": 0,
+      "k_star": 100,
+      "recipient_head": [
+        0,
+        1
+      ],
+      "recipient_seed": 1,
+      "target_accuracy": 0.7712239583333335,
+      "trajectory": [
+        {
+          "accuracy": 0.09505208333333333,
+          "baseline_accuracy": 0.9640299479166667,
+          "k": 0,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.09859868309978051,
+          "train_stats": null,
+          "zero_head_accuracy": 0.11783854166666666
+        },
+        {
+          "accuracy": 0.9580078125,
+          "baseline_accuracy": 0.9640299479166667,
+          "k": 100,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9937531656255275,
+          "train_stats": {
+            "elapsed_seconds": 0.7042890000157058,
+            "final_batch_accuracy": 0.9739583134651184,
+            "final_loss": 0.11968650668859482,
+            "steps": 100,
+            "steps_per_second": 141.98716719666214
+          },
+          "zero_head_accuracy": 0.11783854166666666
+        },
+        {
+          "accuracy": 0.9628906250000001,
+          "baseline_accuracy": 0.9640299479166667,
+          "k": 500,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9988181664696945,
+          "train_stats": {
+            "elapsed_seconds": 5.46584099996835,
+            "final_batch_accuracy": 0.9765625,
+            "final_loss": 0.10586976259946823,
+            "steps": 400,
+            "steps_per_second": 73.18178483463318
+          },
+          "zero_head_accuracy": 0.11783854166666666
+        },
+        {
+          "accuracy": 0.9609375,
+          "baseline_accuracy": 0.9640299479166667,
+          "k": 1000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9967921661320276,
+          "train_stats": {
+            "elapsed_seconds": 6.621138542017434,
+            "final_batch_accuracy": 0.9635416865348816,
+            "final_loss": 0.15609730780124664,
+            "steps": 500,
+            "steps_per_second": 75.5157133213606
+          },
+          "zero_head_accuracy": 0.11783854166666666
+        },
+        {
+          "accuracy": 0.9609375,
+          "baseline_accuracy": 0.9640299479166667,
+          "k": 2000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9967921661320276,
+          "train_stats": {
+            "elapsed_seconds": 15.55719066603342,
+            "final_batch_accuracy": 0.9739583134651184,
+            "final_loss": 0.1259182244539261,
+            "steps": 1000,
+            "steps_per_second": 64.278957651611
+          },
+          "zero_head_accuracy": 0.11783854166666666
+        },
+        {
+          "accuracy": 0.9620768229166667,
+          "baseline_accuracy": 0.9640299479166667,
+          "k": 5000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9979739996623332,
+          "train_stats": {
+            "elapsed_seconds": 48.29945912497351,
+            "final_batch_accuracy": 0.984375,
+            "final_loss": 0.049633800983428955,
+            "steps": 3000,
+            "steps_per_second": 62.112496792926464
+          },
+          "zero_head_accuracy": 0.11783854166666666
+        },
+        {
+          "accuracy": 0.9645182291666667,
+          "baseline_accuracy": 0.9640299479166667,
+          "k": 10000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 1.0005065000844167,
+          "train_stats": {
+            "elapsed_seconds": 37.0554487920017,
+            "final_batch_accuracy": 0.9505208134651184,
+            "final_loss": 0.15115296840667725,
+            "steps": 5000,
+            "steps_per_second": 134.93292249854585
+          },
+          "zero_head_accuracy": 0.11783854166666666
+        },
+        {
+          "accuracy": 0.96484375,
+          "baseline_accuracy": 0.9640299479166667,
+          "k": 20000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 1.000844166807361,
+          "train_stats": {
+            "elapsed_seconds": 71.4440372500103,
+            "final_batch_accuracy": 0.9713541865348816,
+            "final_loss": 0.07701113075017929,
+            "steps": 10000,
+            "steps_per_second": 139.9696935519774
+          },
+          "zero_head_accuracy": 0.11783854166666666
+        }
+      ],
+      "zero_head_accuracy": 0.11783854166666666
+    },
+    {
+      "baseline_accuracy": 0.9628906250000001,
+      "donor_head": [
+        0,
+        3
+      ],
+      "donor_seed": 0,
+      "k_star": 100,
+      "recipient_head": [
+        0,
+        3
+      ],
+      "recipient_seed": 3,
+      "target_accuracy": 0.7703125000000002,
+      "trajectory": [
+        {
+          "accuracy": 0.4121419270833333,
+          "baseline_accuracy": 0.9628906250000001,
+          "k": 0,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.42802569303583493,
+          "train_stats": null,
+          "zero_head_accuracy": 0.46113281249999993
+        },
+        {
+          "accuracy": 0.9366861979166667,
+          "baseline_accuracy": 0.9628906250000001,
+          "k": 100,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9727856659905341,
+          "train_stats": {
+            "elapsed_seconds": 0.7173556250054389,
+            "final_batch_accuracy": 0.9477806687355042,
+            "final_loss": 0.3993673026561737,
+            "steps": 100,
+            "steps_per_second": 139.4008724741537
+          },
+          "zero_head_accuracy": 0.46113281249999993
+        },
+        {
+          "accuracy": 0.9430338541666667,
+          "baseline_accuracy": 0.9628906250000001,
+          "k": 500,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9793779580797836,
+          "train_stats": {
+            "elapsed_seconds": 2.8670832500210963,
+            "final_batch_accuracy": 0.9661458134651184,
+            "final_loss": 0.19497697055339813,
+            "steps": 400,
+            "steps_per_second": 139.51460948929778
+          },
+          "zero_head_accuracy": 0.46113281249999993
+        },
+        {
+          "accuracy": 0.9444986979166667,
+          "baseline_accuracy": 0.9628906250000001,
+          "k": 1000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9808992562542258,
+          "train_stats": {
+            "elapsed_seconds": 3.535039875016082,
+            "final_batch_accuracy": 0.9609375,
+            "final_loss": 0.24371637403964996,
+            "steps": 500,
+            "steps_per_second": 141.44112023565938
+          },
+          "zero_head_accuracy": 0.46113281249999993
+        },
+        {
+          "accuracy": 0.951171875,
+          "baseline_accuracy": 0.9628906250000001,
+          "k": 2000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9878296146044624,
+          "train_stats": {
+            "elapsed_seconds": 7.223691458988469,
+            "final_batch_accuracy": 0.9505208134651184,
+            "final_loss": 0.2476722002029419,
+            "steps": 1000,
+            "steps_per_second": 138.43337657447924
+          },
+          "zero_head_accuracy": 0.46113281249999993
+        },
+        {
+          "accuracy": 0.9516601562500001,
+          "baseline_accuracy": 0.9628906250000001,
+          "k": 5000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9883367139959433,
+          "train_stats": {
+            "elapsed_seconds": 21.395429334021173,
+            "final_batch_accuracy": 0.9791666865348816,
+            "final_loss": 0.08465969562530518,
+            "steps": 3000,
+            "steps_per_second": 140.2168637592917
+          },
+          "zero_head_accuracy": 0.46113281249999993
+        },
+        {
+          "accuracy": 0.9591471354166667,
+          "baseline_accuracy": 0.9628906250000001,
+          "k": 10000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9961122379986477,
+          "train_stats": {
+            "elapsed_seconds": 35.41272212500917,
+            "final_batch_accuracy": 0.984375,
+            "final_loss": 0.06589508801698685,
+            "steps": 5000,
+            "steps_per_second": 141.1921959105454
+          },
+          "zero_head_accuracy": 0.46113281249999993
+        },
+        {
+          "accuracy": 0.96142578125,
+          "baseline_accuracy": 0.9628906250000001,
+          "k": 20000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9984787018255576,
+          "train_stats": {
+            "elapsed_seconds": 74.21985654201126,
+            "final_batch_accuracy": 0.9635416865348816,
+            "final_loss": 0.10137777775526047,
+            "steps": 10000,
+            "steps_per_second": 134.7348333170062
+          },
+          "zero_head_accuracy": 0.46113281249999993
+        }
+      ],
+      "zero_head_accuracy": 0.46113281249999993
+    },
+    {
+      "baseline_accuracy": 0.9620768229166667,
+      "donor_head": [
+        0,
+        1
+      ],
+      "donor_seed": 1,
+      "k_star": 100,
+      "recipient_head": [
+        0,
+        3
+      ],
+      "recipient_seed": 4,
+      "target_accuracy": 0.7696614583333334,
+      "trajectory": [
+        {
+          "accuracy": 0.04622395833333333,
+          "baseline_accuracy": 0.9620768229166667,
+          "k": 0,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.04804601590255455,
+          "train_stats": null,
+          "zero_head_accuracy": 0.058626302083333325
+        },
+        {
+          "accuracy": 0.9280273437500001,
+          "baseline_accuracy": 0.9620768229166667,
+          "k": 100,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9646083572999492,
+          "train_stats": {
+            "elapsed_seconds": 0.7891065419535153,
+            "final_batch_accuracy": 0.9188481569290161,
+            "final_loss": 0.46824613213539124,
+            "steps": 100,
+            "steps_per_second": 126.72560000889057
+          },
+          "zero_head_accuracy": 0.058626302083333325
+        },
+        {
+          "accuracy": 0.9602864583333334,
+          "baseline_accuracy": 0.9620768229166667,
+          "k": 500,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9981390627643376,
+          "train_stats": {
+            "elapsed_seconds": 3.1065504159778357,
+            "final_batch_accuracy": 0.9634464979171753,
+            "final_loss": 0.18255400657653809,
+            "steps": 400,
+            "steps_per_second": 128.76018298067558
+          },
+          "zero_head_accuracy": 0.058626302083333325
+        },
+        {
+          "accuracy": 0.9611002604166667,
+          "baseline_accuracy": 0.9620768229166667,
+          "k": 1000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9989849433260024,
+          "train_stats": {
+            "elapsed_seconds": 4.054983958019875,
+            "final_batch_accuracy": 0.9791666865348816,
+            "final_loss": 0.08705010265111923,
+            "steps": 500,
+            "steps_per_second": 123.30505007574911
+          },
+          "zero_head_accuracy": 0.058626302083333325
+        },
+        {
+          "accuracy": 0.9622395833333335,
+          "baseline_accuracy": 0.9620768229166667,
+          "k": 2000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 1.000169176112333,
+          "train_stats": {
+            "elapsed_seconds": 8.055495000036899,
+            "final_batch_accuracy": 0.9817708134651184,
+            "final_loss": 0.08413293212652206,
+            "steps": 1000,
+            "steps_per_second": 124.138864215721
+          },
+          "zero_head_accuracy": 0.058626302083333325
+        },
+        {
+          "accuracy": 0.9602864583333335,
+          "baseline_accuracy": 0.9620768229166667,
+          "k": 5000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9981390627643377,
+          "train_stats": {
+            "elapsed_seconds": 23.153165167022962,
+            "final_batch_accuracy": 0.9608355164527893,
+            "final_loss": 0.13579463958740234,
+            "steps": 3000,
+            "steps_per_second": 129.57191720261633
+          },
+          "zero_head_accuracy": 0.058626302083333325
+        },
+        {
+          "accuracy": 0.9630533854166667,
+          "baseline_accuracy": 0.9620768229166667,
+          "k": 10000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 1.0010150566739977,
+          "train_stats": {
+            "elapsed_seconds": 38.506809125014115,
+            "final_batch_accuracy": 0.9557291865348816,
+            "final_loss": 0.13451635837554932,
+            "steps": 5000,
+            "steps_per_second": 129.84716504988174
+          },
+          "zero_head_accuracy": 0.058626302083333325
+        },
+        {
+          "accuracy": 0.962890625,
+          "baseline_accuracy": 0.9620768229166667,
+          "k": 20000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 1.0008458805616647,
+          "train_stats": {
+            "elapsed_seconds": 72.74728608399164,
+            "final_batch_accuracy": 0.9739583134651184,
+            "final_loss": 0.08203098177909851,
+            "steps": 10000,
+            "steps_per_second": 137.46217265691982
+          },
+          "zero_head_accuracy": 0.058626302083333325
+        }
+      ],
+      "zero_head_accuracy": 0.058626302083333325
+    },
+    {
+      "baseline_accuracy": 0.9617513020833334,
+      "donor_head": [
+        0,
+        3
+      ],
+      "donor_seed": 3,
+      "k_star": 500,
+      "recipient_head": [
+        0,
+        0
+      ],
+      "recipient_seed": 5,
+      "target_accuracy": 0.7694010416666668,
+      "trajectory": [
+        {
+          "accuracy": 0.027832031249999997,
+          "baseline_accuracy": 0.9617513020833334,
+          "k": 0,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.02893890675241157,
+          "train_stats": null,
+          "zero_head_accuracy": 0.029947916666666664
+        },
+        {
+          "accuracy": 0.04280598958333333,
+          "baseline_accuracy": 0.9617513020833334,
+          "k": 100,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.04450837705195464,
+          "train_stats": {
+            "elapsed_seconds": 0.7434281249879859,
+            "final_batch_accuracy": 0.0416666679084301,
+            "final_loss": 5.9353461265563965,
+            "steps": 100,
+            "steps_per_second": 134.51199468894998
+          },
+          "zero_head_accuracy": 0.029947916666666664
+        },
+        {
+          "accuracy": 0.9601236979166667,
+          "baseline_accuracy": 0.9617513020833334,
+          "k": 500,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9983076662717888,
+          "train_stats": {
+            "elapsed_seconds": 2.958698375034146,
+            "final_batch_accuracy": 0.9791122674942017,
+            "final_loss": 0.12254110723733902,
+            "steps": 400,
+            "steps_per_second": 135.19458535390032
+          },
+          "zero_head_accuracy": 0.029947916666666664
+        },
+        {
+          "accuracy": 0.9576822916666667,
+          "baseline_accuracy": 0.9617513020833334,
+          "k": 1000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.995769165679472,
+          "train_stats": {
+            "elapsed_seconds": 3.7715102919610217,
+            "final_batch_accuracy": 0.9557291865348816,
+            "final_loss": 0.17405052483081818,
+            "steps": 500,
+            "steps_per_second": 132.57288494366583
+          },
+          "zero_head_accuracy": 0.029947916666666664
+        },
+        {
+          "accuracy": 0.9558919270833334,
+          "baseline_accuracy": 0.9617513020833334,
+          "k": 2000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9939075985784397,
+          "train_stats": {
+            "elapsed_seconds": 7.444158041966148,
+            "final_batch_accuracy": 0.9817708134651184,
+            "final_loss": 0.08641942590475082,
+            "steps": 1000,
+            "steps_per_second": 134.33352628497937
+          },
+          "zero_head_accuracy": 0.029947916666666664
+        },
+        {
+          "accuracy": 0.96142578125,
+          "baseline_accuracy": 0.9617513020833334,
+          "k": 5000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9996615332543577,
+          "train_stats": {
+            "elapsed_seconds": 21.910842666984536,
+            "final_batch_accuracy": 0.96875,
+            "final_loss": 0.13487154245376587,
+            "steps": 3000,
+            "steps_per_second": 136.9185131578909
+          },
+          "zero_head_accuracy": 0.029947916666666664
+        },
+        {
+          "accuracy": 0.96142578125,
+          "baseline_accuracy": 0.9617513020833334,
+          "k": 10000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9996615332543577,
+          "train_stats": {
+            "elapsed_seconds": 36.74668391700834,
+            "final_batch_accuracy": 0.9661458134651184,
+            "final_loss": 0.10159168392419815,
+            "steps": 5000,
+            "steps_per_second": 136.06669955015263
+          },
+          "zero_head_accuracy": 0.029947916666666664
+        },
+        {
+          "accuracy": 0.9627278645833334,
+          "baseline_accuracy": 0.9617513020833334,
+          "k": 20000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 1.0010154002369267,
+          "train_stats": {
+            "elapsed_seconds": 72.78691604203777,
+            "final_batch_accuracy": 0.9712793827056885,
+            "final_loss": 0.09360258281230927,
+            "steps": 10000,
+            "steps_per_second": 137.38732925879896
+          },
+          "zero_head_accuracy": 0.029947916666666664
+        }
+      ],
+      "zero_head_accuracy": 0.029947916666666664
+    },
+    {
+      "baseline_accuracy": 0.9606119791666667,
+      "donor_head": [
+        0,
+        3
+      ],
+      "donor_seed": 4,
+      "k_star": 100,
+      "recipient_head": [
+        0,
+        2
+      ],
+      "recipient_seed": 6,
+      "target_accuracy": 0.7684895833333334,
+      "trajectory": [
+        {
+          "accuracy": 0.6017252604166667,
+          "baseline_accuracy": 0.9606119791666667,
+          "k": 0,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.6263978312436462,
+          "train_stats": null,
+          "zero_head_accuracy": 0.7823893229166667
+        },
+        {
+          "accuracy": 0.9544270833333334,
+          "baseline_accuracy": 0.9606119791666667,
+          "k": 100,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9935615045747204,
+          "train_stats": {
+            "elapsed_seconds": 0.7313887089840136,
+            "final_batch_accuracy": 0.9505208134651184,
+            "final_loss": 0.21877466142177582,
+            "steps": 100,
+            "steps_per_second": 136.72620150085712
+          },
+          "zero_head_accuracy": 0.7823893229166667
+        },
+        {
+          "accuracy": 0.9479166666666667,
+          "baseline_accuracy": 0.9606119791666667,
+          "k": 500,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.986784140969163,
+          "train_stats": {
+            "elapsed_seconds": 2.8965473340358585,
+            "final_batch_accuracy": 0.9635416865348816,
+            "final_loss": 0.40858742594718933,
+            "steps": 400,
+            "steps_per_second": 138.09544739690696
+          },
+          "zero_head_accuracy": 0.7823893229166667
+        },
+        {
+          "accuracy": 0.9508463541666667,
+          "baseline_accuracy": 0.9606119791666667,
+          "k": 1000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9898339545916638,
+          "train_stats": {
+            "elapsed_seconds": 3.6691686250269413,
+            "final_batch_accuracy": 0.9609375,
+            "final_loss": 0.2321740835905075,
+            "steps": 500,
+            "steps_per_second": 136.2706517736913
+          },
+          "zero_head_accuracy": 0.7823893229166667
+        },
+        {
+          "accuracy": 0.9562174479166667,
+          "baseline_accuracy": 0.9606119791666667,
+          "k": 2000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9954252795662487,
+          "train_stats": {
+            "elapsed_seconds": 7.302216249983758,
+            "final_batch_accuracy": 0.9477806687355042,
+            "final_loss": 0.26603302359580994,
+            "steps": 1000,
+            "steps_per_second": 136.9447255142881
+          },
+          "zero_head_accuracy": 0.7823893229166667
+        },
+        {
+          "accuracy": 0.9599609375000001,
+          "baseline_accuracy": 0.9606119791666667,
+          "k": 5000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9993222636394443,
+          "train_stats": {
+            "elapsed_seconds": 22.1056072920328,
+            "final_batch_accuracy": 0.9817708134651184,
+            "final_loss": 0.0862475335597992,
+            "steps": 3000,
+            "steps_per_second": 135.71217295085333
+          },
+          "zero_head_accuracy": 0.7823893229166667
+        },
+        {
+          "accuracy": 0.9597981770833334,
+          "baseline_accuracy": 0.9606119791666667,
+          "k": 10000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9991528295493053,
+          "train_stats": {
+            "elapsed_seconds": 37.351834832981694,
+            "final_batch_accuracy": 0.9557291865348816,
+            "final_loss": 0.20168377459049225,
+            "steps": 5000,
+            "steps_per_second": 133.86223253442415
+          },
+          "zero_head_accuracy": 0.7823893229166667
+        },
+        {
+          "accuracy": 0.9583333333333334,
+          "baseline_accuracy": 0.9606119791666667,
+          "k": 20000,
+          "n_eval_sequences": 1024,
+          "recovery_fraction": 0.9976279227380549,
+          "train_stats": {
+            "elapsed_seconds": 72.89724583300995,
+            "final_batch_accuracy": 0.9661458134651184,
+            "final_loss": 0.09602564573287964,
+            "steps": 10000,
+            "steps_per_second": 137.1793938951767
+          },
+          "zero_head_accuracy": 0.7823893229166667
+        }
+      ],
+      "zero_head_accuracy": 0.7823893229166667
+    }
+  ],
+  "scope": "FULL"
+}

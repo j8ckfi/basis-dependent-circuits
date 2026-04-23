@@ -1,0 +1,1613 @@
+{
+  "sweep1": [
+    {
+      "name": "individual: wte.weight",
+      "keys": [
+        "wte.weight"
+      ],
+      "param_fraction": 0.140159,
+      "accuracy": 0.796387
+    },
+    {
+      "name": "individual: wpe.weight",
+      "keys": [
+        "wpe.weight"
+      ],
+      "param_fraction": 0.01752,
+      "accuracy": 0.051302
+    },
+    {
+      "name": "individual: blocks.0.ln1.weight",
+      "keys": [
+        "blocks.0.ln1.weight"
+      ],
+      "param_fraction": 0.000274,
+      "accuracy": 0.964518
+    },
+    {
+      "name": "individual: blocks.0.attn.qkv_proj.weight",
+      "keys": [
+        "blocks.0.attn.qkv_proj.weight"
+      ],
+      "param_fraction": 0.105119,
+      "accuracy": 0.005859
+    },
+    {
+      "name": "individual: blocks.0.attn.out_proj.weight",
+      "keys": [
+        "blocks.0.attn.out_proj.weight"
+      ],
+      "param_fraction": 0.03504,
+      "accuracy": 0.002441
+    },
+    {
+      "name": "individual: blocks.0.ln2.weight",
+      "keys": [
+        "blocks.0.ln2.weight"
+      ],
+      "param_fraction": 0.000274,
+      "accuracy": 0.963867
+    },
+    {
+      "name": "individual: blocks.0.mlp.up_proj.weight",
+      "keys": [
+        "blocks.0.mlp.up_proj.weight"
+      ],
+      "param_fraction": 0.140159,
+      "accuracy": 0.947917
+    },
+    {
+      "name": "individual: blocks.0.mlp.down_proj.weight",
+      "keys": [
+        "blocks.0.mlp.down_proj.weight"
+      ],
+      "param_fraction": 0.140159,
+      "accuracy": 0.958333
+    },
+    {
+      "name": "individual: blocks.1.ln1.weight",
+      "keys": [
+        "blocks.1.ln1.weight"
+      ],
+      "param_fraction": 0.000274,
+      "accuracy": 0.963216
+    },
+    {
+      "name": "individual: blocks.1.attn.qkv_proj.weight",
+      "keys": [
+        "blocks.1.attn.qkv_proj.weight"
+      ],
+      "param_fraction": 0.105119,
+      "accuracy": 0.000977
+    },
+    {
+      "name": "individual: blocks.1.attn.out_proj.weight",
+      "keys": [
+        "blocks.1.attn.out_proj.weight"
+      ],
+      "param_fraction": 0.03504,
+      "accuracy": 0.001953
+    },
+    {
+      "name": "individual: blocks.1.ln2.weight",
+      "keys": [
+        "blocks.1.ln2.weight"
+      ],
+      "param_fraction": 0.000274,
+      "accuracy": 0.964518
+    },
+    {
+      "name": "individual: blocks.1.mlp.up_proj.weight",
+      "keys": [
+        "blocks.1.mlp.up_proj.weight"
+      ],
+      "param_fraction": 0.140159,
+      "accuracy": 0.964518
+    },
+    {
+      "name": "individual: blocks.1.mlp.down_proj.weight",
+      "keys": [
+        "blocks.1.mlp.down_proj.weight"
+      ],
+      "param_fraction": 0.140159,
+      "accuracy": 0.963379
+    },
+    {
+      "name": "individual: ln_f.weight",
+      "keys": [
+        "ln_f.weight"
+      ],
+      "param_fraction": 0.000274,
+      "accuracy": 0.963704
+    },
+    {
+      "name": "L0 attn (qkv+out)",
+      "keys": [
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight"
+      ],
+      "param_fraction": 0.140159,
+      "accuracy": 0.003743
+    },
+    {
+      "name": "L0 MLP (up+down)",
+      "keys": [
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight"
+      ],
+      "param_fraction": 0.280318,
+      "accuracy": 0.323958
+    },
+    {
+      "name": "L0 LN (ln1+ln2)",
+      "keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.ln2.weight"
+      ],
+      "param_fraction": 0.000547,
+      "accuracy": 0.963053
+    },
+    {
+      "name": "L1 attn (qkv+out)",
+      "keys": [
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight"
+      ],
+      "param_fraction": 0.140159,
+      "accuracy": 0.002116
+    },
+    {
+      "name": "L1 MLP (up+down)",
+      "keys": [
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ],
+      "param_fraction": 0.280318,
+      "accuracy": 0.961751
+    },
+    {
+      "name": "L1 LN (ln1+ln2)",
+      "keys": [
+        "blocks.1.ln1.weight",
+        "blocks.1.ln2.weight"
+      ],
+      "param_fraction": 0.000547,
+      "accuracy": 0.963379
+    },
+    {
+      "name": "all qkv_proj (L0+L1)",
+      "keys": [
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.1.attn.qkv_proj.weight"
+      ],
+      "param_fraction": 0.210238,
+      "accuracy": 0.001628
+    },
+    {
+      "name": "all out_proj (L0+L1)",
+      "keys": [
+        "blocks.0.attn.out_proj.weight",
+        "blocks.1.attn.out_proj.weight"
+      ],
+      "param_fraction": 0.070079,
+      "accuracy": 0.001628
+    },
+    {
+      "name": "all MLP up (L0+L1)",
+      "keys": [
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.1.mlp.up_proj.weight"
+      ],
+      "param_fraction": 0.280318,
+      "accuracy": 0.941732
+    },
+    {
+      "name": "all MLP down (L0+L1)",
+      "keys": [
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ],
+      "param_fraction": 0.280318,
+      "accuracy": 0.956055
+    },
+    {
+      "name": "all LayerNorms (L0+L1+ln_f)",
+      "keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.ln2.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.ln2.weight",
+        "ln_f.weight"
+      ],
+      "param_fraction": 0.001369,
+      "accuracy": 0.962565
+    },
+    {
+      "name": "wte only",
+      "keys": [
+        "wte.weight"
+      ],
+      "param_fraction": 0.140159,
+      "accuracy": 0.796387
+    },
+    {
+      "name": "wpe only",
+      "keys": [
+        "wpe.weight"
+      ],
+      "param_fraction": 0.01752,
+      "accuracy": 0.051302
+    },
+    {
+      "name": "wte+wpe",
+      "keys": [
+        "wte.weight",
+        "wpe.weight"
+      ],
+      "param_fraction": 0.157679,
+      "accuracy": 0.012207
+    },
+    {
+      "name": "L0 full block",
+      "keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight"
+      ],
+      "param_fraction": 0.421024,
+      "accuracy": 0.004557
+    },
+    {
+      "name": "L1 full block",
+      "keys": [
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ],
+      "param_fraction": 0.421024,
+      "accuracy": 0.002441
+    },
+    {
+      "name": "both full blocks (L0+L1)",
+      "keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ],
+      "param_fraction": 0.842048,
+      "accuracy": 0.012044
+    },
+    {
+      "name": "all except L0 block",
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ],
+      "param_fraction": 0.578976,
+      "accuracy": 0.003092
+    },
+    {
+      "name": "all except L1 block",
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "ln_f.weight"
+      ],
+      "param_fraction": 0.578976,
+      "accuracy": 0.006999
+    },
+    {
+      "name": "L0 attn + embeddings",
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight"
+      ],
+      "param_fraction": 0.297837,
+      "accuracy": 0.003581
+    },
+    {
+      "name": "L0 full + embeddings + ln_f",
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "ln_f.weight"
+      ],
+      "param_fraction": 0.578976,
+      "accuracy": 0.006999
+    },
+    {
+      "name": "L0+L1 full (everything except embeddings)",
+      "keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ],
+      "param_fraction": 0.842048,
+      "accuracy": 0.012044
+    }
+  ],
+  "sweep2": [
+    {
+      "sample_id": 0,
+      "target_pct": 0.05,
+      "actual_pct": 0.087873,
+      "n_keys": 4,
+      "accuracy": 0.002604,
+      "keys": [
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.1.attn.out_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 1,
+      "target_pct": 0.05,
+      "actual_pct": 0.035861,
+      "n_keys": 4,
+      "accuracy": 0.003092,
+      "keys": [
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.1.ln1.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 2,
+      "target_pct": 0.05,
+      "actual_pct": 0.070353,
+      "n_keys": 3,
+      "accuracy": 0.001465,
+      "keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.1.attn.out_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 3,
+      "target_pct": 0.05,
+      "actual_pct": 0.035861,
+      "n_keys": 4,
+      "accuracy": 0.001953,
+      "keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 4,
+      "target_pct": 0.05,
+      "actual_pct": 0.03504,
+      "n_keys": 1,
+      "accuracy": 0.001953,
+      "keys": [
+        "blocks.1.attn.out_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 5,
+      "target_pct": 0.05,
+      "actual_pct": 0.03504,
+      "n_keys": 1,
+      "accuracy": 0.001953,
+      "keys": [
+        "blocks.1.attn.out_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 6,
+      "target_pct": 0.05,
+      "actual_pct": 0.018341,
+      "n_keys": 4,
+      "accuracy": 0.05293,
+      "keys": [
+        "wpe.weight",
+        "blocks.0.ln2.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.ln2.weight"
+      ]
+    },
+    {
+      "sample_id": 7,
+      "target_pct": 0.05,
+      "actual_pct": 0.03504,
+      "n_keys": 1,
+      "accuracy": 0.001953,
+      "keys": [
+        "blocks.1.attn.out_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 8,
+      "target_pct": 0.05,
+      "actual_pct": 0.000547,
+      "n_keys": 2,
+      "accuracy": 0.962402,
+      "keys": [
+        "blocks.1.ln1.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 9,
+      "target_pct": 0.05,
+      "actual_pct": 0.000274,
+      "n_keys": 1,
+      "accuracy": 0.964518,
+      "keys": [
+        "blocks.0.ln1.weight"
+      ]
+    },
+    {
+      "sample_id": 10,
+      "target_pct": 0.1,
+      "actual_pct": 0.140433,
+      "n_keys": 2,
+      "accuracy": 0.963704,
+      "keys": [
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 11,
+      "target_pct": 0.1,
+      "actual_pct": 0.14098,
+      "n_keys": 4,
+      "accuracy": 0.762533,
+      "keys": [
+        "wte.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.ln2.weight",
+        "blocks.1.ln2.weight"
+      ]
+    },
+    {
+      "sample_id": 12,
+      "target_pct": 0.1,
+      "actual_pct": 0.105393,
+      "n_keys": 2,
+      "accuracy": 0.001953,
+      "keys": [
+        "blocks.1.attn.qkv_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 13,
+      "target_pct": 0.1,
+      "actual_pct": 0.140706,
+      "n_keys": 3,
+      "accuracy": 0.931478,
+      "keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 14,
+      "target_pct": 0.1,
+      "actual_pct": 0.140159,
+      "n_keys": 1,
+      "accuracy": 0.796387,
+      "keys": [
+        "wte.weight"
+      ]
+    },
+    {
+      "sample_id": 15,
+      "target_pct": 0.1,
+      "actual_pct": 0.140159,
+      "n_keys": 1,
+      "accuracy": 0.796387,
+      "keys": [
+        "wte.weight"
+      ]
+    },
+    {
+      "sample_id": 16,
+      "target_pct": 0.1,
+      "actual_pct": 0.105119,
+      "n_keys": 1,
+      "accuracy": 0.005859,
+      "keys": [
+        "blocks.0.attn.qkv_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 17,
+      "target_pct": 0.1,
+      "actual_pct": 0.140706,
+      "n_keys": 3,
+      "accuracy": 0.954915,
+      "keys": [
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln2.weight"
+      ]
+    },
+    {
+      "sample_id": 18,
+      "target_pct": 0.1,
+      "actual_pct": 0.105119,
+      "n_keys": 1,
+      "accuracy": 0.000977,
+      "keys": [
+        "blocks.1.attn.qkv_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 19,
+      "target_pct": 0.1,
+      "actual_pct": 0.14098,
+      "n_keys": 4,
+      "accuracy": 0.963542,
+      "keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.ln2.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 20,
+      "target_pct": 0.2,
+      "actual_pct": 0.175472,
+      "n_keys": 3,
+      "accuracy": 0.001465,
+      "keys": [
+        "wte.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.out_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 21,
+      "target_pct": 0.2,
+      "actual_pct": 0.175472,
+      "n_keys": 3,
+      "accuracy": 0.001953,
+      "keys": [
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.attn.out_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 22,
+      "target_pct": 0.2,
+      "actual_pct": 0.246099,
+      "n_keys": 5,
+      "accuracy": 0.007161,
+      "keys": [
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 23,
+      "target_pct": 0.2,
+      "actual_pct": 0.175472,
+      "n_keys": 4,
+      "accuracy": 0.00179,
+      "keys": [
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 24,
+      "target_pct": 0.2,
+      "actual_pct": 0.245552,
+      "n_keys": 3,
+      "accuracy": 0.005859,
+      "keys": [
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 25,
+      "target_pct": 0.2,
+      "actual_pct": 0.175198,
+      "n_keys": 2,
+      "accuracy": 0.00179,
+      "keys": [
+        "wte.weight",
+        "blocks.1.attn.out_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 26,
+      "target_pct": 0.2,
+      "actual_pct": 0.175198,
+      "n_keys": 2,
+      "accuracy": 0.000977,
+      "keys": [
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 27,
+      "target_pct": 0.2,
+      "actual_pct": 0.193266,
+      "n_keys": 5,
+      "accuracy": 0.003743,
+      "keys": [
+        "wpe.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 28,
+      "target_pct": 0.2,
+      "actual_pct": 0.157679,
+      "n_keys": 2,
+      "accuracy": 0.034831,
+      "keys": [
+        "wpe.weight",
+        "blocks.0.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 29,
+      "target_pct": 0.2,
+      "actual_pct": 0.175746,
+      "n_keys": 4,
+      "accuracy": 0.000977,
+      "keys": [
+        "blocks.0.ln1.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 30,
+      "target_pct": 0.3,
+      "actual_pct": 0.315905,
+      "n_keys": 5,
+      "accuracy": 0.002279,
+      "keys": [
+        "wte.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 31,
+      "target_pct": 0.3,
+      "actual_pct": 0.280318,
+      "n_keys": 3,
+      "accuracy": 0.00179,
+      "keys": [
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 32,
+      "target_pct": 0.3,
+      "actual_pct": 0.263071,
+      "n_keys": 4,
+      "accuracy": 0.002767,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.ln2.weight"
+      ]
+    },
+    {
+      "sample_id": 33,
+      "target_pct": 0.3,
+      "actual_pct": 0.315905,
+      "n_keys": 5,
+      "accuracy": 0.001953,
+      "keys": [
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 34,
+      "target_pct": 0.3,
+      "actual_pct": 0.280865,
+      "n_keys": 4,
+      "accuracy": 0.955892,
+      "keys": [
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 35,
+      "target_pct": 0.3,
+      "actual_pct": 0.298932,
+      "n_keys": 8,
+      "accuracy": 0.001953,
+      "keys": [
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 36,
+      "target_pct": 0.3,
+      "actual_pct": 0.333151,
+      "n_keys": 5,
+      "accuracy": 0.00179,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 37,
+      "target_pct": 0.3,
+      "actual_pct": 0.297837,
+      "n_keys": 4,
+      "accuracy": 0.001953,
+      "keys": [
+        "wpe.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.mlp.up_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 38,
+      "target_pct": 0.3,
+      "actual_pct": 0.280591,
+      "n_keys": 5,
+      "accuracy": 0.002279,
+      "keys": [
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 39,
+      "target_pct": 0.3,
+      "actual_pct": 0.333698,
+      "n_keys": 8,
+      "accuracy": 0.003255,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight"
+      ]
+    },
+    {
+      "sample_id": 40,
+      "target_pct": 0.5,
+      "actual_pct": 0.526417,
+      "n_keys": 7,
+      "accuracy": 0.001465,
+      "keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 41,
+      "target_pct": 0.5,
+      "actual_pct": 0.543389,
+      "n_keys": 7,
+      "accuracy": 0.003418,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 42,
+      "target_pct": 0.5,
+      "actual_pct": 0.45579,
+      "n_keys": 5,
+      "accuracy": 0.001302,
+      "keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.mlp.up_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 43,
+      "target_pct": 0.5,
+      "actual_pct": 0.509171,
+      "n_keys": 9,
+      "accuracy": 0.002279,
+      "keys": [
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 44,
+      "target_pct": 0.5,
+      "actual_pct": 0.544484,
+      "n_keys": 11,
+      "accuracy": 0.001628,
+      "keys": [
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 45,
+      "target_pct": 0.5,
+      "actual_pct": 0.543389,
+      "n_keys": 7,
+      "accuracy": 0.002604,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 46,
+      "target_pct": 0.5,
+      "actual_pct": 0.456611,
+      "n_keys": 9,
+      "accuracy": 0.001465,
+      "keys": [
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 47,
+      "target_pct": 0.5,
+      "actual_pct": 0.525869,
+      "n_keys": 5,
+      "accuracy": 0.001953,
+      "keys": [
+        "wte.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.mlp.up_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 48,
+      "target_pct": 0.5,
+      "actual_pct": 0.52669,
+      "n_keys": 9,
+      "accuracy": 0.000651,
+      "keys": [
+        "wte.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.ln2.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 49,
+      "target_pct": 0.5,
+      "actual_pct": 0.473857,
+      "n_keys": 9,
+      "accuracy": 0.00293,
+      "keys": [
+        "wpe.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 50,
+      "target_pct": 0.7,
+      "actual_pct": 0.719135,
+      "n_keys": 10,
+      "accuracy": 0.008138,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 51,
+      "target_pct": 0.7,
+      "actual_pct": 0.737202,
+      "n_keys": 12,
+      "accuracy": 0.002279,
+      "keys": [
+        "wte.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 52,
+      "target_pct": 0.7,
+      "actual_pct": 0.667123,
+      "n_keys": 11,
+      "accuracy": 0.002767,
+      "keys": [
+        "wte.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 53,
+      "target_pct": 0.7,
+      "actual_pct": 0.666302,
+      "n_keys": 8,
+      "accuracy": 0.003418,
+      "keys": [
+        "wte.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 54,
+      "target_pct": 0.7,
+      "actual_pct": 0.665754,
+      "n_keys": 5,
+      "accuracy": 0.002279,
+      "keys": [
+        "wte.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 55,
+      "target_pct": 0.7,
+      "actual_pct": 0.719409,
+      "n_keys": 11,
+      "accuracy": 0.002116,
+      "keys": [
+        "wpe.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 56,
+      "target_pct": 0.7,
+      "actual_pct": 0.719682,
+      "n_keys": 12,
+      "accuracy": 0.002604,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 57,
+      "target_pct": 0.7,
+      "actual_pct": 0.719409,
+      "n_keys": 11,
+      "accuracy": 0.004069,
+      "keys": [
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 58,
+      "target_pct": 0.7,
+      "actual_pct": 0.719682,
+      "n_keys": 13,
+      "accuracy": 0.008301,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 59,
+      "target_pct": 0.7,
+      "actual_pct": 0.701615,
+      "n_keys": 9,
+      "accuracy": 0.003743,
+      "keys": [
+        "wte.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 60,
+      "target_pct": 0.9,
+      "actual_pct": 0.859567,
+      "n_keys": 13,
+      "accuracy": 0.019206,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 61,
+      "target_pct": 0.9,
+      "actual_pct": 0.894881,
+      "n_keys": 14,
+      "accuracy": 0.007812,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 62,
+      "target_pct": 0.9,
+      "actual_pct": 0.859567,
+      "n_keys": 12,
+      "accuracy": 0.00179,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 63,
+      "target_pct": 0.9,
+      "actual_pct": 0.859567,
+      "n_keys": 13,
+      "accuracy": 0.822591,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 64,
+      "target_pct": 0.9,
+      "actual_pct": 0.859841,
+      "n_keys": 14,
+      "accuracy": 0.835938,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 65,
+      "target_pct": 0.9,
+      "actual_pct": 0.894881,
+      "n_keys": 14,
+      "accuracy": 0.007812,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 66,
+      "target_pct": 0.9,
+      "actual_pct": 0.94744,
+      "n_keys": 13,
+      "accuracy": 0.00179,
+      "keys": [
+        "wte.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    },
+    {
+      "sample_id": 67,
+      "target_pct": 0.9,
+      "actual_pct": 0.859567,
+      "n_keys": 12,
+      "accuracy": 0.002279,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 68,
+      "target_pct": 0.9,
+      "actual_pct": 0.947167,
+      "n_keys": 12,
+      "accuracy": 0.001465,
+      "keys": [
+        "wte.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight"
+      ]
+    },
+    {
+      "sample_id": 69,
+      "target_pct": 0.9,
+      "actual_pct": 0.859841,
+      "n_keys": 14,
+      "accuracy": 0.007812,
+      "keys": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.ln1.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.ln2.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.1.ln1.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "blocks.1.ln2.weight",
+        "blocks.1.mlp.up_proj.weight",
+        "blocks.1.mlp.down_proj.weight",
+        "ln_f.weight"
+      ]
+    }
+  ],
+  "sweep3": {
+    "trace": [
+      {
+        "tensor_tested_for_removal": "wte.weight",
+        "action": "KEPT",
+        "acc_after": 0.347917,
+        "param_fraction_after": 0.859841,
+        "subset_size_after": 14
+      },
+      {
+        "tensor_tested_for_removal": "wpe.weight",
+        "action": "KEPT",
+        "acc_after": 0.023275,
+        "param_fraction_after": 0.98248,
+        "subset_size_after": 14
+      },
+      {
+        "tensor_tested_for_removal": "blocks.0.ln1.weight",
+        "action": "REMOVED",
+        "acc_after": 0.847819,
+        "param_fraction_after": 0.999726,
+        "subset_size_after": 14
+      },
+      {
+        "tensor_tested_for_removal": "blocks.0.attn.qkv_proj.weight",
+        "action": "KEPT",
+        "acc_after": 0.001139,
+        "param_fraction_after": 0.894607,
+        "subset_size_after": 13
+      },
+      {
+        "tensor_tested_for_removal": "blocks.0.attn.out_proj.weight",
+        "action": "KEPT",
+        "acc_after": 0.002279,
+        "param_fraction_after": 0.964687,
+        "subset_size_after": 13
+      },
+      {
+        "tensor_tested_for_removal": "blocks.0.ln2.weight",
+        "action": "REMOVED",
+        "acc_after": 0.759082,
+        "param_fraction_after": 0.999453,
+        "subset_size_after": 13
+      },
+      {
+        "tensor_tested_for_removal": "blocks.0.mlp.up_proj.weight",
+        "action": "KEPT",
+        "acc_after": 0.021484,
+        "param_fraction_after": 0.859294,
+        "subset_size_after": 12
+      },
+      {
+        "tensor_tested_for_removal": "blocks.0.mlp.down_proj.weight",
+        "action": "KEPT",
+        "acc_after": 0.010742,
+        "param_fraction_after": 0.859294,
+        "subset_size_after": 12
+      },
+      {
+        "tensor_tested_for_removal": "blocks.1.ln1.weight",
+        "action": "REMOVED",
+        "acc_after": 0.710612,
+        "param_fraction_after": 0.999179,
+        "subset_size_after": 12
+      },
+      {
+        "tensor_tested_for_removal": "blocks.1.attn.qkv_proj.weight",
+        "action": "KEPT",
+        "acc_after": 0.008789,
+        "param_fraction_after": 0.89406,
+        "subset_size_after": 11
+      },
+      {
+        "tensor_tested_for_removal": "blocks.1.attn.out_proj.weight",
+        "action": "KEPT",
+        "acc_after": 0.006836,
+        "param_fraction_after": 0.964139,
+        "subset_size_after": 11
+      },
+      {
+        "tensor_tested_for_removal": "blocks.1.ln2.weight",
+        "action": "REMOVED",
+        "acc_after": 0.710775,
+        "param_fraction_after": 0.998905,
+        "subset_size_after": 11
+      },
+      {
+        "tensor_tested_for_removal": "blocks.1.mlp.up_proj.weight",
+        "action": "REMOVED",
+        "acc_after": 0.649382,
+        "param_fraction_after": 0.858746,
+        "subset_size_after": 10
+      },
+      {
+        "tensor_tested_for_removal": "blocks.1.mlp.down_proj.weight",
+        "action": "REMOVED",
+        "acc_after": 0.592513,
+        "param_fraction_after": 0.718587,
+        "subset_size_after": 9
+      },
+      {
+        "tensor_tested_for_removal": "ln_f.weight",
+        "action": "KEPT",
+        "acc_after": 0.476139,
+        "param_fraction_after": 0.718314,
+        "subset_size_after": 8
+      }
+    ],
+    "final_subset": [
+      "wte.weight",
+      "wpe.weight",
+      "blocks.0.attn.qkv_proj.weight",
+      "blocks.0.attn.out_proj.weight",
+      "blocks.0.mlp.up_proj.weight",
+      "blocks.0.mlp.down_proj.weight",
+      "blocks.1.attn.qkv_proj.weight",
+      "blocks.1.attn.out_proj.weight",
+      "ln_f.weight"
+    ],
+    "final_acc": 0.592513,
+    "final_param_fraction": 0.718587,
+    "final_n_tensors": 9
+  },
+  "summary": {
+    "all_transplant_acc": 0.860514,
+    "zero_transplant_acc": 0.96403,
+    "rescue_threshold": 0.5,
+    "minimum_rescuing_unit_sweep1": {
+      "name": "individual: blocks.0.ln1.weight",
+      "n_tensors": 1,
+      "param_fraction": 0.000274,
+      "accuracy": 0.964518
+    },
+    "greedy_minimum": {
+      "n_tensors": 9,
+      "param_fraction": 0.718587,
+      "accuracy": 0.592513,
+      "subset": [
+        "wte.weight",
+        "wpe.weight",
+        "blocks.0.attn.qkv_proj.weight",
+        "blocks.0.attn.out_proj.weight",
+        "blocks.0.mlp.up_proj.weight",
+        "blocks.0.mlp.down_proj.weight",
+        "blocks.1.attn.qkv_proj.weight",
+        "blocks.1.attn.out_proj.weight",
+        "ln_f.weight"
+      ]
+    }
+  },
+  "eval_protocol": {
+    "n_sequences": 1024,
+    "data_seed": 9999,
+    "vocab_size": 512,
+    "seq_len": 64,
+    "n_bigrams": 6,
+    "batch_size": 32
+  },
+  "config": {
+    "donor_ckpt": "checkpoints/induction_content_match/induction_seed0/step_020000/model.safetensors",
+    "recipient_ckpt": "checkpoints/induction_content_match/induction_seed1/step_020000/model.safetensors",
+    "total_params": 467584,
+    "rescue_threshold": 0.5,
+    "random_sweep_seed": 2024
+  }
+}

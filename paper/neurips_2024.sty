@@ -1,0 +1,52 @@
+% neurips_2024.sty — NeurIPS 2024 compatible style (minimal faithful implementation)
+% Based on publicly available NeurIPS formatting guidelines.
+% For official submissions use the official style file from neurips.cc.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{neurips_2024}[2024/01/01 NeurIPS 2024]
+
+\DeclareOption{preprint}{\def\@preprint{}}
+\DeclareOption{final}{\def\@final{}}
+\DeclareOption{nonatbib}{\def\@nonatbib{}}
+\ProcessOptions\relax
+
+% Page geometry: NeurIPS uses US letter, margins per official spec
+\RequirePackage[letterpaper,
+                top=1in,
+                bottom=1in,
+                left=1.5in,
+                right=1.5in]{geometry}
+
+% Font: lmodern (Latin Modern, always available in TeX Live)
+\RequirePackage{lmodern}
+
+% Natbib loaded by main document with desired options
+
+% Section formatting
+\RequirePackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\itshape}{\thesubsubsection}{1em}{}
+\titlespacing*{\section}{0pt}{12pt plus 2pt minus 2pt}{6pt plus 1pt minus 1pt}
+\titlespacing*{\subsection}{0pt}{10pt plus 2pt minus 2pt}{4pt plus 1pt}
+\titlespacing*{\subsubsection}{0pt}{8pt plus 1pt minus 1pt}{2pt plus 1pt}
+
+% Abstract
+\renewenvironment{abstract}{%
+  \begin{center}{\bfseries Abstract}\end{center}%
+  \begin{quote}%
+}{%
+  \end{quote}\vspace{1ex}%
+}
+
+% Paragraph spacing
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{1em}
+
+% Caption formatting
+\RequirePackage[font=small,labelfont=bf,labelsep=period]{caption}
+
+% Header/footer
+\pagestyle{plain}
+
+\endinput

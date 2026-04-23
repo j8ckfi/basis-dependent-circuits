@@ -1,0 +1,235 @@
+[
+  {
+    "entropy_level": 0.0,
+    "measured_entropy": 1.1102230246240462e-16,
+    "train_time_s": 113.70180416107178,
+    "circuit": {
+      "n_heads": 16,
+      "role_counts": {
+        "positional": 13,
+        "suppression": 3
+      },
+      "frac_copy": 0.0,
+      "frac_suppression": 0.1875,
+      "frac_positional": 0.8125,
+      "frac_other": 0.0,
+      "mean_copy_score": -0.07400952256284654,
+      "mean_suppression_score": 0.12731639735284261,
+      "mean_pos_dep": 0.9957405515015125,
+      "attn_logit_total": 0.2815026789903641,
+      "mlp_logit_total": 0.8418274968862534
+    }
+  },
+  {
+    "entropy_level": 0.1,
+    "measured_entropy": 0.5282298186445604,
+    "train_time_s": 123.1360912322998,
+    "circuit": {
+      "n_heads": 16,
+      "role_counts": {
+        "copy": 4,
+        "suppression": 12
+      },
+      "frac_copy": 0.25,
+      "frac_suppression": 0.75,
+      "frac_positional": 0.0,
+      "frac_other": 0.0,
+      "mean_copy_score": -0.38769034296274185,
+      "mean_suppression_score": 0.47906178794801235,
+      "mean_pos_dep": 0.998628992587328,
+      "attn_logit_total": 0.1688430793583393,
+      "mlp_logit_total": 1.7382643818855286
+    }
+  },
+  {
+    "entropy_level": 0.2,
+    "measured_entropy": 0.5965179839159336,
+    "train_time_s": 123.39375591278076,
+    "circuit": {
+      "n_heads": 16,
+      "role_counts": {
+        "copy": 4,
+        "suppression": 12
+      },
+      "frac_copy": 0.25,
+      "frac_suppression": 0.75,
+      "frac_positional": 0.0,
+      "frac_other": 0.0,
+      "mean_copy_score": -0.3751631546765566,
+      "mean_suppression_score": 0.4751145765185356,
+      "mean_pos_dep": 0.9987027645111084,
+      "attn_logit_total": 0.1777402125298977,
+      "mlp_logit_total": 1.7380768060684204
+    }
+  },
+  {
+    "entropy_level": 0.3,
+    "measured_entropy": 0.98545530711812,
+    "train_time_s": 118.96110415458679,
+    "circuit": {
+      "n_heads": 16,
+      "role_counts": {
+        "copy": 4,
+        "suppression": 12
+      },
+      "frac_copy": 0.25,
+      "frac_suppression": 0.75,
+      "frac_positional": 0.0,
+      "frac_other": 0.0,
+      "mean_copy_score": -0.5386887602508068,
+      "mean_suppression_score": 0.7343345768749714,
+      "mean_pos_dep": 0.99886155128479,
+      "attn_logit_total": 0.19408562406897545,
+      "mlp_logit_total": 2.3731583058834076
+    }
+  },
+  {
+    "entropy_level": 0.4,
+    "measured_entropy": 1.5089230087829966,
+    "train_time_s": 119.40422511100769,
+    "circuit": {
+      "n_heads": 16,
+      "role_counts": {
+        "copy": 4,
+        "suppression": 12
+      },
+      "frac_copy": 0.25,
+      "frac_suppression": 0.75,
+      "frac_positional": 0.0,
+      "frac_other": 0.0,
+      "mean_copy_score": -0.4050530530512333,
+      "mean_suppression_score": 0.6357270888984203,
+      "mean_pos_dep": 0.9991542808711529,
+      "attn_logit_total": 0.35269722901284695,
+      "mlp_logit_total": 3.398808479309082
+    }
+  },
+  {
+    "entropy_level": 0.5,
+    "measured_entropy": 1.9851958626027475,
+    "train_time_s": 118.24441003799438,
+    "circuit": {
+      "n_heads": 16,
+      "role_counts": {
+        "copy": 4,
+        "suppression": 12
+      },
+      "frac_copy": 0.25,
+      "frac_suppression": 0.75,
+      "frac_positional": 0.0,
+      "frac_other": 0.0,
+      "mean_copy_score": -0.4141269437968731,
+      "mean_suppression_score": 0.6284396406263113,
+      "mean_pos_dep": 0.9995354078710079,
+      "attn_logit_total": 0.4619445651769638,
+      "mlp_logit_total": 4.669115781784058
+    }
+  },
+  {
+    "entropy_level": 0.6,
+    "measured_entropy": 2.405745711508313,
+    "train_time_s": 118.68052816390991,
+    "circuit": {
+      "n_heads": 16,
+      "role_counts": {
+        "copy": 4,
+        "suppression": 12
+      },
+      "frac_copy": 0.25,
+      "frac_suppression": 0.75,
+      "frac_positional": 0.0,
+      "frac_other": 0.0,
+      "mean_copy_score": -0.45379163324832916,
+      "mean_suppression_score": 0.674843605607748,
+      "mean_pos_dep": 0.9992076307535172,
+      "attn_logit_total": 0.45066563226282597,
+      "mlp_logit_total": 6.098188877105713
+    }
+  },
+  {
+    "entropy_level": 0.7,
+    "measured_entropy": 2.8236827189186378,
+    "train_time_s": 118.87078809738159,
+    "circuit": {
+      "n_heads": 16,
+      "role_counts": {
+        "copy": 4,
+        "suppression": 12
+      },
+      "frac_copy": 0.25,
+      "frac_suppression": 0.75,
+      "frac_positional": 0.0,
+      "frac_other": 0.0,
+      "mean_copy_score": -0.4508035220205784,
+      "mean_suppression_score": 0.7115458510816097,
+      "mean_pos_dep": 0.9994248412549496,
+      "attn_logit_total": 0.5123037993907928,
+      "mlp_logit_total": 7.470250725746155
+    }
+  },
+  {
+    "entropy_level": 0.8,
+    "measured_entropy": 3.2741743845226035,
+    "train_time_s": 118.9875500202179,
+    "circuit": {
+      "n_heads": 16,
+      "role_counts": {
+        "copy": 4,
+        "suppression": 11,
+        "positional": 1
+      },
+      "frac_copy": 0.25,
+      "frac_suppression": 0.6875,
+      "frac_positional": 0.0625,
+      "frac_other": 0.0,
+      "mean_copy_score": -0.3498049648478627,
+      "mean_suppression_score": 0.5759355947375298,
+      "mean_pos_dep": 0.9993340075016022,
+      "attn_logit_total": 0.6640030965209007,
+      "mlp_logit_total": 8.652821779251099
+    }
+  },
+  {
+    "entropy_level": 0.9,
+    "measured_entropy": 3.68446659900592,
+    "train_time_s": 120.21656107902527,
+    "circuit": {
+      "n_heads": 16,
+      "role_counts": {
+        "copy": 4,
+        "suppression": 11,
+        "positional": 1
+      },
+      "frac_copy": 0.25,
+      "frac_suppression": 0.6875,
+      "frac_positional": 0.0625,
+      "frac_other": 0.0,
+      "mean_copy_score": -0.434357438236475,
+      "mean_suppression_score": 0.6559242010116577,
+      "mean_pos_dep": 0.9993912130594254,
+      "attn_logit_total": 0.5899345427751541,
+      "mlp_logit_total": 7.528179883956909
+    }
+  },
+  {
+    "entropy_level": 1.0,
+    "measured_entropy": 4.109966757932757,
+    "train_time_s": 120.49445128440857,
+    "circuit": {
+      "n_heads": 16,
+      "role_counts": {
+        "copy": 4,
+        "suppression": 12
+      },
+      "frac_copy": 0.25,
+      "frac_suppression": 0.75,
+      "frac_positional": 0.0,
+      "frac_other": 0.0,
+      "mean_copy_score": -1.0679830387234688,
+      "mean_suppression_score": 1.307834543287754,
+      "mean_pos_dep": 0.9992958083748817,
+      "attn_logit_total": 0.2860392853617668,
+      "mlp_logit_total": 1.6921280547976494
+    }
+  }
+]
