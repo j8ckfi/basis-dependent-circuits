@@ -1,0 +1,14 @@
+{
+  "nl_induction_v2_corpus (seed 42, seq 200, N=500)": {
+    "n_samples": 500,
+    "char_mode": 0.292,
+    "bigram_as_implemented (conditions on window[t-1])": 0.076,
+    "bigram_corrected (conditions on window[t] = A)": 0.554
+  },
+  "portability_corpus (seed 9999, seq 200, N=1024)": {
+    "n_samples": 1024,
+    "char_mode": 0.2763671875,
+    "bigram_as_implemented (conditions on window[t-1])": 0.08984375,
+    "bigram_corrected (conditions on window[t] = A)": 0.55078125
+  }
+}

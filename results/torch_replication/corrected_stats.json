@@ -1,0 +1,43 @@
+{
+  "n_seeds": 20,
+  "layer_agreement": {
+    "count": "20/20",
+    "clopper_pearson_95": [
+      0.8315665290169146,
+      1.0
+    ]
+  },
+  "head_agreement": {
+    "observed": 0.23157894736842105,
+    "jackknife_se": 0.03457718245402218,
+    "jackknife_ci95": [
+      0.16380766975853758,
+      0.29935022497830455
+    ]
+  },
+  "head_agreement_conditional_null": {
+    "null": "uniform over 4 heads given L0 criticality",
+    "null_mean": 0.2498246842105263,
+    "p_one_sided_greater": 0.69027,
+    "p_two_sided": 0.6079,
+    "note": "observed agreement is at/below the conditional null mean; the original p=0.002 was driven entirely by the layer effect"
+  },
+  "slot_uniformity_within_L0": {
+    "counts": [
+      5,
+      3,
+      7,
+      5
+    ],
+    "chi2": 1.6,
+    "p_asymptotic": 0.6593898197119847,
+    "p_monte_carlo": 0.6783
+  },
+  "effect_vector_similarity": {
+    "observed_mean_cosine": 0.32898965654370643,
+    "permutation_null_mean": 0.20807868151492082,
+    "permutation_null_sd": 0.01868206624755543,
+    "p_greater": 0.0,
+    "note": "null = within-seed head-relabeling; tests shared structure beyond the magnitude profile (original null of 0 was vacuous)"
+  }
+}
